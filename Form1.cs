@@ -239,6 +239,7 @@ namespace SOFSEC1_Project
                 SqliteDataAccess.AddUser(newUser);
                 SuccessLabel.Text = "Account creation successful";
                 SuccessLabel.Visible = true;
+                CreateAccountSignupBox.Visible = false;
 
             }
         }
@@ -277,6 +278,23 @@ namespace SOFSEC1_Project
             {
                 ProgramSignupBox.Items.Add(program);
             }
+        }
+
+        private void ReturnToLoginButton_Click(object sender, EventArgs e)
+        {
+            ShowPanel(HOME);
+        }
+
+        private void LoginHome_Click(object sender, EventArgs e)
+        {
+            User_LoginModel newLogin = new User_LoginModel();
+
+            newLogin.username = UsernameHomeLogin.Text;
+        }
+
+        private void CreateAccountRedirect_Click(object sender, EventArgs e)
+        {
+            ShowPanel(SIGNUP);
         }
     }
 }

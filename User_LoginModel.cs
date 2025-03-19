@@ -8,7 +8,6 @@ namespace SOFSEC1_Project
 {
     public class User_LoginModel
     {
-        public int loginId { get; set; }
         public string username { get; set; }
         public string hashedPassword { get; set; }
     }
