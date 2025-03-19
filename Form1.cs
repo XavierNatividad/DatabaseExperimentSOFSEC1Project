@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GradeCalculator;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -198,7 +199,8 @@ namespace SOFSEC1_Project
                         {
                             //Password passed
                             passwordPassed = true;
-                            newUser.password = password;
+                            GPAwareCryptography cryptography = new GPAwareCryptography();                               
+                            newUser.password = cryptography.HashPassword(password);
                         }
                         else
                         {
@@ -288,13 +290,35 @@ namespace SOFSEC1_Project
         private void LoginHome_Click(object sender, EventArgs e)
         {
             User_LoginModel newLogin = new User_LoginModel();
+            GPAwareCryptography cryptography = new GPAwareCryptography();
 
-            newLogin.username = UsernameHomeLogin.Text;
+            newLogin.username = UsernameHomeLogin.Text; 
+            newLogin.hashedPassword = cryptography.HashPassword(PasswordHomeLogin.Text);
+
+            if (SqliteDataAccess.VerifyLogin(newLogin))
+            {
+
+            }
+            else
+            {
+
+            }
+                ;
         }
 
         private void CreateAccountRedirect_Click(object sender, EventArgs e)
         {
             ShowPanel(SIGNUP);
+        }
+
+        private void GPAware_Load(object sender, EventArgs e)
+        {
+            SuccessLabel.Visible = false;
+        }
+
+        private void ReturnToLoginButton_Click_1(object sender, EventArgs e)
+        {
+            ShowPanel(HOME);
         }
     }
 }

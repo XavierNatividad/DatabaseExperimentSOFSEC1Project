@@ -9,7 +9,7 @@ using System.Security.AccessControl;
 
 namespace GradeCalculator
 {
-    class PasswordHasher
+    public class GPAwareCryptography
     {
         private const int saltSize = 16;
         private const int hashSize = 32;
@@ -58,7 +58,7 @@ namespace GradeCalculator
 
             byte[] newHash = HashPassword(password, salt);
 
-            return CryptographicOperations.FixedTimeEquals(hash, newHash);
+            return hash.Equals(newHash);
         }
     }
 }

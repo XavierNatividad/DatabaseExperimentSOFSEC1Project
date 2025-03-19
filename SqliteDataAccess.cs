@@ -7,6 +7,7 @@ using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace SOFSEC1_Project
 {
@@ -51,6 +52,32 @@ namespace SOFSEC1_Project
                 var output = cnn.Query<string>("SELECT username from user_login", new DynamicParameters());
 
                 return output.ToList();
+            }
+        }
+
+        public static bool VerifyLogin(User_LoginModel login)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                List<string> usernameMatch = cnn.Query<string>("SELECT username from user_login WHERE username = @username", login).ToList();
+
+                if (usernameMatch.Count == 1)
+                {
+                    List<string> passwordMatch = cnn.Query<string>("SELECT password FROM user_login WHERE username = @username", login).ToList();
+
+                    if (passwordMatch.Count == 1)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
 
