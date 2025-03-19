@@ -25,7 +25,7 @@ namespace SOFSEC1_Project
             // Hide all panels first DAGDAG SI GPATRACK
             CALCULATOR.Visible = false;
             HOME.Visible = false;
-            DASHBOARD.Visible = false;
+            TopDashboard.Visible = false;
             SIGNUP.Visible = true;
             GPAVIEW.Visible = false;
 
