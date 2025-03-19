@@ -99,7 +99,6 @@
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.BottomSignup = new System.Windows.Forms.Panel();
             this.CenterSignup = new System.Windows.Forms.Panel();
-            this.ReturnToLoginButton = new System.Windows.Forms.Button();
             this.SuccessLabel = new System.Windows.Forms.Label();
             this.InvalidPasswordLabel = new System.Windows.Forms.Label();
             this.InvalidProgramLabel = new System.Windows.Forms.Label();
@@ -1222,7 +1221,6 @@
             // CenterSignup
             // 
             this.CenterSignup.BackColor = System.Drawing.Color.PaleGreen;
-            this.CenterSignup.Controls.Add(this.ReturnToLoginButton);
             this.CenterSignup.Controls.Add(this.SuccessLabel);
             this.CenterSignup.Controls.Add(this.InvalidPasswordLabel);
             this.CenterSignup.Controls.Add(this.InvalidProgramLabel);
@@ -1247,18 +1245,7 @@
             this.CenterSignup.Location = new System.Drawing.Point(230, 153);
             this.CenterSignup.Name = "CenterSignup";
             this.CenterSignup.Size = new System.Drawing.Size(810, 367);
-            this.CenterSignup.TabIndex = 3;
-            // 
-            // ReturnToLoginButton
-            // 
-            this.ReturnToLoginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReturnToLoginButton.Location = new System.Drawing.Point(668, 18);
-            this.ReturnToLoginButton.Name = "ReturnToLoginButton";
-            this.ReturnToLoginButton.Size = new System.Drawing.Size(115, 35);
-            this.ReturnToLoginButton.TabIndex = 26;
-            this.ReturnToLoginButton.Text = "Return to Login";
-            this.ReturnToLoginButton.UseVisualStyleBackColor = true;
-            this.ReturnToLoginButton.Click += new System.EventHandler(this.ReturnToLoginButton_Click);
+            this.CenterSignup.TabIndex = 3;     
             // 
             // SuccessLabel
             // 
