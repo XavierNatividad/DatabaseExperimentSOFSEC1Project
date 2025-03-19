@@ -80,7 +80,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Encryption.cs" />
     <Compile Include="GPAwareMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,7 +99,7 @@
     <Compile Include="LogoutConfirm.Designer.cs">
       <DependentUpon>LogoutConfirm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PasswordHasher.cs" />
+    <Compile Include="GPAwareCryptography.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProgramModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

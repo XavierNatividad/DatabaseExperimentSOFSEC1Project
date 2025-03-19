@@ -17,7 +17,7 @@ namespace SOFSEC1_Project
             return ConfigurationManager.ConnectionStrings[id].ConnectionString;
         }
 
-        public static void GetUsername() 
+        public static void GetUsername()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
@@ -54,13 +54,46 @@ namespace SOFSEC1_Project
             }
         }
 
+        public static bool VerifyLogin(User_LoginModel login)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                List<string> usernameMatch = cnn.Query<string>("SELECT username from user_login WHERE username = @username", login).ToList();
+
+                if (usernameMatch.Count == 1)
+                {
+                    List<string> passwordMatch = cnn.Query<string>("SELECT password FROM user_login WHERE username = @username", login).ToList();
+
+                    if (passwordMatch.Count == 1)
+                    {
+                        if(login.hashedPassword == passwordMatch.First())
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
         public static List<string> GetPrograms()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
                 var output = cnn.Query<string>("SELECT programCODE FROM Program", new DynamicParameters());
 
-                return output.ToList();              
+                return output.ToList();
             }
         }
 

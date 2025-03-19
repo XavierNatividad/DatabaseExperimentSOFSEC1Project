@@ -208,6 +208,7 @@
             this.TermGPABoxGPAView = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.CGPASummaryGPAView = new System.Windows.Forms.Label();
+            this.InvalidLoginLabel = new System.Windows.Forms.Label();
             this.HOME.SuspendLayout();
             this.TopHome.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -268,7 +269,7 @@
             // 
             this.LogoHome.BackColor = System.Drawing.Color.Transparent;
             this.LogoHome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogoHome.Font = new System.Drawing.Font("Inter", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogoHome.ForeColor = System.Drawing.Color.White;
             this.LogoHome.Location = new System.Drawing.Point(18, 19);
             this.LogoHome.Name = "LogoHome";
@@ -320,6 +321,7 @@
             // 
             this.RightHome.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.RightHome.BackColor = System.Drawing.Color.PaleGreen;
+            this.RightHome.Controls.Add(this.InvalidLoginLabel);
             this.RightHome.Controls.Add(this.orText);
             this.RightHome.Controls.Add(this.CreateAccountRedirect);
             this.RightHome.Controls.Add(this.LoginHome);
@@ -377,6 +379,7 @@
             this.PasswordHomeLogin.Size = new System.Drawing.Size(314, 35);
             this.PasswordHomeLogin.TabIndex = 5;
             this.PasswordHomeLogin.Text = " ";
+            this.PasswordHomeLogin.TextChanged += new System.EventHandler(this.PasswordHomeLogin_TextChanged);
             // 
             // PasswordHomeText
             // 
@@ -398,6 +401,7 @@
             this.UsernameHomeLogin.Size = new System.Drawing.Size(314, 35);
             this.UsernameHomeLogin.TabIndex = 3;
             this.UsernameHomeLogin.Text = " ";
+            this.UsernameHomeLogin.TextChanged += new System.EventHandler(this.UsernameHomeLogin_TextChanged);
             // 
             // UsernameHomeText
             // 
@@ -455,7 +459,7 @@
             // 
             this.CalculatorCalculator.BackColor = System.Drawing.Color.Transparent;
             this.CalculatorCalculator.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CalculatorCalculator.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CalculatorCalculator.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CalculatorCalculator.ForeColor = System.Drawing.Color.White;
             this.CalculatorCalculator.Location = new System.Drawing.Point(724, 36);
             this.CalculatorCalculator.Name = "CalculatorCalculator";
@@ -469,7 +473,7 @@
             // 
             this.LogOutCalculator.BackColor = System.Drawing.Color.Transparent;
             this.LogOutCalculator.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogOutCalculator.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOutCalculator.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogOutCalculator.ForeColor = System.Drawing.Color.White;
             this.LogOutCalculator.Location = new System.Drawing.Point(1123, 42);
             this.LogOutCalculator.Name = "LogOutCalculator";
@@ -482,7 +486,7 @@
             // 
             this.NameCalculator.BackColor = System.Drawing.Color.Transparent;
             this.NameCalculator.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.NameCalculator.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameCalculator.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NameCalculator.ForeColor = System.Drawing.Color.White;
             this.NameCalculator.Location = new System.Drawing.Point(897, 36);
             this.NameCalculator.Name = "NameCalculator";
@@ -496,7 +500,7 @@
             // 
             this.CGPACalculator.BackColor = System.Drawing.Color.Transparent;
             this.CGPACalculator.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CGPACalculator.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CGPACalculator.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CGPACalculator.ForeColor = System.Drawing.Color.White;
             this.CGPACalculator.Location = new System.Drawing.Point(563, 36);
             this.CGPACalculator.Name = "CGPACalculator";
@@ -510,7 +514,7 @@
             // 
             this.DashboardCalculator.BackColor = System.Drawing.Color.Transparent;
             this.DashboardCalculator.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DashboardCalculator.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DashboardCalculator.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DashboardCalculator.ForeColor = System.Drawing.Color.White;
             this.DashboardCalculator.Location = new System.Drawing.Point(357, 36);
             this.DashboardCalculator.Name = "DashboardCalculator";
@@ -524,7 +528,7 @@
             // 
             this.LogoCalculator.BackColor = System.Drawing.Color.Transparent;
             this.LogoCalculator.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LogoCalculator.Font = new System.Drawing.Font("Inter", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoCalculator.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogoCalculator.ForeColor = System.Drawing.Color.White;
             this.LogoCalculator.Location = new System.Drawing.Point(18, 19);
             this.LogoCalculator.Name = "LogoCalculator";
@@ -685,7 +689,7 @@
             // TargetGradeCalculatorText
             // 
             this.TargetGradeCalculatorText.BackColor = System.Drawing.Color.Transparent;
-            this.TargetGradeCalculatorText.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TargetGradeCalculatorText.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TargetGradeCalculatorText.ForeColor = System.Drawing.Color.Black;
             this.TargetGradeCalculatorText.Location = new System.Drawing.Point(627, 70);
             this.TargetGradeCalculatorText.Name = "TargetGradeCalculatorText";
@@ -697,7 +701,7 @@
             // GradeComponentCalculatorText
             // 
             this.GradeComponentCalculatorText.BackColor = System.Drawing.Color.Transparent;
-            this.GradeComponentCalculatorText.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GradeComponentCalculatorText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GradeComponentCalculatorText.ForeColor = System.Drawing.Color.Black;
             this.GradeComponentCalculatorText.Location = new System.Drawing.Point(733, 134);
             this.GradeComponentCalculatorText.Name = "GradeComponentCalculatorText";
@@ -709,11 +713,11 @@
             // 
             this.TextboxCalculatorText.AutoSize = true;
             this.TextboxCalculatorText.BackColor = System.Drawing.Color.Transparent;
-            this.TextboxCalculatorText.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextboxCalculatorText.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextboxCalculatorText.ForeColor = System.Drawing.Color.Black;
             this.TextboxCalculatorText.Location = new System.Drawing.Point(688, 315);
             this.TextboxCalculatorText.Name = "TextboxCalculatorText";
-            this.TextboxCalculatorText.Size = new System.Drawing.Size(122, 33);
+            this.TextboxCalculatorText.Size = new System.Drawing.Size(117, 31);
             this.TextboxCalculatorText.TabIndex = 29;
             this.TextboxCalculatorText.Text = "Textbox";
             this.TextboxCalculatorText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -749,11 +753,11 @@
             // 
             this.WeightCalculatorText.AutoSize = true;
             this.WeightCalculatorText.BackColor = System.Drawing.Color.Transparent;
-            this.WeightCalculatorText.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WeightCalculatorText.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WeightCalculatorText.ForeColor = System.Drawing.Color.Black;
             this.WeightCalculatorText.Location = new System.Drawing.Point(396, 104);
             this.WeightCalculatorText.Name = "WeightCalculatorText";
-            this.WeightCalculatorText.Size = new System.Drawing.Size(104, 33);
+            this.WeightCalculatorText.Size = new System.Drawing.Size(98, 31);
             this.WeightCalculatorText.TabIndex = 23;
             this.WeightCalculatorText.Text = "Weight";
             this.WeightCalculatorText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -762,11 +766,11 @@
             // 
             this.GradeCalculatorText2.AutoSize = true;
             this.GradeCalculatorText2.BackColor = System.Drawing.Color.Transparent;
-            this.GradeCalculatorText2.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GradeCalculatorText2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GradeCalculatorText2.ForeColor = System.Drawing.Color.Black;
             this.GradeCalculatorText2.Location = new System.Drawing.Point(276, 104);
             this.GradeCalculatorText2.Name = "GradeCalculatorText2";
-            this.GradeCalculatorText2.Size = new System.Drawing.Size(93, 33);
+            this.GradeCalculatorText2.Size = new System.Drawing.Size(89, 31);
             this.GradeCalculatorText2.TabIndex = 22;
             this.GradeCalculatorText2.Text = "Grade";
             this.GradeCalculatorText2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -775,11 +779,11 @@
             // 
             this.ComponentCalculator.AutoSize = true;
             this.ComponentCalculator.BackColor = System.Drawing.Color.Transparent;
-            this.ComponentCalculator.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComponentCalculator.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComponentCalculator.ForeColor = System.Drawing.Color.Black;
             this.ComponentCalculator.Location = new System.Drawing.Point(52, 104);
             this.ComponentCalculator.Name = "ComponentCalculator";
-            this.ComponentCalculator.Size = new System.Drawing.Size(164, 33);
+            this.ComponentCalculator.Size = new System.Drawing.Size(154, 31);
             this.ComponentCalculator.TabIndex = 21;
             this.ComponentCalculator.Text = "Component";
             this.ComponentCalculator.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -797,11 +801,11 @@
             // 
             this.AddRowCalculatorText.AutoSize = true;
             this.AddRowCalculatorText.BackColor = System.Drawing.Color.Transparent;
-            this.AddRowCalculatorText.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddRowCalculatorText.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddRowCalculatorText.ForeColor = System.Drawing.Color.Black;
             this.AddRowCalculatorText.Location = new System.Drawing.Point(140, 367);
             this.AddRowCalculatorText.Name = "AddRowCalculatorText";
-            this.AddRowCalculatorText.Size = new System.Drawing.Size(233, 33);
+            this.AddRowCalculatorText.Size = new System.Drawing.Size(215, 31);
             this.AddRowCalculatorText.TabIndex = 8;
             this.AddRowCalculatorText.Text = "+ add more rows";
             this.AddRowCalculatorText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -810,7 +814,7 @@
             // 
             this.GradeCalculatorText1.BackColor = System.Drawing.Color.Transparent;
             this.GradeCalculatorText1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.GradeCalculatorText1.Font = new System.Drawing.Font("Inter", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GradeCalculatorText1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GradeCalculatorText1.ForeColor = System.Drawing.Color.Black;
             this.GradeCalculatorText1.Location = new System.Drawing.Point(32, 39);
             this.GradeCalculatorText1.Name = "GradeCalculatorText1";
@@ -850,7 +854,7 @@
             // 
             this.CalculatorGPAEdit.BackColor = System.Drawing.Color.Transparent;
             this.CalculatorGPAEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CalculatorGPAEdit.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CalculatorGPAEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CalculatorGPAEdit.ForeColor = System.Drawing.Color.White;
             this.CalculatorGPAEdit.Location = new System.Drawing.Point(724, 36);
             this.CalculatorGPAEdit.Name = "CalculatorGPAEdit";
@@ -864,7 +868,7 @@
             // 
             this.LogOutGPAEdit.BackColor = System.Drawing.Color.Transparent;
             this.LogOutGPAEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogOutGPAEdit.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOutGPAEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogOutGPAEdit.ForeColor = System.Drawing.Color.White;
             this.LogOutGPAEdit.Location = new System.Drawing.Point(1123, 42);
             this.LogOutGPAEdit.Name = "LogOutGPAEdit";
@@ -877,7 +881,7 @@
             // 
             this.NameGPAEdit.BackColor = System.Drawing.Color.Transparent;
             this.NameGPAEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.NameGPAEdit.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameGPAEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NameGPAEdit.ForeColor = System.Drawing.Color.White;
             this.NameGPAEdit.Location = new System.Drawing.Point(897, 36);
             this.NameGPAEdit.Name = "NameGPAEdit";
@@ -891,7 +895,7 @@
             // 
             this.CGPAGPAEdit.BackColor = System.Drawing.Color.Transparent;
             this.CGPAGPAEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CGPAGPAEdit.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CGPAGPAEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CGPAGPAEdit.ForeColor = System.Drawing.Color.White;
             this.CGPAGPAEdit.Location = new System.Drawing.Point(563, 36);
             this.CGPAGPAEdit.Name = "CGPAGPAEdit";
@@ -905,7 +909,7 @@
             // 
             this.DashboardGPAEdit.BackColor = System.Drawing.Color.Transparent;
             this.DashboardGPAEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DashboardGPAEdit.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DashboardGPAEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DashboardGPAEdit.ForeColor = System.Drawing.Color.White;
             this.DashboardGPAEdit.Location = new System.Drawing.Point(357, 36);
             this.DashboardGPAEdit.Name = "DashboardGPAEdit";
@@ -919,7 +923,7 @@
             // 
             this.LogoGPAEDIT.BackColor = System.Drawing.Color.Transparent;
             this.LogoGPAEDIT.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LogoGPAEDIT.Font = new System.Drawing.Font("Inter", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoGPAEDIT.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogoGPAEDIT.ForeColor = System.Drawing.Color.White;
             this.LogoGPAEDIT.Location = new System.Drawing.Point(18, 19);
             this.LogoGPAEDIT.Name = "LogoGPAEDIT";
@@ -952,7 +956,7 @@
             // EditModeGPAEdit
             // 
             this.EditModeGPAEdit.BackColor = System.Drawing.Color.DarkGray;
-            this.EditModeGPAEdit.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditModeGPAEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EditModeGPAEdit.ForeColor = System.Drawing.Color.Black;
             this.EditModeGPAEdit.Location = new System.Drawing.Point(1081, 15);
             this.EditModeGPAEdit.Name = "EditModeGPAEdit";
@@ -965,7 +969,7 @@
             // ViewModeGPAEdit
             // 
             this.ViewModeGPAEdit.BackColor = System.Drawing.Color.DarkGray;
-            this.ViewModeGPAEdit.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ViewModeGPAEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ViewModeGPAEdit.ForeColor = System.Drawing.Color.Black;
             this.ViewModeGPAEdit.Location = new System.Drawing.Point(896, 15);
             this.ViewModeGPAEdit.Name = "ViewModeGPAEdit";
@@ -979,7 +983,7 @@
             // 
             this.CGPATrackerTextGPAEdit.BackColor = System.Drawing.Color.Transparent;
             this.CGPATrackerTextGPAEdit.Cursor = System.Windows.Forms.Cursors.Default;
-            this.CGPATrackerTextGPAEdit.Font = new System.Drawing.Font("Inter", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CGPATrackerTextGPAEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CGPATrackerTextGPAEdit.ForeColor = System.Drawing.Color.Black;
             this.CGPATrackerTextGPAEdit.Location = new System.Drawing.Point(18, 15);
             this.CGPATrackerTextGPAEdit.Name = "CGPATrackerTextGPAEdit";
@@ -1015,7 +1019,7 @@
             // SaveGPAEdit
             // 
             this.SaveGPAEdit.BackColor = System.Drawing.Color.Lime;
-            this.SaveGPAEdit.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveGPAEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveGPAEdit.ForeColor = System.Drawing.Color.Black;
             this.SaveGPAEdit.Location = new System.Drawing.Point(1105, 10);
             this.SaveGPAEdit.Name = "SaveGPAEdit";
@@ -1027,7 +1031,7 @@
             // DiscardGPAEdit
             // 
             this.DiscardGPAEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.DiscardGPAEdit.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DiscardGPAEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DiscardGPAEdit.ForeColor = System.Drawing.Color.Black;
             this.DiscardGPAEdit.Location = new System.Drawing.Point(877, 10);
             this.DiscardGPAEdit.Name = "DiscardGPAEdit";
@@ -1039,7 +1043,7 @@
             // DeleteGPAEdit
             // 
             this.DeleteGPAEdit.BackColor = System.Drawing.Color.Red;
-            this.DeleteGPAEdit.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteGPAEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteGPAEdit.ForeColor = System.Drawing.Color.Black;
             this.DeleteGPAEdit.Location = new System.Drawing.Point(733, 10);
             this.DeleteGPAEdit.Name = "DeleteGPAEdit";
@@ -1062,7 +1066,7 @@
             // GradeIDSearchButtonGPAEdit
             // 
             this.GradeIDSearchButtonGPAEdit.BackColor = System.Drawing.Color.White;
-            this.GradeIDSearchButtonGPAEdit.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GradeIDSearchButtonGPAEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GradeIDSearchButtonGPAEdit.ForeColor = System.Drawing.Color.Black;
             this.GradeIDSearchButtonGPAEdit.Location = new System.Drawing.Point(196, 34);
             this.GradeIDSearchButtonGPAEdit.Name = "GradeIDSearchButtonGPAEdit";
@@ -1084,11 +1088,11 @@
             // 
             this.GradeIDSearchTextGPAEdit.AutoSize = true;
             this.GradeIDSearchTextGPAEdit.BackColor = System.Drawing.Color.Transparent;
-            this.GradeIDSearchTextGPAEdit.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GradeIDSearchTextGPAEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GradeIDSearchTextGPAEdit.ForeColor = System.Drawing.Color.Black;
             this.GradeIDSearchTextGPAEdit.Location = new System.Drawing.Point(22, 14);
             this.GradeIDSearchTextGPAEdit.Name = "GradeIDSearchTextGPAEdit";
-            this.GradeIDSearchTextGPAEdit.Size = new System.Drawing.Size(76, 19);
+            this.GradeIDSearchTextGPAEdit.Size = new System.Drawing.Size(75, 20);
             this.GradeIDSearchTextGPAEdit.TabIndex = 9;
             this.GradeIDSearchTextGPAEdit.Text = "Grade ID";
             this.GradeIDSearchTextGPAEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1116,7 +1120,7 @@
             // AddNewCourseGPAEdit
             // 
             this.AddNewCourseGPAEdit.BackColor = System.Drawing.Color.Lime;
-            this.AddNewCourseGPAEdit.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddNewCourseGPAEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddNewCourseGPAEdit.ForeColor = System.Drawing.Color.Black;
             this.AddNewCourseGPAEdit.Location = new System.Drawing.Point(28, 154);
             this.AddNewCourseGPAEdit.Name = "AddNewCourseGPAEdit";
@@ -1128,7 +1132,7 @@
             // DeleteCourseGPAView
             // 
             this.DeleteCourseGPAView.BackColor = System.Drawing.Color.Red;
-            this.DeleteCourseGPAView.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteCourseGPAView.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteCourseGPAView.ForeColor = System.Drawing.Color.Black;
             this.DeleteCourseGPAView.Location = new System.Drawing.Point(266, 154);
             this.DeleteCourseGPAView.Name = "DeleteCourseGPAView";
@@ -1141,11 +1145,11 @@
             // 
             this.GradeGPAEdit.AutoSize = true;
             this.GradeGPAEdit.BackColor = System.Drawing.Color.Transparent;
-            this.GradeGPAEdit.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GradeGPAEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GradeGPAEdit.ForeColor = System.Drawing.Color.Black;
             this.GradeGPAEdit.Location = new System.Drawing.Point(357, 87);
             this.GradeGPAEdit.Name = "GradeGPAEdit";
-            this.GradeGPAEdit.Size = new System.Drawing.Size(55, 19);
+            this.GradeGPAEdit.Size = new System.Drawing.Size(54, 20);
             this.GradeGPAEdit.TabIndex = 54;
             this.GradeGPAEdit.Text = "Grade";
             this.GradeGPAEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1154,11 +1158,11 @@
             // 
             this.UnitsGPAEdit.AutoSize = true;
             this.UnitsGPAEdit.BackColor = System.Drawing.Color.Transparent;
-            this.UnitsGPAEdit.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UnitsGPAEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UnitsGPAEdit.ForeColor = System.Drawing.Color.Black;
             this.UnitsGPAEdit.Location = new System.Drawing.Point(236, 87);
             this.UnitsGPAEdit.Name = "UnitsGPAEdit";
-            this.UnitsGPAEdit.Size = new System.Drawing.Size(48, 19);
+            this.UnitsGPAEdit.Size = new System.Drawing.Size(46, 20);
             this.UnitsGPAEdit.TabIndex = 53;
             this.UnitsGPAEdit.Text = "Units";
             this.UnitsGPAEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1167,11 +1171,11 @@
             // 
             this.CourseCodeGPAEdit.AutoSize = true;
             this.CourseCodeGPAEdit.BackColor = System.Drawing.Color.Transparent;
-            this.CourseCodeGPAEdit.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CourseCodeGPAEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CourseCodeGPAEdit.ForeColor = System.Drawing.Color.Black;
             this.CourseCodeGPAEdit.Location = new System.Drawing.Point(41, 86);
             this.CourseCodeGPAEdit.Name = "CourseCodeGPAEdit";
-            this.CourseCodeGPAEdit.Size = new System.Drawing.Size(109, 19);
+            this.CourseCodeGPAEdit.Size = new System.Drawing.Size(102, 20);
             this.CourseCodeGPAEdit.TabIndex = 52;
             this.CourseCodeGPAEdit.Text = "Course Code";
             this.CourseCodeGPAEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1180,11 +1184,11 @@
             // 
             this.CourseNameGPAEdit.AutoSize = true;
             this.CourseNameGPAEdit.BackColor = System.Drawing.Color.Transparent;
-            this.CourseNameGPAEdit.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CourseNameGPAEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CourseNameGPAEdit.ForeColor = System.Drawing.Color.Black;
             this.CourseNameGPAEdit.Location = new System.Drawing.Point(214, 17);
             this.CourseNameGPAEdit.Name = "CourseNameGPAEdit";
-            this.CourseNameGPAEdit.Size = new System.Drawing.Size(112, 19);
+            this.CourseNameGPAEdit.Size = new System.Drawing.Size(106, 20);
             this.CourseNameGPAEdit.TabIndex = 51;
             this.CourseNameGPAEdit.Text = "Course Name";
             this.CourseNameGPAEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1193,18 +1197,18 @@
             // 
             this.GradeIDGPAEdit.AutoSize = true;
             this.GradeIDGPAEdit.BackColor = System.Drawing.Color.Transparent;
-            this.GradeIDGPAEdit.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GradeIDGPAEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GradeIDGPAEdit.ForeColor = System.Drawing.Color.Black;
             this.GradeIDGPAEdit.Location = new System.Drawing.Point(25, 17);
             this.GradeIDGPAEdit.Name = "GradeIDGPAEdit";
-            this.GradeIDGPAEdit.Size = new System.Drawing.Size(76, 19);
+            this.GradeIDGPAEdit.Size = new System.Drawing.Size(75, 20);
             this.GradeIDGPAEdit.TabIndex = 49;
             this.GradeIDGPAEdit.Text = "Grade ID";
             this.GradeIDGPAEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // GradeIDBoxGPAEdit
             // 
-            this.GradeIDBoxGPAEdit.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GradeIDBoxGPAEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GradeIDBoxGPAEdit.Location = new System.Drawing.Point(28, 40);
             this.GradeIDBoxGPAEdit.Multiline = true;
             this.GradeIDBoxGPAEdit.Name = "GradeIDBoxGPAEdit";
@@ -1554,7 +1558,7 @@
             // 
             this.LogoSignup.BackColor = System.Drawing.Color.Transparent;
             this.LogoSignup.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogoSignup.Font = new System.Drawing.Font("Inter", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoSignup.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogoSignup.ForeColor = System.Drawing.Color.White;
             this.LogoSignup.Location = new System.Drawing.Point(18, 19);
             this.LogoSignup.Name = "LogoSignup";
@@ -1594,7 +1598,7 @@
             // 
             this.CalculatorDashboard.BackColor = System.Drawing.Color.Transparent;
             this.CalculatorDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CalculatorDashboard.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CalculatorDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CalculatorDashboard.ForeColor = System.Drawing.Color.White;
             this.CalculatorDashboard.Location = new System.Drawing.Point(724, 36);
             this.CalculatorDashboard.Name = "CalculatorDashboard";
@@ -1608,7 +1612,7 @@
             // 
             this.LogOutDashboard.BackColor = System.Drawing.Color.Transparent;
             this.LogOutDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogOutDashboard.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOutDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogOutDashboard.ForeColor = System.Drawing.Color.White;
             this.LogOutDashboard.Location = new System.Drawing.Point(1123, 42);
             this.LogOutDashboard.Name = "LogOutDashboard";
@@ -1621,7 +1625,7 @@
             // 
             this.NameDashboard.BackColor = System.Drawing.Color.Transparent;
             this.NameDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.NameDashboard.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NameDashboard.ForeColor = System.Drawing.Color.White;
             this.NameDashboard.Location = new System.Drawing.Point(897, 36);
             this.NameDashboard.Name = "NameDashboard";
@@ -1635,7 +1639,7 @@
             // 
             this.CGPADashboard.BackColor = System.Drawing.Color.Transparent;
             this.CGPADashboard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CGPADashboard.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CGPADashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CGPADashboard.ForeColor = System.Drawing.Color.White;
             this.CGPADashboard.Location = new System.Drawing.Point(563, 36);
             this.CGPADashboard.Name = "CGPADashboard";
@@ -1649,7 +1653,7 @@
             // 
             this.DashboardDashboard.BackColor = System.Drawing.Color.Transparent;
             this.DashboardDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DashboardDashboard.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DashboardDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DashboardDashboard.ForeColor = System.Drawing.Color.White;
             this.DashboardDashboard.Location = new System.Drawing.Point(357, 36);
             this.DashboardDashboard.Name = "DashboardDashboard";
@@ -1663,7 +1667,7 @@
             // 
             this.LogoDashboard.BackColor = System.Drawing.Color.Transparent;
             this.LogoDashboard.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LogoDashboard.Font = new System.Drawing.Font("Inter", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogoDashboard.ForeColor = System.Drawing.Color.White;
             this.LogoDashboard.Location = new System.Drawing.Point(18, 19);
             this.LogoDashboard.Name = "LogoDashboard";
@@ -1699,7 +1703,7 @@
             // GradeConversionTableButton
             // 
             this.GradeConversionTableButton.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.GradeConversionTableButton.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GradeConversionTableButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GradeConversionTableButton.ForeColor = System.Drawing.Color.Black;
             this.GradeConversionTableButton.Location = new System.Drawing.Point(755, 36);
             this.GradeConversionTableButton.Name = "GradeConversionTableButton";
@@ -1711,7 +1715,7 @@
             // AverageDashboardText
             // 
             this.AverageDashboardText.BackColor = System.Drawing.Color.Transparent;
-            this.AverageDashboardText.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AverageDashboardText.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AverageDashboardText.ForeColor = System.Drawing.Color.Black;
             this.AverageDashboardText.Location = new System.Drawing.Point(53, 103);
             this.AverageDashboardText.Name = "AverageDashboardText";
@@ -1733,11 +1737,11 @@
             // 
             this.RankDashboardPopup.AutoSize = true;
             this.RankDashboardPopup.BackColor = System.Drawing.Color.Transparent;
-            this.RankDashboardPopup.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RankDashboardPopup.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RankDashboardPopup.ForeColor = System.Drawing.Color.Black;
             this.RankDashboardPopup.Location = new System.Drawing.Point(53, 397);
             this.RankDashboardPopup.Name = "RankDashboardPopup";
-            this.RankDashboardPopup.Size = new System.Drawing.Size(88, 33);
+            this.RankDashboardPopup.Size = new System.Drawing.Size(90, 31);
             this.RankDashboardPopup.TabIndex = 10;
             this.RankDashboardPopup.Text = "RANK";
             this.RankDashboardPopup.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1746,7 +1750,7 @@
             // 
             this.NameDashboardPopup.BackColor = System.Drawing.Color.Transparent;
             this.NameDashboardPopup.Cursor = System.Windows.Forms.Cursors.Default;
-            this.NameDashboardPopup.Font = new System.Drawing.Font("Inter", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameDashboardPopup.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NameDashboardPopup.ForeColor = System.Drawing.Color.Black;
             this.NameDashboardPopup.Location = new System.Drawing.Point(224, 39);
             this.NameDashboardPopup.Name = "NameDashboardPopup";
@@ -1758,11 +1762,11 @@
             // 
             this.TrackDashboardText.AutoSize = true;
             this.TrackDashboardText.BackColor = System.Drawing.Color.Transparent;
-            this.TrackDashboardText.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TrackDashboardText.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TrackDashboardText.ForeColor = System.Drawing.Color.Black;
             this.TrackDashboardText.Location = new System.Drawing.Point(53, 361);
             this.TrackDashboardText.Name = "TrackDashboardText";
-            this.TrackDashboardText.Size = new System.Drawing.Size(525, 33);
+            this.TrackDashboardText.Size = new System.Drawing.Size(492, 31);
             this.TrackDashboardText.TabIndex = 8;
             this.TrackDashboardText.Text = "You are currently on track to graduate...";
             this.TrackDashboardText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1771,7 +1775,7 @@
             // 
             this.WelcomeDashboardText.BackColor = System.Drawing.Color.Transparent;
             this.WelcomeDashboardText.Cursor = System.Windows.Forms.Cursors.Default;
-            this.WelcomeDashboardText.Font = new System.Drawing.Font("Inter", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WelcomeDashboardText.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WelcomeDashboardText.ForeColor = System.Drawing.Color.Black;
             this.WelcomeDashboardText.Location = new System.Drawing.Point(32, 39);
             this.WelcomeDashboardText.Name = "WelcomeDashboardText";
@@ -1811,7 +1815,7 @@
             // 
             this.CalculatorProfile.BackColor = System.Drawing.Color.Transparent;
             this.CalculatorProfile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CalculatorProfile.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CalculatorProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CalculatorProfile.ForeColor = System.Drawing.Color.White;
             this.CalculatorProfile.Location = new System.Drawing.Point(724, 36);
             this.CalculatorProfile.Name = "CalculatorProfile";
@@ -1825,7 +1829,7 @@
             // 
             this.LogOutProfile.BackColor = System.Drawing.Color.Transparent;
             this.LogOutProfile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogOutProfile.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOutProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogOutProfile.ForeColor = System.Drawing.Color.White;
             this.LogOutProfile.Location = new System.Drawing.Point(1123, 42);
             this.LogOutProfile.Name = "LogOutProfile";
@@ -1838,7 +1842,7 @@
             // 
             this.NameProfile.BackColor = System.Drawing.Color.Transparent;
             this.NameProfile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.NameProfile.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NameProfile.ForeColor = System.Drawing.Color.White;
             this.NameProfile.Location = new System.Drawing.Point(897, 36);
             this.NameProfile.Name = "NameProfile";
@@ -1852,7 +1856,7 @@
             // 
             this.CGPAProfile.BackColor = System.Drawing.Color.Transparent;
             this.CGPAProfile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CGPAProfile.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CGPAProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CGPAProfile.ForeColor = System.Drawing.Color.White;
             this.CGPAProfile.Location = new System.Drawing.Point(563, 36);
             this.CGPAProfile.Name = "CGPAProfile";
@@ -1866,7 +1870,7 @@
             // 
             this.DashboardProfile.BackColor = System.Drawing.Color.Transparent;
             this.DashboardProfile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DashboardProfile.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DashboardProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DashboardProfile.ForeColor = System.Drawing.Color.White;
             this.DashboardProfile.Location = new System.Drawing.Point(357, 36);
             this.DashboardProfile.Name = "DashboardProfile";
@@ -1880,7 +1884,7 @@
             // 
             this.LogoProfile.BackColor = System.Drawing.Color.Transparent;
             this.LogoProfile.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LogoProfile.Font = new System.Drawing.Font("Inter", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogoProfile.ForeColor = System.Drawing.Color.White;
             this.LogoProfile.Location = new System.Drawing.Point(18, 19);
             this.LogoProfile.Name = "LogoProfile";
@@ -1912,7 +1916,7 @@
             // 
             this.ProfileTextProfile.BackColor = System.Drawing.Color.Transparent;
             this.ProfileTextProfile.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ProfileTextProfile.Font = new System.Drawing.Font("Inter SemiBold", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProfileTextProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProfileTextProfile.ForeColor = System.Drawing.Color.Black;
             this.ProfileTextProfile.Location = new System.Drawing.Point(18, 15);
             this.ProfileTextProfile.Name = "ProfileTextProfile";
@@ -1978,11 +1982,11 @@
             // 
             this.ProgramProfile.AutoSize = true;
             this.ProgramProfile.BackColor = System.Drawing.Color.Transparent;
-            this.ProgramProfile.Font = new System.Drawing.Font("Inter Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProgramProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProgramProfile.ForeColor = System.Drawing.Color.Black;
             this.ProgramProfile.Location = new System.Drawing.Point(61, 151);
             this.ProgramProfile.Name = "ProgramProfile";
-            this.ProgramProfile.Size = new System.Drawing.Size(112, 25);
+            this.ProgramProfile.Size = new System.Drawing.Size(107, 25);
             this.ProgramProfile.TabIndex = 49;
             this.ProgramProfile.Text = "Program:";
             this.ProgramProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1991,11 +1995,11 @@
             // 
             this.LastNameProfile.AutoSize = true;
             this.LastNameProfile.BackColor = System.Drawing.Color.Transparent;
-            this.LastNameProfile.Font = new System.Drawing.Font("Inter Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LastNameProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LastNameProfile.ForeColor = System.Drawing.Color.Black;
             this.LastNameProfile.Location = new System.Drawing.Point(38, 107);
             this.LastNameProfile.Name = "LastNameProfile";
-            this.LastNameProfile.Size = new System.Drawing.Size(136, 25);
+            this.LastNameProfile.Size = new System.Drawing.Size(131, 25);
             this.LastNameProfile.TabIndex = 48;
             this.LastNameProfile.Text = "Last Name:";
             this.LastNameProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2004,11 +2008,11 @@
             // 
             this.FirstNameProfile.AutoSize = true;
             this.FirstNameProfile.BackColor = System.Drawing.Color.Transparent;
-            this.FirstNameProfile.Font = new System.Drawing.Font("Inter Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FirstNameProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FirstNameProfile.ForeColor = System.Drawing.Color.Black;
             this.FirstNameProfile.Location = new System.Drawing.Point(35, 63);
             this.FirstNameProfile.Name = "FirstNameProfile";
-            this.FirstNameProfile.Size = new System.Drawing.Size(138, 25);
+            this.FirstNameProfile.Size = new System.Drawing.Size(133, 25);
             this.FirstNameProfile.TabIndex = 47;
             this.FirstNameProfile.Text = "First Name:";
             this.FirstNameProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2017,11 +2021,11 @@
             // 
             this.UsernameProfile.AutoSize = true;
             this.UsernameProfile.BackColor = System.Drawing.Color.Transparent;
-            this.UsernameProfile.Font = new System.Drawing.Font("Inter Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsernameProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UsernameProfile.ForeColor = System.Drawing.Color.Black;
             this.UsernameProfile.Location = new System.Drawing.Point(44, 22);
             this.UsernameProfile.Name = "UsernameProfile";
-            this.UsernameProfile.Size = new System.Drawing.Size(129, 25);
+            this.UsernameProfile.Size = new System.Drawing.Size(125, 25);
             this.UsernameProfile.TabIndex = 46;
             this.UsernameProfile.Text = "Username:";
             this.UsernameProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2029,7 +2033,7 @@
             // SaveChangesProfile
             // 
             this.SaveChangesProfile.BackColor = System.Drawing.Color.DarkGray;
-            this.SaveChangesProfile.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveChangesProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveChangesProfile.ForeColor = System.Drawing.Color.Black;
             this.SaveChangesProfile.Location = new System.Drawing.Point(978, 17);
             this.SaveChangesProfile.Name = "SaveChangesProfile";
@@ -2064,11 +2068,11 @@
             // 
             this.ConfirmNewPasswordProfile.AutoSize = true;
             this.ConfirmNewPasswordProfile.BackColor = System.Drawing.Color.Transparent;
-            this.ConfirmNewPasswordProfile.Font = new System.Drawing.Font("Inter Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConfirmNewPasswordProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConfirmNewPasswordProfile.ForeColor = System.Drawing.Color.Black;
             this.ConfirmNewPasswordProfile.Location = new System.Drawing.Point(27, 88);
             this.ConfirmNewPasswordProfile.Name = "ConfirmNewPasswordProfile";
-            this.ConfirmNewPasswordProfile.Size = new System.Drawing.Size(275, 25);
+            this.ConfirmNewPasswordProfile.Size = new System.Drawing.Size(261, 25);
             this.ConfirmNewPasswordProfile.TabIndex = 51;
             this.ConfirmNewPasswordProfile.Text = "Confirm New Password:";
             this.ConfirmNewPasswordProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2077,11 +2081,11 @@
             // 
             this.NewPasswordProfile.AutoSize = true;
             this.NewPasswordProfile.BackColor = System.Drawing.Color.Transparent;
-            this.NewPasswordProfile.Font = new System.Drawing.Font("Inter Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewPasswordProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NewPasswordProfile.ForeColor = System.Drawing.Color.Black;
             this.NewPasswordProfile.Location = new System.Drawing.Point(123, 47);
             this.NewPasswordProfile.Name = "NewPasswordProfile";
-            this.NewPasswordProfile.Size = new System.Drawing.Size(180, 25);
+            this.NewPasswordProfile.Size = new System.Drawing.Size(173, 25);
             this.NewPasswordProfile.TabIndex = 50;
             this.NewPasswordProfile.Text = "New Password:";
             this.NewPasswordProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2089,7 +2093,7 @@
             // ChangePasswordProfile
             // 
             this.ChangePasswordProfile.BackColor = System.Drawing.Color.DarkGray;
-            this.ChangePasswordProfile.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChangePasswordProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChangePasswordProfile.ForeColor = System.Drawing.Color.Black;
             this.ChangePasswordProfile.Location = new System.Drawing.Point(415, 136);
             this.ChangePasswordProfile.Name = "ChangePasswordProfile";
@@ -2139,7 +2143,7 @@
             // 
             this.CalculatorGPAView.BackColor = System.Drawing.Color.Transparent;
             this.CalculatorGPAView.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CalculatorGPAView.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CalculatorGPAView.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CalculatorGPAView.ForeColor = System.Drawing.Color.White;
             this.CalculatorGPAView.Location = new System.Drawing.Point(724, 36);
             this.CalculatorGPAView.Name = "CalculatorGPAView";
@@ -2153,7 +2157,7 @@
             // 
             this.LogOutGPAView.BackColor = System.Drawing.Color.Transparent;
             this.LogOutGPAView.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogOutGPAView.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOutGPAView.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogOutGPAView.ForeColor = System.Drawing.Color.White;
             this.LogOutGPAView.Location = new System.Drawing.Point(1123, 42);
             this.LogOutGPAView.Name = "LogOutGPAView";
@@ -2166,7 +2170,7 @@
             // 
             this.NameGPAView.BackColor = System.Drawing.Color.Transparent;
             this.NameGPAView.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.NameGPAView.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameGPAView.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NameGPAView.ForeColor = System.Drawing.Color.White;
             this.NameGPAView.Location = new System.Drawing.Point(897, 36);
             this.NameGPAView.Name = "NameGPAView";
@@ -2180,7 +2184,7 @@
             // 
             this.CGPAGPAView.BackColor = System.Drawing.Color.Transparent;
             this.CGPAGPAView.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CGPAGPAView.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CGPAGPAView.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CGPAGPAView.ForeColor = System.Drawing.Color.White;
             this.CGPAGPAView.Location = new System.Drawing.Point(563, 36);
             this.CGPAGPAView.Name = "CGPAGPAView";
@@ -2194,7 +2198,7 @@
             // 
             this.DashboardGPAView.BackColor = System.Drawing.Color.Transparent;
             this.DashboardGPAView.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DashboardGPAView.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DashboardGPAView.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DashboardGPAView.ForeColor = System.Drawing.Color.White;
             this.DashboardGPAView.Location = new System.Drawing.Point(357, 36);
             this.DashboardGPAView.Name = "DashboardGPAView";
@@ -2208,7 +2212,7 @@
             // 
             this.LogoGPAView.BackColor = System.Drawing.Color.Transparent;
             this.LogoGPAView.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LogoGPAView.Font = new System.Drawing.Font("Inter", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoGPAView.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogoGPAView.ForeColor = System.Drawing.Color.White;
             this.LogoGPAView.Location = new System.Drawing.Point(18, 19);
             this.LogoGPAView.Name = "LogoGPAView";
@@ -2241,7 +2245,7 @@
             // EditModeGPAView
             // 
             this.EditModeGPAView.BackColor = System.Drawing.Color.DarkGray;
-            this.EditModeGPAView.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditModeGPAView.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EditModeGPAView.ForeColor = System.Drawing.Color.Black;
             this.EditModeGPAView.Location = new System.Drawing.Point(1081, 15);
             this.EditModeGPAView.Name = "EditModeGPAView";
@@ -2254,7 +2258,7 @@
             // ViewModeGPAView
             // 
             this.ViewModeGPAView.BackColor = System.Drawing.Color.DarkGray;
-            this.ViewModeGPAView.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ViewModeGPAView.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ViewModeGPAView.ForeColor = System.Drawing.Color.Black;
             this.ViewModeGPAView.Location = new System.Drawing.Point(896, 15);
             this.ViewModeGPAView.Name = "ViewModeGPAView";
@@ -2268,7 +2272,7 @@
             // 
             this.CGPATrackerTextGPAView.BackColor = System.Drawing.Color.Transparent;
             this.CGPATrackerTextGPAView.Cursor = System.Windows.Forms.Cursors.Default;
-            this.CGPATrackerTextGPAView.Font = new System.Drawing.Font("Inter", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CGPATrackerTextGPAView.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CGPATrackerTextGPAView.ForeColor = System.Drawing.Color.Black;
             this.CGPATrackerTextGPAView.Location = new System.Drawing.Point(18, 15);
             this.CGPATrackerTextGPAView.Name = "CGPATrackerTextGPAView";
@@ -2295,7 +2299,7 @@
             // RequirementNeededTextGPAView
             // 
             this.RequirementNeededTextGPAView.BackColor = System.Drawing.Color.Transparent;
-            this.RequirementNeededTextGPAView.Font = new System.Drawing.Font("Inter Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RequirementNeededTextGPAView.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RequirementNeededTextGPAView.ForeColor = System.Drawing.Color.Black;
             this.RequirementNeededTextGPAView.Location = new System.Drawing.Point(899, 360);
             this.RequirementNeededTextGPAView.Name = "RequirementNeededTextGPAView";
@@ -2307,7 +2311,7 @@
             // RequirementGPAView
             // 
             this.RequirementGPAView.BackColor = System.Drawing.Color.Transparent;
-            this.RequirementGPAView.Font = new System.Drawing.Font("Inter Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RequirementGPAView.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RequirementGPAView.ForeColor = System.Drawing.Color.Black;
             this.RequirementGPAView.Location = new System.Drawing.Point(902, 279);
             this.RequirementGPAView.Name = "RequirementGPAView";
@@ -2329,7 +2333,7 @@
             // 
             this.TermGPATextGPAView.BackColor = System.Drawing.Color.Transparent;
             this.TermGPATextGPAView.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TermGPATextGPAView.Font = new System.Drawing.Font("Inter", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TermGPATextGPAView.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TermGPATextGPAView.ForeColor = System.Drawing.Color.Black;
             this.TermGPATextGPAView.Location = new System.Drawing.Point(910, 134);
             this.TermGPATextGPAView.Name = "TermGPATextGPAView";
@@ -2340,7 +2344,7 @@
             // TotalUnitsTextGPAView
             // 
             this.TotalUnitsTextGPAView.BackColor = System.Drawing.Color.Transparent;
-            this.TotalUnitsTextGPAView.Font = new System.Drawing.Font("Inter Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalUnitsTextGPAView.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalUnitsTextGPAView.ForeColor = System.Drawing.Color.Black;
             this.TotalUnitsTextGPAView.Location = new System.Drawing.Point(894, 70);
             this.TotalUnitsTextGPAView.Name = "TotalUnitsTextGPAView";
@@ -2373,7 +2377,7 @@
             // 
             this.CGPASummaryGPAView.BackColor = System.Drawing.Color.Transparent;
             this.CGPASummaryGPAView.Cursor = System.Windows.Forms.Cursors.Default;
-            this.CGPASummaryGPAView.Font = new System.Drawing.Font("Inter", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CGPASummaryGPAView.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CGPASummaryGPAView.ForeColor = System.Drawing.Color.Black;
             this.CGPASummaryGPAView.Location = new System.Drawing.Point(856, 25);
             this.CGPASummaryGPAView.Name = "CGPASummaryGPAView";
@@ -2381,18 +2385,30 @@
             this.CGPASummaryGPAView.TabIndex = 18;
             this.CGPASummaryGPAView.Text = "CGPA Summary:";
             // 
+            // InvalidLoginLabel
+            // 
+            this.InvalidLoginLabel.AutoSize = true;
+            this.InvalidLoginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InvalidLoginLabel.ForeColor = System.Drawing.Color.Red;
+            this.InvalidLoginLabel.Location = new System.Drawing.Point(37, 236);
+            this.InvalidLoginLabel.Name = "InvalidLoginLabel";
+            this.InvalidLoginLabel.Size = new System.Drawing.Size(339, 18);
+            this.InvalidLoginLabel.TabIndex = 9;
+            this.InvalidLoginLabel.Text = "Username or password is invalid. Please try again.";
+            this.InvalidLoginLabel.Visible = false;
+            // 
             // GPAware
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.HOME);
             this.Controls.Add(this.PROFILE);
             this.Controls.Add(this.GPAEDIT);
             this.Controls.Add(this.GPAVIEW);
             this.Controls.Add(this.CALCULATOR);
             this.Controls.Add(this.DASHBOARD);
-            this.Controls.Add(this.HOME);
             this.Controls.Add(this.SIGNUP);
             this.Name = "GPAware";
             this.Text = "GPAware";
@@ -2619,6 +2635,7 @@
         private System.Windows.Forms.TextBox TotalUnitsBoxGPAView;
         private System.Windows.Forms.Label RequirementNeededTextGPAView;
         private System.Windows.Forms.Label RequirementGPAView;
+        private System.Windows.Forms.Label InvalidLoginLabel;
     }
 }
 

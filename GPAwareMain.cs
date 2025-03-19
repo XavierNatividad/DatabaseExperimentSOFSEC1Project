@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GradeCalculator;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -285,8 +286,19 @@ namespace SOFSEC1_Project
         private void LoginHome_Click(object sender, EventArgs e)
         {
             User_LoginModel newLogin = new User_LoginModel();
+            GPAwareCryptography cryptography = new GPAwareCryptography();
 
             newLogin.username = UsernameHomeLogin.Text;
+            newLogin.hashedPassword = cryptography.HashPassword(PasswordHomeLogin.Text);
+
+            if (SqliteDataAccess.VerifyLogin(newLogin))
+            {
+                ShowPanel(DASHBOARD);
+            }
+            else
+            {
+                newLogin = null;
+            }
         }
 
         private void CreateAccountRedirect_Click(object sender, EventArgs e)
@@ -322,6 +334,16 @@ namespace SOFSEC1_Project
         private void EditModeGPAView_Click(object sender, EventArgs e)
         {
             ShowPanel(GPAEDIT);
+        }
+
+        private void UsernameHomeLogin_TextChanged(object sender, EventArgs e)
+        {
+            InvalidLoginLabel.Visible = false;
+        }
+
+        private void PasswordHomeLogin_TextChanged(object sender, EventArgs e)
+        {
+            InvalidLoginLabel.Visible = false;
         }
     }
 }

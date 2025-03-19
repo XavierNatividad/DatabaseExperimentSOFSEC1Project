@@ -9,7 +9,7 @@ using System.Security.AccessControl;
 
 namespace GradeCalculator
 {
-    class PasswordHasher
+    class GPAwareCryptography
     {
         private const int saltSize = 16;
         private const int hashSize = 32;
@@ -47,18 +47,18 @@ namespace GradeCalculator
             return argon2.GetBytes(hashSize);
         }
 
-        //public bool VerifyPassword(string password, string hashedPassword)
-        //{
-        //    byte[] combinedBytes = Convert.FromBase64String(hashedPassword);
+        public bool VerifyPassword(string password, string hashedPassword)
+        {
+            byte[] combinedBytes = Convert.FromBase64String(hashedPassword);
 
-        //    byte[] salt = new byte[saltSize];
-        //    byte[] hash = new byte[hashSize];
-        //    Array.Copy(combinedBytes, 0, salt, 0, saltSize);
-        //    Array.Copy(combinedBytes, saltSize, hash, 0, hashSize);
+            byte[] salt = new byte[saltSize];
+            byte[] hash = new byte[hashSize];
+            Array.Copy(combinedBytes, 0, salt, 0, saltSize);
+            Array.Copy(combinedBytes, saltSize, hash, 0, hashSize);
 
-        //    byte[] newHash = HashPassword(password, salt);
+            byte[] newHash = HashPassword(password, salt);
 
-        //    return CryptographicOperations.FixedTimeEquals(hash, newHash);
+            return hash.Equals(newHash);
         }
     }
-//}
+}
