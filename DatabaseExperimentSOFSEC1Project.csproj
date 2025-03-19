@@ -81,13 +81,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Encryption.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="GPAwareMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="GPAwareMain.Designer.cs">
+      <DependentUpon>GPAwareMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GradeConversionTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GradeConversionTable.Designer.cs">
+      <DependentUpon>GradeConversionTable.cs</DependentUpon>
     </Compile>
     <Compile Include="GradeModel.cs" />
+    <Compile Include="LogoutConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogoutConfirm.Designer.cs">
+      <DependentUpon>LogoutConfirm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PasswordHasher.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProgramModel.cs" />
@@ -96,8 +108,8 @@
     <Compile Include="NewUserModel.cs" />
     <Compile Include="User_LoginModel.cs" />
     <Compile Include="User_ProfileModel.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="GPAwareMain.resx">
+      <DependentUpon>GPAwareMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
