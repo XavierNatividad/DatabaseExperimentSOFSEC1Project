@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.HOME = new System.Windows.Forms.Panel();
+            this.TopHome = new System.Windows.Forms.Panel();
+            this.LogoHome = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.About = new System.Windows.Forms.TabPage();
             this.ConversionTable = new System.Windows.Forms.TabPage();
@@ -44,6 +46,13 @@
             this.UsernameHomeText = new System.Windows.Forms.Label();
             this.LOGO2 = new System.Windows.Forms.Label();
             this.CALCULATOR = new System.Windows.Forms.Panel();
+            this.TopCalculator = new System.Windows.Forms.Panel();
+            this.CalculatorCalculator = new System.Windows.Forms.Label();
+            this.LogOutCalculator = new System.Windows.Forms.Label();
+            this.NameCalculator = new System.Windows.Forms.Label();
+            this.CGPACalculator = new System.Windows.Forms.Label();
+            this.DashboardCalculator = new System.Windows.Forms.Label();
+            this.LogoCalculator = new System.Windows.Forms.Label();
             this.BottomCalculator = new System.Windows.Forms.Panel();
             this.CenterCalculator = new System.Windows.Forms.Panel();
             this.WeightCalculatorBox2 = new System.Windows.Forms.TextBox();
@@ -71,6 +80,13 @@
             this.AddRowCalculatorText = new System.Windows.Forms.Label();
             this.GradeCalculatorText1 = new System.Windows.Forms.Label();
             this.GPAEDIT = new System.Windows.Forms.Panel();
+            this.TopGPAEdit = new System.Windows.Forms.Panel();
+            this.CalculatorGPAEdit = new System.Windows.Forms.Label();
+            this.LogOutGPAEdit = new System.Windows.Forms.Label();
+            this.NameGPAEdit = new System.Windows.Forms.Label();
+            this.CGPAGPAEdit = new System.Windows.Forms.Label();
+            this.DashboardGPAEdit = new System.Windows.Forms.Label();
+            this.LogoGPAEDIT = new System.Windows.Forms.Label();
             this.BottomGPAEDIT = new System.Windows.Forms.Panel();
             this.CenterGPAEdit = new System.Windows.Forms.Panel();
             this.EditModeGPAEdit = new System.Windows.Forms.Button();
@@ -81,6 +97,23 @@
             this.SaveGPAEdit = new System.Windows.Forms.Button();
             this.DiscardGPAEdit = new System.Windows.Forms.Button();
             this.DeleteGPAEdit = new System.Windows.Forms.Button();
+            this.DarkGreyCenterSmallGPAEdit = new System.Windows.Forms.Panel();
+            this.GradeIDSearchButtonGPAEdit = new System.Windows.Forms.Button();
+            this.GradeIDSearchBoxGPAEdit = new System.Windows.Forms.TextBox();
+            this.GradeIDSearchTextGPAEdit = new System.Windows.Forms.Label();
+            this.DarkGreyCenterBigGPAEdit = new System.Windows.Forms.Panel();
+            this.AddNewCourseGPAEdit = new System.Windows.Forms.Button();
+            this.DeleteCourseGPAView = new System.Windows.Forms.Button();
+            this.GradeGPAEdit = new System.Windows.Forms.Label();
+            this.UnitsGPAEdit = new System.Windows.Forms.Label();
+            this.CourseCodeGPAEdit = new System.Windows.Forms.Label();
+            this.CourseNameGPAEdit = new System.Windows.Forms.Label();
+            this.GradeIDGPAEdit = new System.Windows.Forms.Label();
+            this.GradeIDBoxGPAEdit = new System.Windows.Forms.TextBox();
+            this.GradeBoxGPAEdit = new System.Windows.Forms.TextBox();
+            this.UnitsBoxGPAEdit = new System.Windows.Forms.TextBox();
+            this.CourseCodeBoxGPAEdit = new System.Windows.Forms.TextBox();
+            this.CourseNameBoxGGPAEdit = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.BottomSignup = new System.Windows.Forms.Panel();
@@ -107,16 +140,25 @@
             this.UsernameSignupText = new System.Windows.Forms.Label();
             this.CreateNewAccountSignupText = new System.Windows.Forms.Label();
             this.SIGNUP = new System.Windows.Forms.Panel();
+            this.TopSignup = new System.Windows.Forms.Panel();
+            this.LogoSignup = new System.Windows.Forms.Label();
             this.DASHBOARD = new System.Windows.Forms.Panel();
+            this.TopDashboard = new System.Windows.Forms.Panel();
+            this.CalculatorDashboard = new System.Windows.Forms.Label();
+            this.LogOutDashboard = new System.Windows.Forms.Label();
+            this.NameDashboard = new System.Windows.Forms.Label();
+            this.CGPADashboard = new System.Windows.Forms.Label();
+            this.DashboardDashboard = new System.Windows.Forms.Label();
+            this.LogoDashboard = new System.Windows.Forms.Label();
             this.BottomDashboard = new System.Windows.Forms.Panel();
             this.CenterDashboard = new System.Windows.Forms.Panel();
+            this.GradeConversionTableButton = new System.Windows.Forms.Button();
             this.AverageDashboardText = new System.Windows.Forms.Label();
             this.AverageGradeBox = new System.Windows.Forms.TextBox();
             this.RankDashboardPopup = new System.Windows.Forms.Label();
             this.NameDashboardPopup = new System.Windows.Forms.Label();
             this.TrackDashboardText = new System.Windows.Forms.Label();
             this.WelcomeDashboardText = new System.Windows.Forms.Label();
-            this.GradeConversionTableButton = new System.Windows.Forms.Button();
             this.PROFILE = new System.Windows.Forms.Panel();
             this.TopProfile = new System.Windows.Forms.Panel();
             this.CalculatorProfile = new System.Windows.Forms.Label();
@@ -144,73 +186,58 @@
             this.NewPasswordProfile = new System.Windows.Forms.Label();
             this.ChangePasswordProfile = new System.Windows.Forms.Button();
             this.NewPasswordBoxProfile = new System.Windows.Forms.TextBox();
-            this.TopHome = new System.Windows.Forms.Panel();
-            this.LogoHome = new System.Windows.Forms.Label();
-            this.TopGPAEdit = new System.Windows.Forms.Panel();
-            this.CalculatorGPAEdit = new System.Windows.Forms.Label();
-            this.LogOutGPAEdit = new System.Windows.Forms.Label();
-            this.NameGPAEdit = new System.Windows.Forms.Label();
-            this.CGPAGPAEdit = new System.Windows.Forms.Label();
-            this.DashboardGPAEdit = new System.Windows.Forms.Label();
-            this.LogoGPAEDIT = new System.Windows.Forms.Label();
-            this.TopDashboard = new System.Windows.Forms.Panel();
-            this.CalculatorDashboard = new System.Windows.Forms.Label();
-            this.LogOutDashboard = new System.Windows.Forms.Label();
-            this.NameDashboard = new System.Windows.Forms.Label();
-            this.CGPADashboard = new System.Windows.Forms.Label();
-            this.DashboardDashboard = new System.Windows.Forms.Label();
-            this.LogoDashboard = new System.Windows.Forms.Label();
-            this.TopCalculator = new System.Windows.Forms.Panel();
-            this.CalculatorCalculator = new System.Windows.Forms.Label();
-            this.LogOutCalculator = new System.Windows.Forms.Label();
-            this.NameCalculator = new System.Windows.Forms.Label();
-            this.CGPACalculator = new System.Windows.Forms.Label();
-            this.DashboardCalculator = new System.Windows.Forms.Label();
-            this.LogoCalculator = new System.Windows.Forms.Label();
-            this.TopSignup = new System.Windows.Forms.Panel();
-            this.LogoSignup = new System.Windows.Forms.Label();
-            this.GradeIDBoxGPAEdit = new System.Windows.Forms.TextBox();
-            this.CourseNameBoxGGPAEdit = new System.Windows.Forms.TextBox();
-            this.CourseCodeBoxGPAEdit = new System.Windows.Forms.TextBox();
-            this.UnitsBoxGPAEdit = new System.Windows.Forms.TextBox();
-            this.GradeBoxGPAEdit = new System.Windows.Forms.TextBox();
-            this.DarkGreyCenterBigGPAEdit = new System.Windows.Forms.Panel();
-            this.GradeIDSearchTextGPAEdit = new System.Windows.Forms.Label();
-            this.GradeIDSearchButtonGPAEdit = new System.Windows.Forms.Button();
-            this.DarkGreyCenterSmallGPAEdit = new System.Windows.Forms.Panel();
-            this.GradeIDGPAEdit = new System.Windows.Forms.Label();
-            this.CourseNameGPAEdit = new System.Windows.Forms.Label();
-            this.CourseCodeGPAEdit = new System.Windows.Forms.Label();
-            this.UnitsGPAEdit = new System.Windows.Forms.Label();
-            this.GradeGPAEdit = new System.Windows.Forms.Label();
-            this.GradeIDSearchBoxGPAEdit = new System.Windows.Forms.TextBox();
-            this.DeleteCourseGPAView = new System.Windows.Forms.Button();
-            this.AddNewCourseGPAEdit = new System.Windows.Forms.Button();
+            this.GPAVIEW = new System.Windows.Forms.Panel();
+            this.TopGPAView = new System.Windows.Forms.Panel();
+            this.CalculatorGPAView = new System.Windows.Forms.Label();
+            this.LogOutGPAView = new System.Windows.Forms.Label();
+            this.NameGPAView = new System.Windows.Forms.Label();
+            this.CGPAGPAView = new System.Windows.Forms.Label();
+            this.DashboardGPAView = new System.Windows.Forms.Label();
+            this.LogoGPAView = new System.Windows.Forms.Label();
+            this.BottomGPAView = new System.Windows.Forms.Panel();
+            this.CenterGPAView = new System.Windows.Forms.Panel();
+            this.EditModeGPAView = new System.Windows.Forms.Button();
+            this.ViewModeGPAView = new System.Windows.Forms.Button();
+            this.CGPATrackerTextGPAView = new System.Windows.Forms.Label();
+            this.GreyCenterGPAView = new System.Windows.Forms.Panel();
+            this.RequirementNeededTextGPAView = new System.Windows.Forms.Label();
+            this.RequirementGPAView = new System.Windows.Forms.Label();
+            this.TotalUnitsBoxGPAView = new System.Windows.Forms.TextBox();
+            this.TermGPATextGPAView = new System.Windows.Forms.Label();
+            this.TotalUnitsTextGPAView = new System.Windows.Forms.Label();
+            this.TermGPABoxGPAView = new System.Windows.Forms.TextBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.CGPASummaryGPAView = new System.Windows.Forms.Label();
             this.HOME.SuspendLayout();
+            this.TopHome.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.RightHome.SuspendLayout();
             this.CALCULATOR.SuspendLayout();
+            this.TopCalculator.SuspendLayout();
             this.CenterCalculator.SuspendLayout();
             this.GPAEDIT.SuspendLayout();
+            this.TopGPAEdit.SuspendLayout();
             this.CenterGPAEdit.SuspendLayout();
             this.GreyCenterGPAEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.DarkGreyCenterSmallGPAEdit.SuspendLayout();
+            this.DarkGreyCenterBigGPAEdit.SuspendLayout();
             this.CenterSignup.SuspendLayout();
             this.SIGNUP.SuspendLayout();
+            this.TopSignup.SuspendLayout();
             this.DASHBOARD.SuspendLayout();
+            this.TopDashboard.SuspendLayout();
             this.CenterDashboard.SuspendLayout();
             this.PROFILE.SuspendLayout();
             this.TopProfile.SuspendLayout();
             this.CenterProfile.SuspendLayout();
             this.GreyCenterProfile.SuspendLayout();
             this.DarkGreyCenterProfile.SuspendLayout();
-            this.TopHome.SuspendLayout();
-            this.TopGPAEdit.SuspendLayout();
-            this.TopDashboard.SuspendLayout();
-            this.TopCalculator.SuspendLayout();
-            this.TopSignup.SuspendLayout();
-            this.DarkGreyCenterBigGPAEdit.SuspendLayout();
-            this.DarkGreyCenterSmallGPAEdit.SuspendLayout();
+            this.GPAVIEW.SuspendLayout();
+            this.TopGPAView.SuspendLayout();
+            this.CenterGPAView.SuspendLayout();
+            this.GreyCenterGPAView.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // HOME
@@ -226,7 +253,28 @@
             this.HOME.Name = "HOME";
             this.HOME.Size = new System.Drawing.Size(1264, 681);
             this.HOME.TabIndex = 1;
-            this.HOME.Visible = false;
+            // 
+            // TopHome
+            // 
+            this.TopHome.BackColor = System.Drawing.Color.SeaGreen;
+            this.TopHome.Controls.Add(this.LogoHome);
+            this.TopHome.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TopHome.Location = new System.Drawing.Point(0, 0);
+            this.TopHome.Name = "TopHome";
+            this.TopHome.Size = new System.Drawing.Size(1264, 89);
+            this.TopHome.TabIndex = 4;
+            // 
+            // LogoHome
+            // 
+            this.LogoHome.BackColor = System.Drawing.Color.Transparent;
+            this.LogoHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LogoHome.Font = new System.Drawing.Font("Inter", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoHome.ForeColor = System.Drawing.Color.White;
+            this.LogoHome.Location = new System.Drawing.Point(18, 19);
+            this.LogoHome.Name = "LogoHome";
+            this.LogoHome.Size = new System.Drawing.Size(242, 52);
+            this.LogoHome.TabIndex = 0;
+            this.LogoHome.Text = "GPAware";
             // 
             // tabControl1
             // 
@@ -388,6 +436,102 @@
             this.CALCULATOR.Size = new System.Drawing.Size(1264, 681);
             this.CALCULATOR.TabIndex = 5;
             // 
+            // TopCalculator
+            // 
+            this.TopCalculator.BackColor = System.Drawing.Color.SeaGreen;
+            this.TopCalculator.Controls.Add(this.CalculatorCalculator);
+            this.TopCalculator.Controls.Add(this.LogOutCalculator);
+            this.TopCalculator.Controls.Add(this.NameCalculator);
+            this.TopCalculator.Controls.Add(this.CGPACalculator);
+            this.TopCalculator.Controls.Add(this.DashboardCalculator);
+            this.TopCalculator.Controls.Add(this.LogoCalculator);
+            this.TopCalculator.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TopCalculator.Location = new System.Drawing.Point(0, 0);
+            this.TopCalculator.Name = "TopCalculator";
+            this.TopCalculator.Size = new System.Drawing.Size(1264, 89);
+            this.TopCalculator.TabIndex = 4;
+            // 
+            // CalculatorCalculator
+            // 
+            this.CalculatorCalculator.BackColor = System.Drawing.Color.Transparent;
+            this.CalculatorCalculator.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CalculatorCalculator.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CalculatorCalculator.ForeColor = System.Drawing.Color.White;
+            this.CalculatorCalculator.Location = new System.Drawing.Point(724, 36);
+            this.CalculatorCalculator.Name = "CalculatorCalculator";
+            this.CalculatorCalculator.Size = new System.Drawing.Size(136, 40);
+            this.CalculatorCalculator.TabIndex = 5;
+            this.CalculatorCalculator.Text = "Calculator";
+            this.CalculatorCalculator.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CalculatorCalculator.Click += new System.EventHandler(this.CalculatorProfile_Click);
+            // 
+            // LogOutCalculator
+            // 
+            this.LogOutCalculator.BackColor = System.Drawing.Color.Transparent;
+            this.LogOutCalculator.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LogOutCalculator.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOutCalculator.ForeColor = System.Drawing.Color.White;
+            this.LogOutCalculator.Location = new System.Drawing.Point(1123, 42);
+            this.LogOutCalculator.Name = "LogOutCalculator";
+            this.LogOutCalculator.Size = new System.Drawing.Size(141, 47);
+            this.LogOutCalculator.TabIndex = 4;
+            this.LogOutCalculator.Text = "Log out";
+            this.LogOutCalculator.Click += new System.EventHandler(this.LogoProfile_Click);
+            // 
+            // NameCalculator
+            // 
+            this.NameCalculator.BackColor = System.Drawing.Color.Transparent;
+            this.NameCalculator.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.NameCalculator.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameCalculator.ForeColor = System.Drawing.Color.White;
+            this.NameCalculator.Location = new System.Drawing.Point(897, 36);
+            this.NameCalculator.Name = "NameCalculator";
+            this.NameCalculator.Size = new System.Drawing.Size(186, 40);
+            this.NameCalculator.TabIndex = 3;
+            this.NameCalculator.Text = "NAME";
+            this.NameCalculator.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.NameCalculator.Click += new System.EventHandler(this.NameProfile_Click);
+            // 
+            // CGPACalculator
+            // 
+            this.CGPACalculator.BackColor = System.Drawing.Color.Transparent;
+            this.CGPACalculator.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CGPACalculator.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CGPACalculator.ForeColor = System.Drawing.Color.White;
+            this.CGPACalculator.Location = new System.Drawing.Point(563, 36);
+            this.CGPACalculator.Name = "CGPACalculator";
+            this.CGPACalculator.Size = new System.Drawing.Size(94, 40);
+            this.CGPACalculator.TabIndex = 2;
+            this.CGPACalculator.Text = "CGPA";
+            this.CGPACalculator.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CGPACalculator.Click += new System.EventHandler(this.CGPAProfile_Click);
+            // 
+            // DashboardCalculator
+            // 
+            this.DashboardCalculator.BackColor = System.Drawing.Color.Transparent;
+            this.DashboardCalculator.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DashboardCalculator.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DashboardCalculator.ForeColor = System.Drawing.Color.White;
+            this.DashboardCalculator.Location = new System.Drawing.Point(357, 36);
+            this.DashboardCalculator.Name = "DashboardCalculator";
+            this.DashboardCalculator.Size = new System.Drawing.Size(146, 40);
+            this.DashboardCalculator.TabIndex = 1;
+            this.DashboardCalculator.Text = "Dashboard";
+            this.DashboardCalculator.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DashboardCalculator.Click += new System.EventHandler(this.DashboardProfile_Click);
+            // 
+            // LogoCalculator
+            // 
+            this.LogoCalculator.BackColor = System.Drawing.Color.Transparent;
+            this.LogoCalculator.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LogoCalculator.Font = new System.Drawing.Font("Inter", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoCalculator.ForeColor = System.Drawing.Color.White;
+            this.LogoCalculator.Location = new System.Drawing.Point(18, 19);
+            this.LogoCalculator.Name = "LogoCalculator";
+            this.LogoCalculator.Size = new System.Drawing.Size(242, 52);
+            this.LogoCalculator.TabIndex = 0;
+            this.LogoCalculator.Text = "GPAware";
+            // 
             // BottomCalculator
             // 
             this.BottomCalculator.BackColor = System.Drawing.Color.SeaGreen;
@@ -541,7 +685,7 @@
             // TargetGradeCalculatorText
             // 
             this.TargetGradeCalculatorText.BackColor = System.Drawing.Color.Transparent;
-            this.TargetGradeCalculatorText.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TargetGradeCalculatorText.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TargetGradeCalculatorText.ForeColor = System.Drawing.Color.Black;
             this.TargetGradeCalculatorText.Location = new System.Drawing.Point(627, 70);
             this.TargetGradeCalculatorText.Name = "TargetGradeCalculatorText";
@@ -553,7 +697,7 @@
             // GradeComponentCalculatorText
             // 
             this.GradeComponentCalculatorText.BackColor = System.Drawing.Color.Transparent;
-            this.GradeComponentCalculatorText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GradeComponentCalculatorText.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GradeComponentCalculatorText.ForeColor = System.Drawing.Color.Black;
             this.GradeComponentCalculatorText.Location = new System.Drawing.Point(733, 134);
             this.GradeComponentCalculatorText.Name = "GradeComponentCalculatorText";
@@ -565,11 +709,11 @@
             // 
             this.TextboxCalculatorText.AutoSize = true;
             this.TextboxCalculatorText.BackColor = System.Drawing.Color.Transparent;
-            this.TextboxCalculatorText.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextboxCalculatorText.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextboxCalculatorText.ForeColor = System.Drawing.Color.Black;
             this.TextboxCalculatorText.Location = new System.Drawing.Point(688, 315);
             this.TextboxCalculatorText.Name = "TextboxCalculatorText";
-            this.TextboxCalculatorText.Size = new System.Drawing.Size(110, 31);
+            this.TextboxCalculatorText.Size = new System.Drawing.Size(122, 33);
             this.TextboxCalculatorText.TabIndex = 29;
             this.TextboxCalculatorText.Text = "Textbox";
             this.TextboxCalculatorText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -605,11 +749,11 @@
             // 
             this.WeightCalculatorText.AutoSize = true;
             this.WeightCalculatorText.BackColor = System.Drawing.Color.Transparent;
-            this.WeightCalculatorText.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WeightCalculatorText.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WeightCalculatorText.ForeColor = System.Drawing.Color.Black;
             this.WeightCalculatorText.Location = new System.Drawing.Point(396, 104);
             this.WeightCalculatorText.Name = "WeightCalculatorText";
-            this.WeightCalculatorText.Size = new System.Drawing.Size(98, 31);
+            this.WeightCalculatorText.Size = new System.Drawing.Size(104, 33);
             this.WeightCalculatorText.TabIndex = 23;
             this.WeightCalculatorText.Text = "Weight";
             this.WeightCalculatorText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -618,11 +762,11 @@
             // 
             this.GradeCalculatorText2.AutoSize = true;
             this.GradeCalculatorText2.BackColor = System.Drawing.Color.Transparent;
-            this.GradeCalculatorText2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GradeCalculatorText2.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GradeCalculatorText2.ForeColor = System.Drawing.Color.Black;
             this.GradeCalculatorText2.Location = new System.Drawing.Point(276, 104);
             this.GradeCalculatorText2.Name = "GradeCalculatorText2";
-            this.GradeCalculatorText2.Size = new System.Drawing.Size(89, 31);
+            this.GradeCalculatorText2.Size = new System.Drawing.Size(93, 33);
             this.GradeCalculatorText2.TabIndex = 22;
             this.GradeCalculatorText2.Text = "Grade";
             this.GradeCalculatorText2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -631,11 +775,11 @@
             // 
             this.ComponentCalculator.AutoSize = true;
             this.ComponentCalculator.BackColor = System.Drawing.Color.Transparent;
-            this.ComponentCalculator.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComponentCalculator.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComponentCalculator.ForeColor = System.Drawing.Color.Black;
             this.ComponentCalculator.Location = new System.Drawing.Point(52, 104);
             this.ComponentCalculator.Name = "ComponentCalculator";
-            this.ComponentCalculator.Size = new System.Drawing.Size(154, 31);
+            this.ComponentCalculator.Size = new System.Drawing.Size(164, 33);
             this.ComponentCalculator.TabIndex = 21;
             this.ComponentCalculator.Text = "Component";
             this.ComponentCalculator.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -653,11 +797,11 @@
             // 
             this.AddRowCalculatorText.AutoSize = true;
             this.AddRowCalculatorText.BackColor = System.Drawing.Color.Transparent;
-            this.AddRowCalculatorText.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddRowCalculatorText.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddRowCalculatorText.ForeColor = System.Drawing.Color.Black;
-            this.AddRowCalculatorText.Location = new System.Drawing.Point(181, 406);
+            this.AddRowCalculatorText.Location = new System.Drawing.Point(140, 367);
             this.AddRowCalculatorText.Name = "AddRowCalculatorText";
-            this.AddRowCalculatorText.Size = new System.Drawing.Size(215, 31);
+            this.AddRowCalculatorText.Size = new System.Drawing.Size(233, 33);
             this.AddRowCalculatorText.TabIndex = 8;
             this.AddRowCalculatorText.Text = "+ add more rows";
             this.AddRowCalculatorText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -665,8 +809,8 @@
             // GradeCalculatorText1
             // 
             this.GradeCalculatorText1.BackColor = System.Drawing.Color.Transparent;
-            this.GradeCalculatorText1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.GradeCalculatorText1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GradeCalculatorText1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.GradeCalculatorText1.Font = new System.Drawing.Font("Inter", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GradeCalculatorText1.ForeColor = System.Drawing.Color.Black;
             this.GradeCalculatorText1.Location = new System.Drawing.Point(32, 39);
             this.GradeCalculatorText1.Name = "GradeCalculatorText1";
@@ -686,6 +830,102 @@
             this.GPAEDIT.Name = "GPAEDIT";
             this.GPAEDIT.Size = new System.Drawing.Size(1264, 681);
             this.GPAEDIT.TabIndex = 6;
+            // 
+            // TopGPAEdit
+            // 
+            this.TopGPAEdit.BackColor = System.Drawing.Color.SeaGreen;
+            this.TopGPAEdit.Controls.Add(this.CalculatorGPAEdit);
+            this.TopGPAEdit.Controls.Add(this.LogOutGPAEdit);
+            this.TopGPAEdit.Controls.Add(this.NameGPAEdit);
+            this.TopGPAEdit.Controls.Add(this.CGPAGPAEdit);
+            this.TopGPAEdit.Controls.Add(this.DashboardGPAEdit);
+            this.TopGPAEdit.Controls.Add(this.LogoGPAEDIT);
+            this.TopGPAEdit.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TopGPAEdit.Location = new System.Drawing.Point(0, 0);
+            this.TopGPAEdit.Name = "TopGPAEdit";
+            this.TopGPAEdit.Size = new System.Drawing.Size(1264, 89);
+            this.TopGPAEdit.TabIndex = 4;
+            // 
+            // CalculatorGPAEdit
+            // 
+            this.CalculatorGPAEdit.BackColor = System.Drawing.Color.Transparent;
+            this.CalculatorGPAEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CalculatorGPAEdit.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CalculatorGPAEdit.ForeColor = System.Drawing.Color.White;
+            this.CalculatorGPAEdit.Location = new System.Drawing.Point(724, 36);
+            this.CalculatorGPAEdit.Name = "CalculatorGPAEdit";
+            this.CalculatorGPAEdit.Size = new System.Drawing.Size(136, 40);
+            this.CalculatorGPAEdit.TabIndex = 5;
+            this.CalculatorGPAEdit.Text = "Calculator";
+            this.CalculatorGPAEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CalculatorGPAEdit.Click += new System.EventHandler(this.CalculatorProfile_Click);
+            // 
+            // LogOutGPAEdit
+            // 
+            this.LogOutGPAEdit.BackColor = System.Drawing.Color.Transparent;
+            this.LogOutGPAEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LogOutGPAEdit.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOutGPAEdit.ForeColor = System.Drawing.Color.White;
+            this.LogOutGPAEdit.Location = new System.Drawing.Point(1123, 42);
+            this.LogOutGPAEdit.Name = "LogOutGPAEdit";
+            this.LogOutGPAEdit.Size = new System.Drawing.Size(141, 47);
+            this.LogOutGPAEdit.TabIndex = 4;
+            this.LogOutGPAEdit.Text = "Log out";
+            this.LogOutGPAEdit.Click += new System.EventHandler(this.LogoProfile_Click);
+            // 
+            // NameGPAEdit
+            // 
+            this.NameGPAEdit.BackColor = System.Drawing.Color.Transparent;
+            this.NameGPAEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.NameGPAEdit.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameGPAEdit.ForeColor = System.Drawing.Color.White;
+            this.NameGPAEdit.Location = new System.Drawing.Point(897, 36);
+            this.NameGPAEdit.Name = "NameGPAEdit";
+            this.NameGPAEdit.Size = new System.Drawing.Size(186, 40);
+            this.NameGPAEdit.TabIndex = 3;
+            this.NameGPAEdit.Text = "NAME";
+            this.NameGPAEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.NameGPAEdit.Click += new System.EventHandler(this.NameProfile_Click);
+            // 
+            // CGPAGPAEdit
+            // 
+            this.CGPAGPAEdit.BackColor = System.Drawing.Color.Transparent;
+            this.CGPAGPAEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CGPAGPAEdit.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CGPAGPAEdit.ForeColor = System.Drawing.Color.White;
+            this.CGPAGPAEdit.Location = new System.Drawing.Point(563, 36);
+            this.CGPAGPAEdit.Name = "CGPAGPAEdit";
+            this.CGPAGPAEdit.Size = new System.Drawing.Size(94, 40);
+            this.CGPAGPAEdit.TabIndex = 2;
+            this.CGPAGPAEdit.Text = "CGPA";
+            this.CGPAGPAEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CGPAGPAEdit.Click += new System.EventHandler(this.CGPAProfile_Click);
+            // 
+            // DashboardGPAEdit
+            // 
+            this.DashboardGPAEdit.BackColor = System.Drawing.Color.Transparent;
+            this.DashboardGPAEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DashboardGPAEdit.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DashboardGPAEdit.ForeColor = System.Drawing.Color.White;
+            this.DashboardGPAEdit.Location = new System.Drawing.Point(357, 36);
+            this.DashboardGPAEdit.Name = "DashboardGPAEdit";
+            this.DashboardGPAEdit.Size = new System.Drawing.Size(146, 40);
+            this.DashboardGPAEdit.TabIndex = 1;
+            this.DashboardGPAEdit.Text = "Dashboard";
+            this.DashboardGPAEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DashboardGPAEdit.Click += new System.EventHandler(this.DashboardProfile_Click);
+            // 
+            // LogoGPAEDIT
+            // 
+            this.LogoGPAEDIT.BackColor = System.Drawing.Color.Transparent;
+            this.LogoGPAEDIT.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LogoGPAEDIT.Font = new System.Drawing.Font("Inter", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoGPAEDIT.ForeColor = System.Drawing.Color.White;
+            this.LogoGPAEDIT.Location = new System.Drawing.Point(18, 19);
+            this.LogoGPAEDIT.Name = "LogoGPAEDIT";
+            this.LogoGPAEDIT.Size = new System.Drawing.Size(242, 52);
+            this.LogoGPAEDIT.TabIndex = 0;
+            this.LogoGPAEDIT.Text = "GPAware";
             // 
             // BottomGPAEDIT
             // 
@@ -720,6 +960,7 @@
             this.EditModeGPAEdit.TabIndex = 47;
             this.EditModeGPAEdit.Text = "Edit Mode";
             this.EditModeGPAEdit.UseVisualStyleBackColor = false;
+            this.EditModeGPAEdit.Click += new System.EventHandler(this.EditModeGPAView_Click);
             // 
             // ViewModeGPAEdit
             // 
@@ -732,12 +973,13 @@
             this.ViewModeGPAEdit.TabIndex = 46;
             this.ViewModeGPAEdit.Text = "View Mode";
             this.ViewModeGPAEdit.UseVisualStyleBackColor = false;
+            this.ViewModeGPAEdit.Click += new System.EventHandler(this.CGPAProfile_Click);
             // 
             // CGPATrackerTextGPAEdit
             // 
             this.CGPATrackerTextGPAEdit.BackColor = System.Drawing.Color.Transparent;
-            this.CGPATrackerTextGPAEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CGPATrackerTextGPAEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CGPATrackerTextGPAEdit.Cursor = System.Windows.Forms.Cursors.Default;
+            this.CGPATrackerTextGPAEdit.Font = new System.Drawing.Font("Inter", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CGPATrackerTextGPAEdit.ForeColor = System.Drawing.Color.Black;
             this.CGPATrackerTextGPAEdit.Location = new System.Drawing.Point(18, 15);
             this.CGPATrackerTextGPAEdit.Name = "CGPATrackerTextGPAEdit";
@@ -805,6 +1047,205 @@
             this.DeleteGPAEdit.TabIndex = 41;
             this.DeleteGPAEdit.Text = "Delete All";
             this.DeleteGPAEdit.UseVisualStyleBackColor = false;
+            // 
+            // DarkGreyCenterSmallGPAEdit
+            // 
+            this.DarkGreyCenterSmallGPAEdit.BackColor = System.Drawing.Color.Gray;
+            this.DarkGreyCenterSmallGPAEdit.Controls.Add(this.GradeIDSearchButtonGPAEdit);
+            this.DarkGreyCenterSmallGPAEdit.Controls.Add(this.GradeIDSearchBoxGPAEdit);
+            this.DarkGreyCenterSmallGPAEdit.Controls.Add(this.GradeIDSearchTextGPAEdit);
+            this.DarkGreyCenterSmallGPAEdit.Location = new System.Drawing.Point(826, 86);
+            this.DarkGreyCenterSmallGPAEdit.Name = "DarkGreyCenterSmallGPAEdit";
+            this.DarkGreyCenterSmallGPAEdit.Size = new System.Drawing.Size(321, 76);
+            this.DarkGreyCenterSmallGPAEdit.TabIndex = 46;
+            // 
+            // GradeIDSearchButtonGPAEdit
+            // 
+            this.GradeIDSearchButtonGPAEdit.BackColor = System.Drawing.Color.White;
+            this.GradeIDSearchButtonGPAEdit.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GradeIDSearchButtonGPAEdit.ForeColor = System.Drawing.Color.Black;
+            this.GradeIDSearchButtonGPAEdit.Location = new System.Drawing.Point(196, 34);
+            this.GradeIDSearchButtonGPAEdit.Name = "GradeIDSearchButtonGPAEdit";
+            this.GradeIDSearchButtonGPAEdit.Size = new System.Drawing.Size(103, 33);
+            this.GradeIDSearchButtonGPAEdit.TabIndex = 48;
+            this.GradeIDSearchButtonGPAEdit.Text = "Search";
+            this.GradeIDSearchButtonGPAEdit.UseVisualStyleBackColor = false;
+            // 
+            // GradeIDSearchBoxGPAEdit
+            // 
+            this.GradeIDSearchBoxGPAEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GradeIDSearchBoxGPAEdit.Location = new System.Drawing.Point(25, 38);
+            this.GradeIDSearchBoxGPAEdit.Multiline = true;
+            this.GradeIDSearchBoxGPAEdit.Name = "GradeIDSearchBoxGPAEdit";
+            this.GradeIDSearchBoxGPAEdit.Size = new System.Drawing.Size(145, 26);
+            this.GradeIDSearchBoxGPAEdit.TabIndex = 55;
+            // 
+            // GradeIDSearchTextGPAEdit
+            // 
+            this.GradeIDSearchTextGPAEdit.AutoSize = true;
+            this.GradeIDSearchTextGPAEdit.BackColor = System.Drawing.Color.Transparent;
+            this.GradeIDSearchTextGPAEdit.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GradeIDSearchTextGPAEdit.ForeColor = System.Drawing.Color.Black;
+            this.GradeIDSearchTextGPAEdit.Location = new System.Drawing.Point(22, 14);
+            this.GradeIDSearchTextGPAEdit.Name = "GradeIDSearchTextGPAEdit";
+            this.GradeIDSearchTextGPAEdit.Size = new System.Drawing.Size(76, 19);
+            this.GradeIDSearchTextGPAEdit.TabIndex = 9;
+            this.GradeIDSearchTextGPAEdit.Text = "Grade ID";
+            this.GradeIDSearchTextGPAEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // DarkGreyCenterBigGPAEdit
+            // 
+            this.DarkGreyCenterBigGPAEdit.BackColor = System.Drawing.Color.Gray;
+            this.DarkGreyCenterBigGPAEdit.Controls.Add(this.AddNewCourseGPAEdit);
+            this.DarkGreyCenterBigGPAEdit.Controls.Add(this.DeleteCourseGPAView);
+            this.DarkGreyCenterBigGPAEdit.Controls.Add(this.GradeGPAEdit);
+            this.DarkGreyCenterBigGPAEdit.Controls.Add(this.UnitsGPAEdit);
+            this.DarkGreyCenterBigGPAEdit.Controls.Add(this.CourseCodeGPAEdit);
+            this.DarkGreyCenterBigGPAEdit.Controls.Add(this.CourseNameGPAEdit);
+            this.DarkGreyCenterBigGPAEdit.Controls.Add(this.GradeIDGPAEdit);
+            this.DarkGreyCenterBigGPAEdit.Controls.Add(this.GradeIDBoxGPAEdit);
+            this.DarkGreyCenterBigGPAEdit.Controls.Add(this.GradeBoxGPAEdit);
+            this.DarkGreyCenterBigGPAEdit.Controls.Add(this.UnitsBoxGPAEdit);
+            this.DarkGreyCenterBigGPAEdit.Controls.Add(this.CourseCodeBoxGPAEdit);
+            this.DarkGreyCenterBigGPAEdit.Controls.Add(this.CourseNameBoxGGPAEdit);
+            this.DarkGreyCenterBigGPAEdit.Location = new System.Drawing.Point(738, 185);
+            this.DarkGreyCenterBigGPAEdit.Name = "DarkGreyCenterBigGPAEdit";
+            this.DarkGreyCenterBigGPAEdit.Size = new System.Drawing.Size(489, 209);
+            this.DarkGreyCenterBigGPAEdit.TabIndex = 45;
+            // 
+            // AddNewCourseGPAEdit
+            // 
+            this.AddNewCourseGPAEdit.BackColor = System.Drawing.Color.Lime;
+            this.AddNewCourseGPAEdit.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddNewCourseGPAEdit.ForeColor = System.Drawing.Color.Black;
+            this.AddNewCourseGPAEdit.Location = new System.Drawing.Point(28, 154);
+            this.AddNewCourseGPAEdit.Name = "AddNewCourseGPAEdit";
+            this.AddNewCourseGPAEdit.Size = new System.Drawing.Size(184, 33);
+            this.AddNewCourseGPAEdit.TabIndex = 57;
+            this.AddNewCourseGPAEdit.Text = "Add New Course";
+            this.AddNewCourseGPAEdit.UseVisualStyleBackColor = false;
+            // 
+            // DeleteCourseGPAView
+            // 
+            this.DeleteCourseGPAView.BackColor = System.Drawing.Color.Red;
+            this.DeleteCourseGPAView.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteCourseGPAView.ForeColor = System.Drawing.Color.Black;
+            this.DeleteCourseGPAView.Location = new System.Drawing.Point(266, 154);
+            this.DeleteCourseGPAView.Name = "DeleteCourseGPAView";
+            this.DeleteCourseGPAView.Size = new System.Drawing.Size(184, 33);
+            this.DeleteCourseGPAView.TabIndex = 56;
+            this.DeleteCourseGPAView.Text = "Delete Course";
+            this.DeleteCourseGPAView.UseVisualStyleBackColor = false;
+            // 
+            // GradeGPAEdit
+            // 
+            this.GradeGPAEdit.AutoSize = true;
+            this.GradeGPAEdit.BackColor = System.Drawing.Color.Transparent;
+            this.GradeGPAEdit.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GradeGPAEdit.ForeColor = System.Drawing.Color.Black;
+            this.GradeGPAEdit.Location = new System.Drawing.Point(357, 87);
+            this.GradeGPAEdit.Name = "GradeGPAEdit";
+            this.GradeGPAEdit.Size = new System.Drawing.Size(55, 19);
+            this.GradeGPAEdit.TabIndex = 54;
+            this.GradeGPAEdit.Text = "Grade";
+            this.GradeGPAEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // UnitsGPAEdit
+            // 
+            this.UnitsGPAEdit.AutoSize = true;
+            this.UnitsGPAEdit.BackColor = System.Drawing.Color.Transparent;
+            this.UnitsGPAEdit.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UnitsGPAEdit.ForeColor = System.Drawing.Color.Black;
+            this.UnitsGPAEdit.Location = new System.Drawing.Point(236, 87);
+            this.UnitsGPAEdit.Name = "UnitsGPAEdit";
+            this.UnitsGPAEdit.Size = new System.Drawing.Size(48, 19);
+            this.UnitsGPAEdit.TabIndex = 53;
+            this.UnitsGPAEdit.Text = "Units";
+            this.UnitsGPAEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // CourseCodeGPAEdit
+            // 
+            this.CourseCodeGPAEdit.AutoSize = true;
+            this.CourseCodeGPAEdit.BackColor = System.Drawing.Color.Transparent;
+            this.CourseCodeGPAEdit.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CourseCodeGPAEdit.ForeColor = System.Drawing.Color.Black;
+            this.CourseCodeGPAEdit.Location = new System.Drawing.Point(41, 86);
+            this.CourseCodeGPAEdit.Name = "CourseCodeGPAEdit";
+            this.CourseCodeGPAEdit.Size = new System.Drawing.Size(109, 19);
+            this.CourseCodeGPAEdit.TabIndex = 52;
+            this.CourseCodeGPAEdit.Text = "Course Code";
+            this.CourseCodeGPAEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // CourseNameGPAEdit
+            // 
+            this.CourseNameGPAEdit.AutoSize = true;
+            this.CourseNameGPAEdit.BackColor = System.Drawing.Color.Transparent;
+            this.CourseNameGPAEdit.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CourseNameGPAEdit.ForeColor = System.Drawing.Color.Black;
+            this.CourseNameGPAEdit.Location = new System.Drawing.Point(214, 17);
+            this.CourseNameGPAEdit.Name = "CourseNameGPAEdit";
+            this.CourseNameGPAEdit.Size = new System.Drawing.Size(112, 19);
+            this.CourseNameGPAEdit.TabIndex = 51;
+            this.CourseNameGPAEdit.Text = "Course Name";
+            this.CourseNameGPAEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // GradeIDGPAEdit
+            // 
+            this.GradeIDGPAEdit.AutoSize = true;
+            this.GradeIDGPAEdit.BackColor = System.Drawing.Color.Transparent;
+            this.GradeIDGPAEdit.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GradeIDGPAEdit.ForeColor = System.Drawing.Color.Black;
+            this.GradeIDGPAEdit.Location = new System.Drawing.Point(25, 17);
+            this.GradeIDGPAEdit.Name = "GradeIDGPAEdit";
+            this.GradeIDGPAEdit.Size = new System.Drawing.Size(76, 19);
+            this.GradeIDGPAEdit.TabIndex = 49;
+            this.GradeIDGPAEdit.Text = "Grade ID";
+            this.GradeIDGPAEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // GradeIDBoxGPAEdit
+            // 
+            this.GradeIDBoxGPAEdit.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GradeIDBoxGPAEdit.Location = new System.Drawing.Point(28, 40);
+            this.GradeIDBoxGPAEdit.Multiline = true;
+            this.GradeIDBoxGPAEdit.Name = "GradeIDBoxGPAEdit";
+            this.GradeIDBoxGPAEdit.Size = new System.Drawing.Size(144, 26);
+            this.GradeIDBoxGPAEdit.TabIndex = 25;
+            // 
+            // GradeBoxGPAEdit
+            // 
+            this.GradeBoxGPAEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GradeBoxGPAEdit.Location = new System.Drawing.Point(360, 109);
+            this.GradeBoxGPAEdit.Multiline = true;
+            this.GradeBoxGPAEdit.Name = "GradeBoxGPAEdit";
+            this.GradeBoxGPAEdit.Size = new System.Drawing.Size(69, 26);
+            this.GradeBoxGPAEdit.TabIndex = 38;
+            // 
+            // UnitsBoxGPAEdit
+            // 
+            this.UnitsBoxGPAEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UnitsBoxGPAEdit.Location = new System.Drawing.Point(240, 109);
+            this.UnitsBoxGPAEdit.Multiline = true;
+            this.UnitsBoxGPAEdit.Name = "UnitsBoxGPAEdit";
+            this.UnitsBoxGPAEdit.Size = new System.Drawing.Size(68, 26);
+            this.UnitsBoxGPAEdit.TabIndex = 37;
+            // 
+            // CourseCodeBoxGPAEdit
+            // 
+            this.CourseCodeBoxGPAEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CourseCodeBoxGPAEdit.Location = new System.Drawing.Point(45, 109);
+            this.CourseCodeBoxGPAEdit.Multiline = true;
+            this.CourseCodeBoxGPAEdit.Name = "CourseCodeBoxGPAEdit";
+            this.CourseCodeBoxGPAEdit.Size = new System.Drawing.Size(143, 26);
+            this.CourseCodeBoxGPAEdit.TabIndex = 36;
+            // 
+            // CourseNameBoxGGPAEdit
+            // 
+            this.CourseNameBoxGGPAEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CourseNameBoxGGPAEdit.Location = new System.Drawing.Point(216, 39);
+            this.CourseNameBoxGGPAEdit.Multiline = true;
+            this.CourseNameBoxGGPAEdit.Name = "CourseNameBoxGGPAEdit";
+            this.CourseNameBoxGGPAEdit.Size = new System.Drawing.Size(234, 26);
+            this.CourseNameBoxGGPAEdit.TabIndex = 35;
             // 
             // BottomSignup
             // 
@@ -1099,6 +1540,28 @@
             this.SIGNUP.Size = new System.Drawing.Size(1264, 681);
             this.SIGNUP.TabIndex = 2;
             // 
+            // TopSignup
+            // 
+            this.TopSignup.BackColor = System.Drawing.Color.SeaGreen;
+            this.TopSignup.Controls.Add(this.LogoSignup);
+            this.TopSignup.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TopSignup.Location = new System.Drawing.Point(0, 0);
+            this.TopSignup.Name = "TopSignup";
+            this.TopSignup.Size = new System.Drawing.Size(1264, 89);
+            this.TopSignup.TabIndex = 4;
+            // 
+            // LogoSignup
+            // 
+            this.LogoSignup.BackColor = System.Drawing.Color.Transparent;
+            this.LogoSignup.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LogoSignup.Font = new System.Drawing.Font("Inter", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoSignup.ForeColor = System.Drawing.Color.White;
+            this.LogoSignup.Location = new System.Drawing.Point(18, 19);
+            this.LogoSignup.Name = "LogoSignup";
+            this.LogoSignup.Size = new System.Drawing.Size(242, 52);
+            this.LogoSignup.TabIndex = 0;
+            this.LogoSignup.Text = "GPAware";
+            // 
             // DASHBOARD
             // 
             this.DASHBOARD.AutoScroll = true;
@@ -1111,7 +1574,102 @@
             this.DASHBOARD.Name = "DASHBOARD";
             this.DASHBOARD.Size = new System.Drawing.Size(1264, 681);
             this.DASHBOARD.TabIndex = 7;
-            this.DASHBOARD.Visible = false;
+            // 
+            // TopDashboard
+            // 
+            this.TopDashboard.BackColor = System.Drawing.Color.SeaGreen;
+            this.TopDashboard.Controls.Add(this.CalculatorDashboard);
+            this.TopDashboard.Controls.Add(this.LogOutDashboard);
+            this.TopDashboard.Controls.Add(this.NameDashboard);
+            this.TopDashboard.Controls.Add(this.CGPADashboard);
+            this.TopDashboard.Controls.Add(this.DashboardDashboard);
+            this.TopDashboard.Controls.Add(this.LogoDashboard);
+            this.TopDashboard.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TopDashboard.Location = new System.Drawing.Point(0, 0);
+            this.TopDashboard.Name = "TopDashboard";
+            this.TopDashboard.Size = new System.Drawing.Size(1264, 89);
+            this.TopDashboard.TabIndex = 4;
+            // 
+            // CalculatorDashboard
+            // 
+            this.CalculatorDashboard.BackColor = System.Drawing.Color.Transparent;
+            this.CalculatorDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CalculatorDashboard.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CalculatorDashboard.ForeColor = System.Drawing.Color.White;
+            this.CalculatorDashboard.Location = new System.Drawing.Point(724, 36);
+            this.CalculatorDashboard.Name = "CalculatorDashboard";
+            this.CalculatorDashboard.Size = new System.Drawing.Size(136, 40);
+            this.CalculatorDashboard.TabIndex = 5;
+            this.CalculatorDashboard.Text = "Calculator";
+            this.CalculatorDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CalculatorDashboard.Click += new System.EventHandler(this.CalculatorProfile_Click);
+            // 
+            // LogOutDashboard
+            // 
+            this.LogOutDashboard.BackColor = System.Drawing.Color.Transparent;
+            this.LogOutDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LogOutDashboard.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOutDashboard.ForeColor = System.Drawing.Color.White;
+            this.LogOutDashboard.Location = new System.Drawing.Point(1123, 42);
+            this.LogOutDashboard.Name = "LogOutDashboard";
+            this.LogOutDashboard.Size = new System.Drawing.Size(141, 47);
+            this.LogOutDashboard.TabIndex = 4;
+            this.LogOutDashboard.Text = "Log out";
+            this.LogOutDashboard.Click += new System.EventHandler(this.LogoProfile_Click);
+            // 
+            // NameDashboard
+            // 
+            this.NameDashboard.BackColor = System.Drawing.Color.Transparent;
+            this.NameDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.NameDashboard.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameDashboard.ForeColor = System.Drawing.Color.White;
+            this.NameDashboard.Location = new System.Drawing.Point(897, 36);
+            this.NameDashboard.Name = "NameDashboard";
+            this.NameDashboard.Size = new System.Drawing.Size(186, 40);
+            this.NameDashboard.TabIndex = 3;
+            this.NameDashboard.Text = "NAME";
+            this.NameDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.NameDashboard.Click += new System.EventHandler(this.NameProfile_Click);
+            // 
+            // CGPADashboard
+            // 
+            this.CGPADashboard.BackColor = System.Drawing.Color.Transparent;
+            this.CGPADashboard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CGPADashboard.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CGPADashboard.ForeColor = System.Drawing.Color.White;
+            this.CGPADashboard.Location = new System.Drawing.Point(563, 36);
+            this.CGPADashboard.Name = "CGPADashboard";
+            this.CGPADashboard.Size = new System.Drawing.Size(94, 40);
+            this.CGPADashboard.TabIndex = 2;
+            this.CGPADashboard.Text = "CGPA";
+            this.CGPADashboard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CGPADashboard.Click += new System.EventHandler(this.CGPAProfile_Click);
+            // 
+            // DashboardDashboard
+            // 
+            this.DashboardDashboard.BackColor = System.Drawing.Color.Transparent;
+            this.DashboardDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DashboardDashboard.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DashboardDashboard.ForeColor = System.Drawing.Color.White;
+            this.DashboardDashboard.Location = new System.Drawing.Point(357, 36);
+            this.DashboardDashboard.Name = "DashboardDashboard";
+            this.DashboardDashboard.Size = new System.Drawing.Size(146, 40);
+            this.DashboardDashboard.TabIndex = 1;
+            this.DashboardDashboard.Text = "Dashboard";
+            this.DashboardDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DashboardDashboard.Click += new System.EventHandler(this.DashboardProfile_Click);
+            // 
+            // LogoDashboard
+            // 
+            this.LogoDashboard.BackColor = System.Drawing.Color.Transparent;
+            this.LogoDashboard.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LogoDashboard.Font = new System.Drawing.Font("Inter", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoDashboard.ForeColor = System.Drawing.Color.White;
+            this.LogoDashboard.Location = new System.Drawing.Point(18, 19);
+            this.LogoDashboard.Name = "LogoDashboard";
+            this.LogoDashboard.Size = new System.Drawing.Size(242, 52);
+            this.LogoDashboard.TabIndex = 0;
+            this.LogoDashboard.Text = "GPAware";
             // 
             // BottomDashboard
             // 
@@ -1137,6 +1695,18 @@
             this.CenterDashboard.Name = "CenterDashboard";
             this.CenterDashboard.Size = new System.Drawing.Size(1240, 485);
             this.CenterDashboard.TabIndex = 3;
+            // 
+            // GradeConversionTableButton
+            // 
+            this.GradeConversionTableButton.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.GradeConversionTableButton.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GradeConversionTableButton.ForeColor = System.Drawing.Color.Black;
+            this.GradeConversionTableButton.Location = new System.Drawing.Point(755, 36);
+            this.GradeConversionTableButton.Name = "GradeConversionTableButton";
+            this.GradeConversionTableButton.Size = new System.Drawing.Size(443, 43);
+            this.GradeConversionTableButton.TabIndex = 45;
+            this.GradeConversionTableButton.Text = "Grade Conversion Table";
+            this.GradeConversionTableButton.UseVisualStyleBackColor = false;
             // 
             // AverageDashboardText
             // 
@@ -1175,7 +1745,7 @@
             // NameDashboardPopup
             // 
             this.NameDashboardPopup.BackColor = System.Drawing.Color.Transparent;
-            this.NameDashboardPopup.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.NameDashboardPopup.Cursor = System.Windows.Forms.Cursors.Default;
             this.NameDashboardPopup.Font = new System.Drawing.Font("Inter", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NameDashboardPopup.ForeColor = System.Drawing.Color.Black;
             this.NameDashboardPopup.Location = new System.Drawing.Point(224, 39);
@@ -1200,7 +1770,7 @@
             // WelcomeDashboardText
             // 
             this.WelcomeDashboardText.BackColor = System.Drawing.Color.Transparent;
-            this.WelcomeDashboardText.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.WelcomeDashboardText.Cursor = System.Windows.Forms.Cursors.Default;
             this.WelcomeDashboardText.Font = new System.Drawing.Font("Inter", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WelcomeDashboardText.ForeColor = System.Drawing.Color.Black;
             this.WelcomeDashboardText.Location = new System.Drawing.Point(32, 39);
@@ -1208,18 +1778,6 @@
             this.WelcomeDashboardText.Size = new System.Drawing.Size(207, 40);
             this.WelcomeDashboardText.TabIndex = 1;
             this.WelcomeDashboardText.Text = "Welcome,";
-            // 
-            // GradeConversionTableButton
-            // 
-            this.GradeConversionTableButton.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.GradeConversionTableButton.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GradeConversionTableButton.ForeColor = System.Drawing.Color.Black;
-            this.GradeConversionTableButton.Location = new System.Drawing.Point(755, 36);
-            this.GradeConversionTableButton.Name = "GradeConversionTableButton";
-            this.GradeConversionTableButton.Size = new System.Drawing.Size(443, 43);
-            this.GradeConversionTableButton.TabIndex = 45;
-            this.GradeConversionTableButton.Text = "Grade Conversion Table";
-            this.GradeConversionTableButton.UseVisualStyleBackColor = false;
             // 
             // PROFILE
             // 
@@ -1261,6 +1819,7 @@
             this.CalculatorProfile.TabIndex = 5;
             this.CalculatorProfile.Text = "Calculator";
             this.CalculatorProfile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CalculatorProfile.Click += new System.EventHandler(this.CalculatorProfile_Click);
             // 
             // LogOutProfile
             // 
@@ -1273,6 +1832,7 @@
             this.LogOutProfile.Size = new System.Drawing.Size(141, 47);
             this.LogOutProfile.TabIndex = 4;
             this.LogOutProfile.Text = "Log out";
+            this.LogOutProfile.Click += new System.EventHandler(this.LogoProfile_Click);
             // 
             // NameProfile
             // 
@@ -1286,6 +1846,7 @@
             this.NameProfile.TabIndex = 3;
             this.NameProfile.Text = "NAME";
             this.NameProfile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.NameProfile.Click += new System.EventHandler(this.NameProfile_Click);
             // 
             // CGPAProfile
             // 
@@ -1299,6 +1860,7 @@
             this.CGPAProfile.TabIndex = 2;
             this.CGPAProfile.Text = "CGPA";
             this.CGPAProfile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CGPAProfile.Click += new System.EventHandler(this.CGPAProfile_Click);
             // 
             // DashboardProfile
             // 
@@ -1312,11 +1874,12 @@
             this.DashboardProfile.TabIndex = 1;
             this.DashboardProfile.Text = "Dashboard";
             this.DashboardProfile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DashboardProfile.Click += new System.EventHandler(this.DashboardProfile_Click);
             // 
             // LogoProfile
             // 
             this.LogoProfile.BackColor = System.Drawing.Color.Transparent;
-            this.LogoProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LogoProfile.Cursor = System.Windows.Forms.Cursors.Default;
             this.LogoProfile.Font = new System.Drawing.Font("Inter", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogoProfile.ForeColor = System.Drawing.Color.White;
             this.LogoProfile.Location = new System.Drawing.Point(18, 19);
@@ -1348,7 +1911,7 @@
             // ProfileTextProfile
             // 
             this.ProfileTextProfile.BackColor = System.Drawing.Color.Transparent;
-            this.ProfileTextProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ProfileTextProfile.Cursor = System.Windows.Forms.Cursors.Default;
             this.ProfileTextProfile.Font = new System.Drawing.Font("Inter SemiBold", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProfileTextProfile.ForeColor = System.Drawing.Color.Black;
             this.ProfileTextProfile.Location = new System.Drawing.Point(18, 15);
@@ -1544,521 +2107,279 @@
             this.NewPasswordBoxProfile.Size = new System.Drawing.Size(410, 32);
             this.NewPasswordBoxProfile.TabIndex = 16;
             // 
-            // TopHome
-            // 
-            this.TopHome.BackColor = System.Drawing.Color.SeaGreen;
-            this.TopHome.Controls.Add(this.LogoHome);
-            this.TopHome.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TopHome.Location = new System.Drawing.Point(0, 0);
-            this.TopHome.Name = "TopHome";
-            this.TopHome.Size = new System.Drawing.Size(1264, 89);
-            this.TopHome.TabIndex = 4;
-            // 
-            // LogoHome
-            // 
-            this.LogoHome.BackColor = System.Drawing.Color.Transparent;
-            this.LogoHome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogoHome.Font = new System.Drawing.Font("Inter", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogoHome.ForeColor = System.Drawing.Color.White;
-            this.LogoHome.Location = new System.Drawing.Point(18, 19);
-            this.LogoHome.Name = "LogoHome";
-            this.LogoHome.Size = new System.Drawing.Size(242, 52);
-            this.LogoHome.TabIndex = 0;
-            this.LogoHome.Text = "GPAware";
-            // 
-            // TopGPAEdit
-            // 
-            this.TopGPAEdit.BackColor = System.Drawing.Color.SeaGreen;
-            this.TopGPAEdit.Controls.Add(this.CalculatorGPAEdit);
-            this.TopGPAEdit.Controls.Add(this.LogOutGPAEdit);
-            this.TopGPAEdit.Controls.Add(this.NameGPAEdit);
-            this.TopGPAEdit.Controls.Add(this.CGPAGPAEdit);
-            this.TopGPAEdit.Controls.Add(this.DashboardGPAEdit);
-            this.TopGPAEdit.Controls.Add(this.LogoGPAEDIT);
-            this.TopGPAEdit.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TopGPAEdit.Location = new System.Drawing.Point(0, 0);
-            this.TopGPAEdit.Name = "TopGPAEdit";
-            this.TopGPAEdit.Size = new System.Drawing.Size(1264, 89);
-            this.TopGPAEdit.TabIndex = 4;
-            // 
-            // CalculatorGPAEdit
-            // 
-            this.CalculatorGPAEdit.BackColor = System.Drawing.Color.Transparent;
-            this.CalculatorGPAEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CalculatorGPAEdit.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CalculatorGPAEdit.ForeColor = System.Drawing.Color.White;
-            this.CalculatorGPAEdit.Location = new System.Drawing.Point(724, 36);
-            this.CalculatorGPAEdit.Name = "CalculatorGPAEdit";
-            this.CalculatorGPAEdit.Size = new System.Drawing.Size(136, 40);
-            this.CalculatorGPAEdit.TabIndex = 5;
-            this.CalculatorGPAEdit.Text = "Calculator";
-            this.CalculatorGPAEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LogOutGPAEdit
-            // 
-            this.LogOutGPAEdit.BackColor = System.Drawing.Color.Transparent;
-            this.LogOutGPAEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogOutGPAEdit.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogOutGPAEdit.ForeColor = System.Drawing.Color.White;
-            this.LogOutGPAEdit.Location = new System.Drawing.Point(1123, 42);
-            this.LogOutGPAEdit.Name = "LogOutGPAEdit";
-            this.LogOutGPAEdit.Size = new System.Drawing.Size(141, 47);
-            this.LogOutGPAEdit.TabIndex = 4;
-            this.LogOutGPAEdit.Text = "Log out";
-            // 
-            // NameGPAEdit
-            // 
-            this.NameGPAEdit.BackColor = System.Drawing.Color.Transparent;
-            this.NameGPAEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.NameGPAEdit.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameGPAEdit.ForeColor = System.Drawing.Color.White;
-            this.NameGPAEdit.Location = new System.Drawing.Point(897, 36);
-            this.NameGPAEdit.Name = "NameGPAEdit";
-            this.NameGPAEdit.Size = new System.Drawing.Size(186, 40);
-            this.NameGPAEdit.TabIndex = 3;
-            this.NameGPAEdit.Text = "NAME";
-            this.NameGPAEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // CGPAGPAEdit
-            // 
-            this.CGPAGPAEdit.BackColor = System.Drawing.Color.Transparent;
-            this.CGPAGPAEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CGPAGPAEdit.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CGPAGPAEdit.ForeColor = System.Drawing.Color.White;
-            this.CGPAGPAEdit.Location = new System.Drawing.Point(563, 36);
-            this.CGPAGPAEdit.Name = "CGPAGPAEdit";
-            this.CGPAGPAEdit.Size = new System.Drawing.Size(94, 40);
-            this.CGPAGPAEdit.TabIndex = 2;
-            this.CGPAGPAEdit.Text = "CGPA";
-            this.CGPAGPAEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // DashboardGPAEdit
-            // 
-            this.DashboardGPAEdit.BackColor = System.Drawing.Color.Transparent;
-            this.DashboardGPAEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DashboardGPAEdit.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DashboardGPAEdit.ForeColor = System.Drawing.Color.White;
-            this.DashboardGPAEdit.Location = new System.Drawing.Point(357, 36);
-            this.DashboardGPAEdit.Name = "DashboardGPAEdit";
-            this.DashboardGPAEdit.Size = new System.Drawing.Size(146, 40);
-            this.DashboardGPAEdit.TabIndex = 1;
-            this.DashboardGPAEdit.Text = "Dashboard";
-            this.DashboardGPAEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LogoGPAEDIT
-            // 
-            this.LogoGPAEDIT.BackColor = System.Drawing.Color.Transparent;
-            this.LogoGPAEDIT.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogoGPAEDIT.Font = new System.Drawing.Font("Inter", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogoGPAEDIT.ForeColor = System.Drawing.Color.White;
-            this.LogoGPAEDIT.Location = new System.Drawing.Point(18, 19);
-            this.LogoGPAEDIT.Name = "LogoGPAEDIT";
-            this.LogoGPAEDIT.Size = new System.Drawing.Size(242, 52);
-            this.LogoGPAEDIT.TabIndex = 0;
-            this.LogoGPAEDIT.Text = "GPAware";
-            // 
-            // TopDashboard
-            // 
-            this.TopDashboard.BackColor = System.Drawing.Color.SeaGreen;
-            this.TopDashboard.Controls.Add(this.CalculatorDashboard);
-            this.TopDashboard.Controls.Add(this.LogOutDashboard);
-            this.TopDashboard.Controls.Add(this.NameDashboard);
-            this.TopDashboard.Controls.Add(this.CGPADashboard);
-            this.TopDashboard.Controls.Add(this.DashboardDashboard);
-            this.TopDashboard.Controls.Add(this.LogoDashboard);
-            this.TopDashboard.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TopDashboard.Location = new System.Drawing.Point(0, 0);
-            this.TopDashboard.Name = "TopDashboard";
-            this.TopDashboard.Size = new System.Drawing.Size(1264, 89);
-            this.TopDashboard.TabIndex = 4;
-            // 
-            // CalculatorDashboard
-            // 
-            this.CalculatorDashboard.BackColor = System.Drawing.Color.Transparent;
-            this.CalculatorDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CalculatorDashboard.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CalculatorDashboard.ForeColor = System.Drawing.Color.White;
-            this.CalculatorDashboard.Location = new System.Drawing.Point(724, 36);
-            this.CalculatorDashboard.Name = "CalculatorDashboard";
-            this.CalculatorDashboard.Size = new System.Drawing.Size(136, 40);
-            this.CalculatorDashboard.TabIndex = 5;
-            this.CalculatorDashboard.Text = "Calculator";
-            this.CalculatorDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LogOutDashboard
-            // 
-            this.LogOutDashboard.BackColor = System.Drawing.Color.Transparent;
-            this.LogOutDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogOutDashboard.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogOutDashboard.ForeColor = System.Drawing.Color.White;
-            this.LogOutDashboard.Location = new System.Drawing.Point(1123, 42);
-            this.LogOutDashboard.Name = "LogOutDashboard";
-            this.LogOutDashboard.Size = new System.Drawing.Size(141, 47);
-            this.LogOutDashboard.TabIndex = 4;
-            this.LogOutDashboard.Text = "Log out";
-            // 
-            // NameDashboard
-            // 
-            this.NameDashboard.BackColor = System.Drawing.Color.Transparent;
-            this.NameDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.NameDashboard.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameDashboard.ForeColor = System.Drawing.Color.White;
-            this.NameDashboard.Location = new System.Drawing.Point(897, 36);
-            this.NameDashboard.Name = "NameDashboard";
-            this.NameDashboard.Size = new System.Drawing.Size(186, 40);
-            this.NameDashboard.TabIndex = 3;
-            this.NameDashboard.Text = "NAME";
-            this.NameDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // CGPADashboard
-            // 
-            this.CGPADashboard.BackColor = System.Drawing.Color.Transparent;
-            this.CGPADashboard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CGPADashboard.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CGPADashboard.ForeColor = System.Drawing.Color.White;
-            this.CGPADashboard.Location = new System.Drawing.Point(563, 36);
-            this.CGPADashboard.Name = "CGPADashboard";
-            this.CGPADashboard.Size = new System.Drawing.Size(94, 40);
-            this.CGPADashboard.TabIndex = 2;
-            this.CGPADashboard.Text = "CGPA";
-            this.CGPADashboard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // DashboardDashboard
-            // 
-            this.DashboardDashboard.BackColor = System.Drawing.Color.Transparent;
-            this.DashboardDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DashboardDashboard.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DashboardDashboard.ForeColor = System.Drawing.Color.White;
-            this.DashboardDashboard.Location = new System.Drawing.Point(357, 36);
-            this.DashboardDashboard.Name = "DashboardDashboard";
-            this.DashboardDashboard.Size = new System.Drawing.Size(146, 40);
-            this.DashboardDashboard.TabIndex = 1;
-            this.DashboardDashboard.Text = "Dashboard";
-            this.DashboardDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LogoDashboard
-            // 
-            this.LogoDashboard.BackColor = System.Drawing.Color.Transparent;
-            this.LogoDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogoDashboard.Font = new System.Drawing.Font("Inter", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogoDashboard.ForeColor = System.Drawing.Color.White;
-            this.LogoDashboard.Location = new System.Drawing.Point(18, 19);
-            this.LogoDashboard.Name = "LogoDashboard";
-            this.LogoDashboard.Size = new System.Drawing.Size(242, 52);
-            this.LogoDashboard.TabIndex = 0;
-            this.LogoDashboard.Text = "GPAware";
-            // 
-            // TopCalculator
-            // 
-            this.TopCalculator.BackColor = System.Drawing.Color.SeaGreen;
-            this.TopCalculator.Controls.Add(this.CalculatorCalculator);
-            this.TopCalculator.Controls.Add(this.LogOutCalculator);
-            this.TopCalculator.Controls.Add(this.NameCalculator);
-            this.TopCalculator.Controls.Add(this.CGPACalculator);
-            this.TopCalculator.Controls.Add(this.DashboardCalculator);
-            this.TopCalculator.Controls.Add(this.LogoCalculator);
-            this.TopCalculator.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TopCalculator.Location = new System.Drawing.Point(0, 0);
-            this.TopCalculator.Name = "TopCalculator";
-            this.TopCalculator.Size = new System.Drawing.Size(1264, 89);
-            this.TopCalculator.TabIndex = 4;
-            // 
-            // CalculatorCalculator
-            // 
-            this.CalculatorCalculator.BackColor = System.Drawing.Color.Transparent;
-            this.CalculatorCalculator.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CalculatorCalculator.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CalculatorCalculator.ForeColor = System.Drawing.Color.White;
-            this.CalculatorCalculator.Location = new System.Drawing.Point(724, 36);
-            this.CalculatorCalculator.Name = "CalculatorCalculator";
-            this.CalculatorCalculator.Size = new System.Drawing.Size(136, 40);
-            this.CalculatorCalculator.TabIndex = 5;
-            this.CalculatorCalculator.Text = "Calculator";
-            this.CalculatorCalculator.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LogOutCalculator
-            // 
-            this.LogOutCalculator.BackColor = System.Drawing.Color.Transparent;
-            this.LogOutCalculator.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogOutCalculator.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogOutCalculator.ForeColor = System.Drawing.Color.White;
-            this.LogOutCalculator.Location = new System.Drawing.Point(1123, 42);
-            this.LogOutCalculator.Name = "LogOutCalculator";
-            this.LogOutCalculator.Size = new System.Drawing.Size(141, 47);
-            this.LogOutCalculator.TabIndex = 4;
-            this.LogOutCalculator.Text = "Log out";
-            // 
-            // NameCalculator
-            // 
-            this.NameCalculator.BackColor = System.Drawing.Color.Transparent;
-            this.NameCalculator.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.NameCalculator.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameCalculator.ForeColor = System.Drawing.Color.White;
-            this.NameCalculator.Location = new System.Drawing.Point(897, 36);
-            this.NameCalculator.Name = "NameCalculator";
-            this.NameCalculator.Size = new System.Drawing.Size(186, 40);
-            this.NameCalculator.TabIndex = 3;
-            this.NameCalculator.Text = "NAME";
-            this.NameCalculator.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // CGPACalculator
-            // 
-            this.CGPACalculator.BackColor = System.Drawing.Color.Transparent;
-            this.CGPACalculator.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CGPACalculator.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CGPACalculator.ForeColor = System.Drawing.Color.White;
-            this.CGPACalculator.Location = new System.Drawing.Point(563, 36);
-            this.CGPACalculator.Name = "CGPACalculator";
-            this.CGPACalculator.Size = new System.Drawing.Size(94, 40);
-            this.CGPACalculator.TabIndex = 2;
-            this.CGPACalculator.Text = "CGPA";
-            this.CGPACalculator.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // DashboardCalculator
-            // 
-            this.DashboardCalculator.BackColor = System.Drawing.Color.Transparent;
-            this.DashboardCalculator.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DashboardCalculator.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DashboardCalculator.ForeColor = System.Drawing.Color.White;
-            this.DashboardCalculator.Location = new System.Drawing.Point(357, 36);
-            this.DashboardCalculator.Name = "DashboardCalculator";
-            this.DashboardCalculator.Size = new System.Drawing.Size(146, 40);
-            this.DashboardCalculator.TabIndex = 1;
-            this.DashboardCalculator.Text = "Dashboard";
-            this.DashboardCalculator.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LogoCalculator
-            // 
-            this.LogoCalculator.BackColor = System.Drawing.Color.Transparent;
-            this.LogoCalculator.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogoCalculator.Font = new System.Drawing.Font("Inter", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogoCalculator.ForeColor = System.Drawing.Color.White;
-            this.LogoCalculator.Location = new System.Drawing.Point(18, 19);
-            this.LogoCalculator.Name = "LogoCalculator";
-            this.LogoCalculator.Size = new System.Drawing.Size(242, 52);
-            this.LogoCalculator.TabIndex = 0;
-            this.LogoCalculator.Text = "GPAware";
-            // 
-            // TopSignup
-            // 
-            this.TopSignup.BackColor = System.Drawing.Color.SeaGreen;
-            this.TopSignup.Controls.Add(this.LogoSignup);
-            this.TopSignup.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TopSignup.Location = new System.Drawing.Point(0, 0);
-            this.TopSignup.Name = "TopSignup";
-            this.TopSignup.Size = new System.Drawing.Size(1264, 89);
-            this.TopSignup.TabIndex = 4;
-            // 
-            // LogoSignup
-            // 
-            this.LogoSignup.BackColor = System.Drawing.Color.Transparent;
-            this.LogoSignup.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogoSignup.Font = new System.Drawing.Font("Inter", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogoSignup.ForeColor = System.Drawing.Color.White;
-            this.LogoSignup.Location = new System.Drawing.Point(18, 19);
-            this.LogoSignup.Name = "LogoSignup";
-            this.LogoSignup.Size = new System.Drawing.Size(242, 52);
-            this.LogoSignup.TabIndex = 0;
-            this.LogoSignup.Text = "GPAware";
-            // 
-            // GradeIDBoxGPAEdit
-            // 
-            this.GradeIDBoxGPAEdit.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GradeIDBoxGPAEdit.Location = new System.Drawing.Point(28, 40);
-            this.GradeIDBoxGPAEdit.Multiline = true;
-            this.GradeIDBoxGPAEdit.Name = "GradeIDBoxGPAEdit";
-            this.GradeIDBoxGPAEdit.Size = new System.Drawing.Size(144, 26);
-            this.GradeIDBoxGPAEdit.TabIndex = 25;
-            // 
-            // CourseNameBoxGGPAEdit
-            // 
-            this.CourseNameBoxGGPAEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CourseNameBoxGGPAEdit.Location = new System.Drawing.Point(216, 39);
-            this.CourseNameBoxGGPAEdit.Multiline = true;
-            this.CourseNameBoxGGPAEdit.Name = "CourseNameBoxGGPAEdit";
-            this.CourseNameBoxGGPAEdit.Size = new System.Drawing.Size(234, 26);
-            this.CourseNameBoxGGPAEdit.TabIndex = 35;
-            // 
-            // CourseCodeBoxGPAEdit
-            // 
-            this.CourseCodeBoxGPAEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CourseCodeBoxGPAEdit.Location = new System.Drawing.Point(45, 109);
-            this.CourseCodeBoxGPAEdit.Multiline = true;
-            this.CourseCodeBoxGPAEdit.Name = "CourseCodeBoxGPAEdit";
-            this.CourseCodeBoxGPAEdit.Size = new System.Drawing.Size(143, 26);
-            this.CourseCodeBoxGPAEdit.TabIndex = 36;
-            // 
-            // UnitsBoxGPAEdit
-            // 
-            this.UnitsBoxGPAEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UnitsBoxGPAEdit.Location = new System.Drawing.Point(240, 109);
-            this.UnitsBoxGPAEdit.Multiline = true;
-            this.UnitsBoxGPAEdit.Name = "UnitsBoxGPAEdit";
-            this.UnitsBoxGPAEdit.Size = new System.Drawing.Size(68, 26);
-            this.UnitsBoxGPAEdit.TabIndex = 37;
-            // 
-            // GradeBoxGPAEdit
-            // 
-            this.GradeBoxGPAEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GradeBoxGPAEdit.Location = new System.Drawing.Point(360, 109);
-            this.GradeBoxGPAEdit.Multiline = true;
-            this.GradeBoxGPAEdit.Name = "GradeBoxGPAEdit";
-            this.GradeBoxGPAEdit.Size = new System.Drawing.Size(69, 26);
-            this.GradeBoxGPAEdit.TabIndex = 38;
-            // 
-            // DarkGreyCenterBigGPAEdit
-            // 
-            this.DarkGreyCenterBigGPAEdit.BackColor = System.Drawing.Color.Gray;
-            this.DarkGreyCenterBigGPAEdit.Controls.Add(this.AddNewCourseGPAEdit);
-            this.DarkGreyCenterBigGPAEdit.Controls.Add(this.DeleteCourseGPAView);
-            this.DarkGreyCenterBigGPAEdit.Controls.Add(this.GradeGPAEdit);
-            this.DarkGreyCenterBigGPAEdit.Controls.Add(this.UnitsGPAEdit);
-            this.DarkGreyCenterBigGPAEdit.Controls.Add(this.CourseCodeGPAEdit);
-            this.DarkGreyCenterBigGPAEdit.Controls.Add(this.CourseNameGPAEdit);
-            this.DarkGreyCenterBigGPAEdit.Controls.Add(this.GradeIDGPAEdit);
-            this.DarkGreyCenterBigGPAEdit.Controls.Add(this.GradeIDBoxGPAEdit);
-            this.DarkGreyCenterBigGPAEdit.Controls.Add(this.GradeBoxGPAEdit);
-            this.DarkGreyCenterBigGPAEdit.Controls.Add(this.UnitsBoxGPAEdit);
-            this.DarkGreyCenterBigGPAEdit.Controls.Add(this.CourseCodeBoxGPAEdit);
-            this.DarkGreyCenterBigGPAEdit.Controls.Add(this.CourseNameBoxGGPAEdit);
-            this.DarkGreyCenterBigGPAEdit.Location = new System.Drawing.Point(738, 185);
-            this.DarkGreyCenterBigGPAEdit.Name = "DarkGreyCenterBigGPAEdit";
-            this.DarkGreyCenterBigGPAEdit.Size = new System.Drawing.Size(489, 209);
-            this.DarkGreyCenterBigGPAEdit.TabIndex = 45;
-            // 
-            // GradeIDSearchTextGPAEdit
-            // 
-            this.GradeIDSearchTextGPAEdit.AutoSize = true;
-            this.GradeIDSearchTextGPAEdit.BackColor = System.Drawing.Color.Transparent;
-            this.GradeIDSearchTextGPAEdit.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GradeIDSearchTextGPAEdit.ForeColor = System.Drawing.Color.Black;
-            this.GradeIDSearchTextGPAEdit.Location = new System.Drawing.Point(22, 14);
-            this.GradeIDSearchTextGPAEdit.Name = "GradeIDSearchTextGPAEdit";
-            this.GradeIDSearchTextGPAEdit.Size = new System.Drawing.Size(76, 19);
-            this.GradeIDSearchTextGPAEdit.TabIndex = 9;
-            this.GradeIDSearchTextGPAEdit.Text = "Grade ID";
-            this.GradeIDSearchTextGPAEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // GradeIDSearchButtonGPAEdit
-            // 
-            this.GradeIDSearchButtonGPAEdit.BackColor = System.Drawing.Color.White;
-            this.GradeIDSearchButtonGPAEdit.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GradeIDSearchButtonGPAEdit.ForeColor = System.Drawing.Color.Black;
-            this.GradeIDSearchButtonGPAEdit.Location = new System.Drawing.Point(196, 34);
-            this.GradeIDSearchButtonGPAEdit.Name = "GradeIDSearchButtonGPAEdit";
-            this.GradeIDSearchButtonGPAEdit.Size = new System.Drawing.Size(103, 33);
-            this.GradeIDSearchButtonGPAEdit.TabIndex = 48;
-            this.GradeIDSearchButtonGPAEdit.Text = "Search";
-            this.GradeIDSearchButtonGPAEdit.UseVisualStyleBackColor = false;
-            // 
-            // DarkGreyCenterSmallGPAEdit
-            // 
-            this.DarkGreyCenterSmallGPAEdit.BackColor = System.Drawing.Color.Gray;
-            this.DarkGreyCenterSmallGPAEdit.Controls.Add(this.GradeIDSearchButtonGPAEdit);
-            this.DarkGreyCenterSmallGPAEdit.Controls.Add(this.GradeIDSearchBoxGPAEdit);
-            this.DarkGreyCenterSmallGPAEdit.Controls.Add(this.GradeIDSearchTextGPAEdit);
-            this.DarkGreyCenterSmallGPAEdit.Location = new System.Drawing.Point(826, 86);
-            this.DarkGreyCenterSmallGPAEdit.Name = "DarkGreyCenterSmallGPAEdit";
-            this.DarkGreyCenterSmallGPAEdit.Size = new System.Drawing.Size(321, 76);
-            this.DarkGreyCenterSmallGPAEdit.TabIndex = 46;
-            // 
-            // GradeIDGPAEdit
-            // 
-            this.GradeIDGPAEdit.AutoSize = true;
-            this.GradeIDGPAEdit.BackColor = System.Drawing.Color.Transparent;
-            this.GradeIDGPAEdit.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GradeIDGPAEdit.ForeColor = System.Drawing.Color.Black;
-            this.GradeIDGPAEdit.Location = new System.Drawing.Point(25, 17);
-            this.GradeIDGPAEdit.Name = "GradeIDGPAEdit";
-            this.GradeIDGPAEdit.Size = new System.Drawing.Size(76, 19);
-            this.GradeIDGPAEdit.TabIndex = 49;
-            this.GradeIDGPAEdit.Text = "Grade ID";
-            this.GradeIDGPAEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // CourseNameGPAEdit
-            // 
-            this.CourseNameGPAEdit.AutoSize = true;
-            this.CourseNameGPAEdit.BackColor = System.Drawing.Color.Transparent;
-            this.CourseNameGPAEdit.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CourseNameGPAEdit.ForeColor = System.Drawing.Color.Black;
-            this.CourseNameGPAEdit.Location = new System.Drawing.Point(214, 17);
-            this.CourseNameGPAEdit.Name = "CourseNameGPAEdit";
-            this.CourseNameGPAEdit.Size = new System.Drawing.Size(112, 19);
-            this.CourseNameGPAEdit.TabIndex = 51;
-            this.CourseNameGPAEdit.Text = "Course Name";
-            this.CourseNameGPAEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // CourseCodeGPAEdit
-            // 
-            this.CourseCodeGPAEdit.AutoSize = true;
-            this.CourseCodeGPAEdit.BackColor = System.Drawing.Color.Transparent;
-            this.CourseCodeGPAEdit.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CourseCodeGPAEdit.ForeColor = System.Drawing.Color.Black;
-            this.CourseCodeGPAEdit.Location = new System.Drawing.Point(41, 86);
-            this.CourseCodeGPAEdit.Name = "CourseCodeGPAEdit";
-            this.CourseCodeGPAEdit.Size = new System.Drawing.Size(109, 19);
-            this.CourseCodeGPAEdit.TabIndex = 52;
-            this.CourseCodeGPAEdit.Text = "Course Code";
-            this.CourseCodeGPAEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // UnitsGPAEdit
-            // 
-            this.UnitsGPAEdit.AutoSize = true;
-            this.UnitsGPAEdit.BackColor = System.Drawing.Color.Transparent;
-            this.UnitsGPAEdit.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UnitsGPAEdit.ForeColor = System.Drawing.Color.Black;
-            this.UnitsGPAEdit.Location = new System.Drawing.Point(236, 87);
-            this.UnitsGPAEdit.Name = "UnitsGPAEdit";
-            this.UnitsGPAEdit.Size = new System.Drawing.Size(48, 19);
-            this.UnitsGPAEdit.TabIndex = 53;
-            this.UnitsGPAEdit.Text = "Units";
-            this.UnitsGPAEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // GradeGPAEdit
-            // 
-            this.GradeGPAEdit.AutoSize = true;
-            this.GradeGPAEdit.BackColor = System.Drawing.Color.Transparent;
-            this.GradeGPAEdit.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GradeGPAEdit.ForeColor = System.Drawing.Color.Black;
-            this.GradeGPAEdit.Location = new System.Drawing.Point(357, 87);
-            this.GradeGPAEdit.Name = "GradeGPAEdit";
-            this.GradeGPAEdit.Size = new System.Drawing.Size(55, 19);
-            this.GradeGPAEdit.TabIndex = 54;
-            this.GradeGPAEdit.Text = "Grade";
-            this.GradeGPAEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // GradeIDSearchBoxGPAEdit
-            // 
-            this.GradeIDSearchBoxGPAEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GradeIDSearchBoxGPAEdit.Location = new System.Drawing.Point(25, 38);
-            this.GradeIDSearchBoxGPAEdit.Multiline = true;
-            this.GradeIDSearchBoxGPAEdit.Name = "GradeIDSearchBoxGPAEdit";
-            this.GradeIDSearchBoxGPAEdit.Size = new System.Drawing.Size(145, 26);
-            this.GradeIDSearchBoxGPAEdit.TabIndex = 55;
-            // 
-            // DeleteCourseGPAView
-            // 
-            this.DeleteCourseGPAView.BackColor = System.Drawing.Color.Red;
-            this.DeleteCourseGPAView.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteCourseGPAView.ForeColor = System.Drawing.Color.Black;
-            this.DeleteCourseGPAView.Location = new System.Drawing.Point(266, 154);
-            this.DeleteCourseGPAView.Name = "DeleteCourseGPAView";
-            this.DeleteCourseGPAView.Size = new System.Drawing.Size(184, 33);
-            this.DeleteCourseGPAView.TabIndex = 56;
-            this.DeleteCourseGPAView.Text = "Delete Course";
-            this.DeleteCourseGPAView.UseVisualStyleBackColor = false;
-            // 
-            // AddNewCourseGPAEdit
-            // 
-            this.AddNewCourseGPAEdit.BackColor = System.Drawing.Color.Lime;
-            this.AddNewCourseGPAEdit.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddNewCourseGPAEdit.ForeColor = System.Drawing.Color.Black;
-            this.AddNewCourseGPAEdit.Location = new System.Drawing.Point(28, 154);
-            this.AddNewCourseGPAEdit.Name = "AddNewCourseGPAEdit";
-            this.AddNewCourseGPAEdit.Size = new System.Drawing.Size(184, 33);
-            this.AddNewCourseGPAEdit.TabIndex = 57;
-            this.AddNewCourseGPAEdit.Text = "Add New Course";
-            this.AddNewCourseGPAEdit.UseVisualStyleBackColor = false;
+            // GPAVIEW
+            // 
+            this.GPAVIEW.AutoScroll = true;
+            this.GPAVIEW.BackColor = System.Drawing.Color.White;
+            this.GPAVIEW.Controls.Add(this.TopGPAView);
+            this.GPAVIEW.Controls.Add(this.BottomGPAView);
+            this.GPAVIEW.Controls.Add(this.CenterGPAView);
+            this.GPAVIEW.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GPAVIEW.Location = new System.Drawing.Point(0, 0);
+            this.GPAVIEW.Name = "GPAVIEW";
+            this.GPAVIEW.Size = new System.Drawing.Size(1264, 681);
+            this.GPAVIEW.TabIndex = 9;
+            // 
+            // TopGPAView
+            // 
+            this.TopGPAView.BackColor = System.Drawing.Color.SeaGreen;
+            this.TopGPAView.Controls.Add(this.CalculatorGPAView);
+            this.TopGPAView.Controls.Add(this.LogOutGPAView);
+            this.TopGPAView.Controls.Add(this.NameGPAView);
+            this.TopGPAView.Controls.Add(this.CGPAGPAView);
+            this.TopGPAView.Controls.Add(this.DashboardGPAView);
+            this.TopGPAView.Controls.Add(this.LogoGPAView);
+            this.TopGPAView.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TopGPAView.Location = new System.Drawing.Point(0, 0);
+            this.TopGPAView.Name = "TopGPAView";
+            this.TopGPAView.Size = new System.Drawing.Size(1264, 89);
+            this.TopGPAView.TabIndex = 4;
+            // 
+            // CalculatorGPAView
+            // 
+            this.CalculatorGPAView.BackColor = System.Drawing.Color.Transparent;
+            this.CalculatorGPAView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CalculatorGPAView.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CalculatorGPAView.ForeColor = System.Drawing.Color.White;
+            this.CalculatorGPAView.Location = new System.Drawing.Point(724, 36);
+            this.CalculatorGPAView.Name = "CalculatorGPAView";
+            this.CalculatorGPAView.Size = new System.Drawing.Size(136, 40);
+            this.CalculatorGPAView.TabIndex = 5;
+            this.CalculatorGPAView.Text = "Calculator";
+            this.CalculatorGPAView.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CalculatorGPAView.Click += new System.EventHandler(this.CalculatorProfile_Click);
+            // 
+            // LogOutGPAView
+            // 
+            this.LogOutGPAView.BackColor = System.Drawing.Color.Transparent;
+            this.LogOutGPAView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LogOutGPAView.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOutGPAView.ForeColor = System.Drawing.Color.White;
+            this.LogOutGPAView.Location = new System.Drawing.Point(1123, 42);
+            this.LogOutGPAView.Name = "LogOutGPAView";
+            this.LogOutGPAView.Size = new System.Drawing.Size(141, 47);
+            this.LogOutGPAView.TabIndex = 4;
+            this.LogOutGPAView.Text = "Log out";
+            this.LogOutGPAView.Click += new System.EventHandler(this.LogoProfile_Click);
+            // 
+            // NameGPAView
+            // 
+            this.NameGPAView.BackColor = System.Drawing.Color.Transparent;
+            this.NameGPAView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.NameGPAView.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameGPAView.ForeColor = System.Drawing.Color.White;
+            this.NameGPAView.Location = new System.Drawing.Point(897, 36);
+            this.NameGPAView.Name = "NameGPAView";
+            this.NameGPAView.Size = new System.Drawing.Size(186, 40);
+            this.NameGPAView.TabIndex = 3;
+            this.NameGPAView.Text = "NAME";
+            this.NameGPAView.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.NameGPAView.Click += new System.EventHandler(this.NameProfile_Click);
+            // 
+            // CGPAGPAView
+            // 
+            this.CGPAGPAView.BackColor = System.Drawing.Color.Transparent;
+            this.CGPAGPAView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CGPAGPAView.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CGPAGPAView.ForeColor = System.Drawing.Color.White;
+            this.CGPAGPAView.Location = new System.Drawing.Point(563, 36);
+            this.CGPAGPAView.Name = "CGPAGPAView";
+            this.CGPAGPAView.Size = new System.Drawing.Size(94, 40);
+            this.CGPAGPAView.TabIndex = 2;
+            this.CGPAGPAView.Text = "CGPA";
+            this.CGPAGPAView.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CGPAGPAView.Click += new System.EventHandler(this.CGPAProfile_Click);
+            // 
+            // DashboardGPAView
+            // 
+            this.DashboardGPAView.BackColor = System.Drawing.Color.Transparent;
+            this.DashboardGPAView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DashboardGPAView.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DashboardGPAView.ForeColor = System.Drawing.Color.White;
+            this.DashboardGPAView.Location = new System.Drawing.Point(357, 36);
+            this.DashboardGPAView.Name = "DashboardGPAView";
+            this.DashboardGPAView.Size = new System.Drawing.Size(146, 40);
+            this.DashboardGPAView.TabIndex = 1;
+            this.DashboardGPAView.Text = "Dashboard";
+            this.DashboardGPAView.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DashboardGPAView.Click += new System.EventHandler(this.DashboardProfile_Click);
+            // 
+            // LogoGPAView
+            // 
+            this.LogoGPAView.BackColor = System.Drawing.Color.Transparent;
+            this.LogoGPAView.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LogoGPAView.Font = new System.Drawing.Font("Inter", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoGPAView.ForeColor = System.Drawing.Color.White;
+            this.LogoGPAView.Location = new System.Drawing.Point(18, 19);
+            this.LogoGPAView.Name = "LogoGPAView";
+            this.LogoGPAView.Size = new System.Drawing.Size(242, 52);
+            this.LogoGPAView.TabIndex = 0;
+            this.LogoGPAView.Text = "GPAware";
+            // 
+            // BottomGPAView
+            // 
+            this.BottomGPAView.BackColor = System.Drawing.Color.SeaGreen;
+            this.BottomGPAView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BottomGPAView.Location = new System.Drawing.Point(0, 592);
+            this.BottomGPAView.Name = "BottomGPAView";
+            this.BottomGPAView.Size = new System.Drawing.Size(1264, 89);
+            this.BottomGPAView.TabIndex = 1;
+            // 
+            // CenterGPAView
+            // 
+            this.CenterGPAView.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.CenterGPAView.BackColor = System.Drawing.Color.PaleGreen;
+            this.CenterGPAView.Controls.Add(this.EditModeGPAView);
+            this.CenterGPAView.Controls.Add(this.ViewModeGPAView);
+            this.CenterGPAView.Controls.Add(this.CGPATrackerTextGPAView);
+            this.CenterGPAView.Controls.Add(this.GreyCenterGPAView);
+            this.CenterGPAView.Location = new System.Drawing.Point(12, 98);
+            this.CenterGPAView.Name = "CenterGPAView";
+            this.CenterGPAView.Size = new System.Drawing.Size(1240, 485);
+            this.CenterGPAView.TabIndex = 3;
+            // 
+            // EditModeGPAView
+            // 
+            this.EditModeGPAView.BackColor = System.Drawing.Color.DarkGray;
+            this.EditModeGPAView.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditModeGPAView.ForeColor = System.Drawing.Color.Black;
+            this.EditModeGPAView.Location = new System.Drawing.Point(1081, 15);
+            this.EditModeGPAView.Name = "EditModeGPAView";
+            this.EditModeGPAView.Size = new System.Drawing.Size(146, 43);
+            this.EditModeGPAView.TabIndex = 47;
+            this.EditModeGPAView.Text = "Edit Mode";
+            this.EditModeGPAView.UseVisualStyleBackColor = false;
+            this.EditModeGPAView.Click += new System.EventHandler(this.EditModeGPAView_Click);
+            // 
+            // ViewModeGPAView
+            // 
+            this.ViewModeGPAView.BackColor = System.Drawing.Color.DarkGray;
+            this.ViewModeGPAView.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ViewModeGPAView.ForeColor = System.Drawing.Color.Black;
+            this.ViewModeGPAView.Location = new System.Drawing.Point(896, 15);
+            this.ViewModeGPAView.Name = "ViewModeGPAView";
+            this.ViewModeGPAView.Size = new System.Drawing.Size(150, 43);
+            this.ViewModeGPAView.TabIndex = 46;
+            this.ViewModeGPAView.Text = "View Mode";
+            this.ViewModeGPAView.UseVisualStyleBackColor = false;
+            this.ViewModeGPAView.Click += new System.EventHandler(this.CGPAProfile_Click);
+            // 
+            // CGPATrackerTextGPAView
+            // 
+            this.CGPATrackerTextGPAView.BackColor = System.Drawing.Color.Transparent;
+            this.CGPATrackerTextGPAView.Cursor = System.Windows.Forms.Cursors.Default;
+            this.CGPATrackerTextGPAView.Font = new System.Drawing.Font("Inter", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CGPATrackerTextGPAView.ForeColor = System.Drawing.Color.Black;
+            this.CGPATrackerTextGPAView.Location = new System.Drawing.Point(18, 15);
+            this.CGPATrackerTextGPAView.Name = "CGPATrackerTextGPAView";
+            this.CGPATrackerTextGPAView.Size = new System.Drawing.Size(313, 40);
+            this.CGPATrackerTextGPAView.TabIndex = 1;
+            this.CGPATrackerTextGPAView.Text = "CGPA Tracker";
+            // 
+            // GreyCenterGPAView
+            // 
+            this.GreyCenterGPAView.BackColor = System.Drawing.Color.LightGray;
+            this.GreyCenterGPAView.Controls.Add(this.RequirementNeededTextGPAView);
+            this.GreyCenterGPAView.Controls.Add(this.RequirementGPAView);
+            this.GreyCenterGPAView.Controls.Add(this.TotalUnitsBoxGPAView);
+            this.GreyCenterGPAView.Controls.Add(this.TermGPATextGPAView);
+            this.GreyCenterGPAView.Controls.Add(this.TotalUnitsTextGPAView);
+            this.GreyCenterGPAView.Controls.Add(this.TermGPABoxGPAView);
+            this.GreyCenterGPAView.Controls.Add(this.dataGridView2);
+            this.GreyCenterGPAView.Controls.Add(this.CGPASummaryGPAView);
+            this.GreyCenterGPAView.Location = new System.Drawing.Point(0, 70);
+            this.GreyCenterGPAView.Name = "GreyCenterGPAView";
+            this.GreyCenterGPAView.Size = new System.Drawing.Size(1240, 415);
+            this.GreyCenterGPAView.TabIndex = 44;
+            // 
+            // RequirementNeededTextGPAView
+            // 
+            this.RequirementNeededTextGPAView.BackColor = System.Drawing.Color.Transparent;
+            this.RequirementNeededTextGPAView.Font = new System.Drawing.Font("Inter Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RequirementNeededTextGPAView.ForeColor = System.Drawing.Color.Black;
+            this.RequirementNeededTextGPAView.Location = new System.Drawing.Point(899, 360);
+            this.RequirementNeededTextGPAView.Name = "RequirementNeededTextGPAView";
+            this.RequirementNeededTextGPAView.Size = new System.Drawing.Size(224, 32);
+            this.RequirementNeededTextGPAView.TabIndex = 48;
+            this.RequirementNeededTextGPAView.Text = "Not enough units";
+            this.RequirementNeededTextGPAView.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // RequirementGPAView
+            // 
+            this.RequirementGPAView.BackColor = System.Drawing.Color.Transparent;
+            this.RequirementGPAView.Font = new System.Drawing.Font("Inter Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RequirementGPAView.ForeColor = System.Drawing.Color.Black;
+            this.RequirementGPAView.Location = new System.Drawing.Point(902, 279);
+            this.RequirementGPAView.Name = "RequirementGPAView";
+            this.RequirementGPAView.Size = new System.Drawing.Size(234, 88);
+            this.RequirementGPAView.TabIndex = 47;
+            this.RequirementGPAView.Text = "You lack the following requirements to be a Dean\'s Lister:";
+            this.RequirementGPAView.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // TotalUnitsBoxGPAView
+            // 
+            this.TotalUnitsBoxGPAView.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalUnitsBoxGPAView.Location = new System.Drawing.Point(1058, 80);
+            this.TotalUnitsBoxGPAView.Multiline = true;
+            this.TotalUnitsBoxGPAView.Name = "TotalUnitsBoxGPAView";
+            this.TotalUnitsBoxGPAView.Size = new System.Drawing.Size(71, 45);
+            this.TotalUnitsBoxGPAView.TabIndex = 46;
+            // 
+            // TermGPATextGPAView
+            // 
+            this.TermGPATextGPAView.BackColor = System.Drawing.Color.Transparent;
+            this.TermGPATextGPAView.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TermGPATextGPAView.Font = new System.Drawing.Font("Inter", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TermGPATextGPAView.ForeColor = System.Drawing.Color.Black;
+            this.TermGPATextGPAView.Location = new System.Drawing.Point(910, 134);
+            this.TermGPATextGPAView.Name = "TermGPATextGPAView";
+            this.TermGPATextGPAView.Size = new System.Drawing.Size(210, 51);
+            this.TermGPATextGPAView.TabIndex = 45;
+            this.TermGPATextGPAView.Text = "Term GPA:";
+            // 
+            // TotalUnitsTextGPAView
+            // 
+            this.TotalUnitsTextGPAView.BackColor = System.Drawing.Color.Transparent;
+            this.TotalUnitsTextGPAView.Font = new System.Drawing.Font("Inter Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalUnitsTextGPAView.ForeColor = System.Drawing.Color.Black;
+            this.TotalUnitsTextGPAView.Location = new System.Drawing.Point(894, 70);
+            this.TotalUnitsTextGPAView.Name = "TotalUnitsTextGPAView";
+            this.TotalUnitsTextGPAView.Size = new System.Drawing.Size(158, 66);
+            this.TotalUnitsTextGPAView.TabIndex = 20;
+            this.TotalUnitsTextGPAView.Text = "Total Units:";
+            this.TotalUnitsTextGPAView.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // TermGPABoxGPAView
+            // 
+            this.TermGPABoxGPAView.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TermGPABoxGPAView.Location = new System.Drawing.Point(942, 183);
+            this.TermGPABoxGPAView.Multiline = true;
+            this.TermGPABoxGPAView.Name = "TermGPABoxGPAView";
+            this.TermGPABoxGPAView.Size = new System.Drawing.Size(144, 95);
+            this.TermGPABoxGPAView.TabIndex = 19;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(24, 17);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(192, 120);
+            this.dataGridView2.TabIndex = 44;
+            // 
+            // CGPASummaryGPAView
+            // 
+            this.CGPASummaryGPAView.BackColor = System.Drawing.Color.Transparent;
+            this.CGPASummaryGPAView.Cursor = System.Windows.Forms.Cursors.Default;
+            this.CGPASummaryGPAView.Font = new System.Drawing.Font("Inter", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CGPASummaryGPAView.ForeColor = System.Drawing.Color.Black;
+            this.CGPASummaryGPAView.Location = new System.Drawing.Point(856, 25);
+            this.CGPASummaryGPAView.Name = "CGPASummaryGPAView";
+            this.CGPASummaryGPAView.Size = new System.Drawing.Size(319, 51);
+            this.CGPASummaryGPAView.TabIndex = 18;
+            this.CGPASummaryGPAView.Text = "CGPA Summary:";
             // 
             // GPAware
             // 
@@ -2066,29 +2387,39 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.GPAEDIT);
-            this.Controls.Add(this.CALCULATOR);
             this.Controls.Add(this.PROFILE);
-            this.Controls.Add(this.SIGNUP);
-            this.Controls.Add(this.HOME);
+            this.Controls.Add(this.GPAEDIT);
+            this.Controls.Add(this.GPAVIEW);
+            this.Controls.Add(this.CALCULATOR);
             this.Controls.Add(this.DASHBOARD);
+            this.Controls.Add(this.HOME);
+            this.Controls.Add(this.SIGNUP);
             this.Name = "GPAware";
             this.Text = "GPAware";
             this.HOME.ResumeLayout(false);
+            this.TopHome.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.RightHome.ResumeLayout(false);
             this.RightHome.PerformLayout();
             this.CALCULATOR.ResumeLayout(false);
+            this.TopCalculator.ResumeLayout(false);
             this.CenterCalculator.ResumeLayout(false);
             this.CenterCalculator.PerformLayout();
             this.GPAEDIT.ResumeLayout(false);
+            this.TopGPAEdit.ResumeLayout(false);
             this.CenterGPAEdit.ResumeLayout(false);
             this.GreyCenterGPAEdit.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.DarkGreyCenterSmallGPAEdit.ResumeLayout(false);
+            this.DarkGreyCenterSmallGPAEdit.PerformLayout();
+            this.DarkGreyCenterBigGPAEdit.ResumeLayout(false);
+            this.DarkGreyCenterBigGPAEdit.PerformLayout();
             this.CenterSignup.ResumeLayout(false);
             this.CenterSignup.PerformLayout();
             this.SIGNUP.ResumeLayout(false);
+            this.TopSignup.ResumeLayout(false);
             this.DASHBOARD.ResumeLayout(false);
+            this.TopDashboard.ResumeLayout(false);
             this.CenterDashboard.ResumeLayout(false);
             this.CenterDashboard.PerformLayout();
             this.PROFILE.ResumeLayout(false);
@@ -2098,15 +2429,12 @@
             this.GreyCenterProfile.PerformLayout();
             this.DarkGreyCenterProfile.ResumeLayout(false);
             this.DarkGreyCenterProfile.PerformLayout();
-            this.TopHome.ResumeLayout(false);
-            this.TopGPAEdit.ResumeLayout(false);
-            this.TopDashboard.ResumeLayout(false);
-            this.TopCalculator.ResumeLayout(false);
-            this.TopSignup.ResumeLayout(false);
-            this.DarkGreyCenterBigGPAEdit.ResumeLayout(false);
-            this.DarkGreyCenterBigGPAEdit.PerformLayout();
-            this.DarkGreyCenterSmallGPAEdit.ResumeLayout(false);
-            this.DarkGreyCenterSmallGPAEdit.PerformLayout();
+            this.GPAVIEW.ResumeLayout(false);
+            this.TopGPAView.ResumeLayout(false);
+            this.CenterGPAView.ResumeLayout(false);
+            this.GreyCenterGPAView.ResumeLayout(false);
+            this.GreyCenterGPAView.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2269,6 +2597,28 @@
         private System.Windows.Forms.TextBox GradeIDSearchBoxGPAEdit;
         private System.Windows.Forms.Button DeleteCourseGPAView;
         private System.Windows.Forms.Button AddNewCourseGPAEdit;
+        private System.Windows.Forms.Panel GPAVIEW;
+        private System.Windows.Forms.Panel TopGPAView;
+        private System.Windows.Forms.Label CalculatorGPAView;
+        private System.Windows.Forms.Label LogOutGPAView;
+        private System.Windows.Forms.Label NameGPAView;
+        private System.Windows.Forms.Label CGPAGPAView;
+        private System.Windows.Forms.Label DashboardGPAView;
+        private System.Windows.Forms.Label LogoGPAView;
+        private System.Windows.Forms.Panel BottomGPAView;
+        private System.Windows.Forms.Panel CenterGPAView;
+        private System.Windows.Forms.Button EditModeGPAView;
+        private System.Windows.Forms.Button ViewModeGPAView;
+        private System.Windows.Forms.Label CGPATrackerTextGPAView;
+        private System.Windows.Forms.Panel GreyCenterGPAView;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label TotalUnitsTextGPAView;
+        private System.Windows.Forms.TextBox TermGPABoxGPAView;
+        private System.Windows.Forms.Label CGPASummaryGPAView;
+        private System.Windows.Forms.Label TermGPATextGPAView;
+        private System.Windows.Forms.TextBox TotalUnitsBoxGPAView;
+        private System.Windows.Forms.Label RequirementNeededTextGPAView;
+        private System.Windows.Forms.Label RequirementGPAView;
     }
 }
 

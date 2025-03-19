@@ -18,26 +18,23 @@ namespace SOFSEC1_Project
         public GPAware()
         {
             InitializeComponent();
+            //ShowPanel(HOME);
+            // TO START WITH HOME ALWAYS
         }
 
         private void ShowPanel(Panel panelToShow)
         {
-            // Hide all panels first DAGDAG SI GPATRACK
-            CALCULATOR.Visible = false;
+            // Hide all panels
             HOME.Visible = false;
-            TopDashboard.Visible = false;
-            SIGNUP.Visible = true;
+            SIGNUP.Visible = false;
+            DASHBOARD.Visible = false;
             GPAEDIT.Visible = false;
+            GPAVIEW.Visible = false;
+            CALCULATOR.Visible = false;
+            PROFILE.Visible = false;
 
             // Show the selected panel
             panelToShow.Visible = true;
-        }
-
-
-
-        private void GPACalculator_Click(object sender, EventArgs e)
-        {
-            ShowPanel(GPAEDIT);
         }
 
         private void CreateAccountSignupBox_Click(object sender, EventArgs e)
@@ -295,6 +292,36 @@ namespace SOFSEC1_Project
         private void CreateAccountRedirect_Click(object sender, EventArgs e)
         {
             ShowPanel(SIGNUP);
+        }
+
+        private void LogoProfile_Click(object sender, EventArgs e)
+        {
+            ShowPanel(HOME);
+        }
+
+        private void DashboardProfile_Click(object sender, EventArgs e)
+        {
+            ShowPanel(DASHBOARD);
+        }
+
+        private void CGPAProfile_Click(object sender, EventArgs e)
+        {
+            ShowPanel(GPAVIEW);
+        }
+
+        private void CalculatorProfile_Click(object sender, EventArgs e)
+        {
+            ShowPanel(CALCULATOR);
+        }
+
+        private void NameProfile_Click(object sender, EventArgs e)
+        {
+            ShowPanel(PROFILE);
+        }
+
+        private void EditModeGPAView_Click(object sender, EventArgs e)
+        {
+            ShowPanel(GPAEDIT);
         }
     }
 }
