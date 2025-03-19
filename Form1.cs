@@ -27,7 +27,7 @@ namespace SOFSEC1_Project
             HOME.Visible = false;
             TopDashboard.Visible = false;
             SIGNUP.Visible = true;
-            GPAVIEW.Visible = false;
+            GPAEDIT.Visible = false;
 
             // Show the selected panel
             panelToShow.Visible = true;
@@ -37,7 +37,7 @@ namespace SOFSEC1_Project
 
         private void GPACalculator_Click(object sender, EventArgs e)
         {
-            ShowPanel(GPAVIEW);
+            ShowPanel(GPAEDIT);
         }
 
         private void CreateAccountSignupBox_Click(object sender, EventArgs e)
