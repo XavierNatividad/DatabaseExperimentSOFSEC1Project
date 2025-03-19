@@ -4,9 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Lifetime;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace SOFSEC1_Project
 {
@@ -39,73 +42,206 @@ namespace SOFSEC1_Project
 
         private void CreateAccountSignupBox_Click(object sender, EventArgs e)
         {
-            UserRegistrationModel newUser = new UserRegistrationModel();
+            NewUserModel newUser = new NewUserModel();
+            string username = UsernameSignupBox.Text;
+            string firstName = FirstNameSignupBox.Text;
+            string lastName = LastNameSignupBox.Text;
+            string program = ProgramSignupBox.Text;
+            bool autoGenerateCourses = AutoGenerateCourses.Checked;
+            string password = PasswordSignupBox.Text;
+            string confirmPassword = ConfirmPasswordSignupBox.Text;
 
-            ////username
-            ////must be between 8-20 letters
-            //if ((UsernameSignupBox.Text.Length >= 8 && UsernameSignupBox.Text.Length <= 20))
-            //{
-            //    //must only contain letters, numbers, and underscores
-            //    if (UsernameSignupBox.Text.Contains(c =>))
-            //    {
-            //        //must be unique
-            //        if ()
-            //        {
+            bool usernamePassed = false;
+            bool fnPassed = false;
+            bool lnPassed = false;
+            bool programPassed = false;
+            bool passwordPassed = false;
 
-            //        }
-            //        else
-            //        {
+            //Username
+            if (!string.IsNullOrWhiteSpace(username))
+            {
+                if (Regex.IsMatch(username, "^[a-zA-Z0-9_]+$"))
+                {
+                    if (username.Length >= 8 && username.Length <= 20)
+                    {                     
+                        if (username == "Xavier")
+                        {
+                            //Username passed
+                            usernamePassed = true;
+                            newUser.username = username;
+                        }
+                        else
+                        {
+                            //Username is already taken
+                            usernamePassed = false;
+                            InvalidUsernameLabel.Text = "Username must be between 8 and 20 characters";
+                            InvalidUsernameLabel.Visible = true;
+                        }
+                    }
+                    else
+                    {
+                        //Username must be between 8 and 20 characters
+                        usernamePassed = false;
+                        InvalidUsernameLabel.Text = "Username must be between 8 and 20 characters";
+                        InvalidUsernameLabel.Visible = true;
 
-            //        }
-            //    }
-            //    else 
-            //    {
-                    
-            //    }
-            //}
-            //else
-            //{
+                    }
+                }
+                else
+                {
+                    //Username can only contain letters, numbers, and underscores
+                    usernamePassed = false;
+                    InvalidUsernameLabel.Text = "Username can only contain letters, numbers, and underscores";
+                    InvalidUsernameLabel.Visible = true;
+                } 
+            }
+            else
+            {
+                //Username must not be empty
+                usernamePassed = false;
+                InvalidUsernameLabel.Text = "Username must not be empty";
+                InvalidUsernameLabel.Visible = true;
+            }
 
-            //}
+            //First name
+            if (!string.IsNullOrWhiteSpace(firstName))
+            {
+                if (firstName.Length <= 64)
+                {
+                    if (!Regex.IsMatch(firstName, "^[a-zA-Z ]+$"))
+                    {
+                        //Last name passed
+                        fnPassed = true;
+                        newUser.firstName = firstName;
+                    }
+                    else
+                    {
+                        //First name can only contain letters and spaces
+                        fnPassed = false;
+                    }
+                }
+                else
+                {
+                    //First name must be up to 64 characters
+                    fnPassed = false;
+                }
+            }
+            else
+            {
+                //First name must not be empty
+                fnPassed = false;
+            }
 
-            ////first name
-            ////must not be blank
-            //if ()
-            //{
-            //    //must not be 
-            //}
-            //else
-            //{
-            //}
+            //Last name
+            if (!string.IsNullOrWhiteSpace(lastName))
+            {
+                if (lastName.Length <= 64)
+                {
+                    if (!Regex.IsMatch(lastName, "^[a-zA-Z ]+$"))
+                    {
+                        //Last name passed
+                        lnPassed = true;
+                        newUser.lastName = lastName;
+                    }
+                    else
+                    {
+                        //First name can only contain letters and spaces
+                        lnPassed = false;
+                    }
+                }
+                else
+                {
+                    //First name must be up to 64 characters
+                    lnPassed = false;
+                }
+            }
+            else
+            {
+                //First name must not be empty
+                lnPassed = false;
+            }
 
-            ////passwords must match
-            //if (PasswordSignupBox.Text != ConfirmPasswordSignupBox.Text)
-            //{
+            //Program
+            if (!string.IsNullOrWhiteSpace(program))
+            {
+                programPassed = true;
+                newUser.program = program;
+            }
+            else
+            {
+                programPassed = false;
+                InvalidProgramLabel.Text = "No program was selected";
+                InvalidProgramLabel.Visible = true;
+            }
 
-            //}
+            //Password
+            if (!string.IsNullOrWhiteSpace(password))
+            {
+                if (password.Length >= 8 && password.Length <= 64)
+                {
+
+                    if (!Regex.IsMatch(password, @"^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()\-_=+])[A-Za-z\d!@#$%^&*()\-_=+]{8,64}$"))
+                    {
+                        if (password == confirmPassword)
+                        {
+                            //Password passed
+                            passwordPassed = true;
+                            newUser.password = password;
+                        }
+                        else
+                        {
+                            //Passwords do not match
+                            passwordPassed = false;
+                        }
+                    }
+                    else
+                    {
+                        //Password must contain at least one letter, one number, and one special character
+                        passwordPassed = false;
+                    }
+                }
+                else
+                {
+                    //Password must be between 8 and 64 characters
+                    passwordPassed = false;
+                }
+
+            }
+            else
+            {
+                //Password must not be empty
+                passwordPassed = false;
+            }
+
+            if (usernamePassed && passwordPassed && fnPassed && lnPassed && programPassed)
+            {
+                //Add new user account
+            }
         }
 
         private void UsernameSignupBox_TextChanged(object sender, EventArgs e)
         {
-            if ((UsernameSignupBox.Text.Length >= 8 && UsernameSignupBox.Text.Length <= 20))
-            {
-                toolTip1.Show("Must be between 8 and 20 characters", UsernameSignupBox);
-            }
+            InvalidUsernameLabel.Visible = false;
         }
 
         private void FirstNameSignupBox_TextChanged(object sender, EventArgs e)
         {
-
+            InvalidFirstNameLabel.Visible = false;
         }
 
         private void PasswordSignupBox_TextChanged(object sender, EventArgs e)
         {
-
+            InvalidPasswordLabel.Visible = false;
         }
 
         private void ConfirmPasswordSignupBox_TextChanged(object sender, EventArgs e)
         {
+            InvalidPasswordLabel.Visible = false;
+        }
 
+        private void ProgramSignupBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            InvalidProgramLabel.Visible = false;
         }
 
         private void ProgramSignupBox_DropDown(object sender, EventArgs e)
@@ -118,5 +254,7 @@ namespace SOFSEC1_Project
                 ProgramSignupBox.Items.Add(program);
             }
         }
+
+        
     }
 }

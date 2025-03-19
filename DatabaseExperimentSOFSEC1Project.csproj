@@ -75,7 +75,7 @@
     <Compile Include="ProgramModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqliteDataAccess.cs" />
-    <Compile Include="UserRegistrationModel.cs" />
+    <Compile Include="NewUserModel.cs" />
     <Compile Include="User_LoginModel.cs" />
     <Compile Include="User_ProfileModel.cs" />
     <EmbeddedResource Include="Form1.resx">

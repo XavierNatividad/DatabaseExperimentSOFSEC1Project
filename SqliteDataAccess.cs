@@ -35,25 +35,14 @@ namespace SOFSEC1_Project
             }
         }
 
-        private static void CreateProfile(User_ProfileModel newProfile)
+        private static void AddUser(NewUserModel newUser)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                cnn.Execute("INSERT into user_login (username, password) values (@username, @password)", newProfile);
-
+                cnn.Execute("INSERT into user_login (username, password) values (@username, @password)", newUser);
+                int userId = cnn.Query<string>("SELECT login_Id FROM user_profile WHERE username = @username", newUser);
+                cnn.Execute("Insert into user_profile(firstName, lastName,) values (@)");
             }
-        }
-        private static void CreateLogin(User_LoginModel newLogin)
-        {
-            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
-            {
-                cnn.Execute("INSERT into user_login (username, password) values (@username, @password)", newLogin);
-            }
-        }
-        public static void CreateAccount(User_LoginModel newLogin, User_ProfileModel newUser)
-        {
-            CreateProfile(newUser);
-            CreateLogin(newLogin);
         }
 
         public static List<string> GetPrograms()

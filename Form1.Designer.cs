@@ -139,6 +139,11 @@
             this.TopSignup = new System.Windows.Forms.Panel();
             this.LOGOSignup = new System.Windows.Forms.Label();
             this.SIGNUP = new System.Windows.Forms.Panel();
+            this.InvalidUsernameLabel = new System.Windows.Forms.Label();
+            this.InvalidFirstNameLabel = new System.Windows.Forms.Label();
+            this.InvalidLastNameLabel = new System.Windows.Forms.Label();
+            this.InvalidProgramLabel = new System.Windows.Forms.Label();
+            this.InvalidPasswordLabel = new System.Windows.Forms.Label();
             this.TopHome.SuspendLayout();
             this.HOME.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -1267,6 +1272,11 @@
             // CenterSignup
             // 
             this.CenterSignup.BackColor = System.Drawing.Color.PaleGreen;
+            this.CenterSignup.Controls.Add(this.InvalidPasswordLabel);
+            this.CenterSignup.Controls.Add(this.InvalidProgramLabel);
+            this.CenterSignup.Controls.Add(this.InvalidLastNameLabel);
+            this.CenterSignup.Controls.Add(this.InvalidFirstNameLabel);
+            this.CenterSignup.Controls.Add(this.InvalidUsernameLabel);
             this.CenterSignup.Controls.Add(this.ProgramSignupBox);
             this.CenterSignup.Controls.Add(this.AutoGenerateCourses);
             this.CenterSignup.Controls.Add(this.ConfirmPasswordSignupBox);
@@ -1301,6 +1311,7 @@
             this.ProgramSignupBox.Size = new System.Drawing.Size(354, 33);
             this.ProgramSignupBox.TabIndex = 19;
             this.ProgramSignupBox.DropDown += new System.EventHandler(this.ProgramSignupBox_DropDown);
+            this.ProgramSignupBox.SelectedIndexChanged += new System.EventHandler(this.ProgramSignupBox_SelectedIndexChanged);
             // 
             // AutoGenerateCourses
             // 
@@ -1509,6 +1520,61 @@
             this.SIGNUP.Size = new System.Drawing.Size(1580, 851);
             this.SIGNUP.TabIndex = 2;
             // 
+            // InvalidUsernameLabel
+            // 
+            this.InvalidUsernameLabel.AutoSize = true;
+            this.InvalidUsernameLabel.ForeColor = System.Drawing.Color.Red;
+            this.InvalidUsernameLabel.Location = new System.Drawing.Point(175, 101);
+            this.InvalidUsernameLabel.Name = "InvalidUsernameLabel";
+            this.InvalidUsernameLabel.Size = new System.Drawing.Size(44, 16);
+            this.InvalidUsernameLabel.TabIndex = 20;
+            this.InvalidUsernameLabel.Text = "label1";
+            this.InvalidUsernameLabel.Visible = false;
+            // 
+            // InvalidFirstNameLabel
+            // 
+            this.InvalidFirstNameLabel.AutoSize = true;
+            this.InvalidFirstNameLabel.ForeColor = System.Drawing.Color.Red;
+            this.InvalidFirstNameLabel.Location = new System.Drawing.Point(175, 199);
+            this.InvalidFirstNameLabel.Name = "InvalidFirstNameLabel";
+            this.InvalidFirstNameLabel.Size = new System.Drawing.Size(44, 16);
+            this.InvalidFirstNameLabel.TabIndex = 21;
+            this.InvalidFirstNameLabel.Text = "label1";
+            this.InvalidFirstNameLabel.Visible = false;
+            // 
+            // InvalidLastNameLabel
+            // 
+            this.InvalidLastNameLabel.AutoSize = true;
+            this.InvalidLastNameLabel.ForeColor = System.Drawing.Color.Red;
+            this.InvalidLastNameLabel.Location = new System.Drawing.Point(175, 267);
+            this.InvalidLastNameLabel.Name = "InvalidLastNameLabel";
+            this.InvalidLastNameLabel.Size = new System.Drawing.Size(44, 16);
+            this.InvalidLastNameLabel.TabIndex = 22;
+            this.InvalidLastNameLabel.Text = "label1";
+            this.InvalidLastNameLabel.Visible = false;
+            // 
+            // InvalidProgramLabel
+            // 
+            this.InvalidProgramLabel.AutoSize = true;
+            this.InvalidProgramLabel.ForeColor = System.Drawing.Color.Red;
+            this.InvalidProgramLabel.Location = new System.Drawing.Point(629, 99);
+            this.InvalidProgramLabel.Name = "InvalidProgramLabel";
+            this.InvalidProgramLabel.Size = new System.Drawing.Size(44, 16);
+            this.InvalidProgramLabel.TabIndex = 23;
+            this.InvalidProgramLabel.Text = "label1";
+            this.InvalidProgramLabel.Visible = false;
+            // 
+            // InvalidPasswordLabel
+            // 
+            this.InvalidPasswordLabel.AutoSize = true;
+            this.InvalidPasswordLabel.ForeColor = System.Drawing.Color.Red;
+            this.InvalidPasswordLabel.Location = new System.Drawing.Point(640, 199);
+            this.InvalidPasswordLabel.Name = "InvalidPasswordLabel";
+            this.InvalidPasswordLabel.Size = new System.Drawing.Size(44, 16);
+            this.InvalidPasswordLabel.TabIndex = 24;
+            this.InvalidPasswordLabel.Text = "label2";
+            this.InvalidPasswordLabel.Visible = false;
+            // 
             // GPAware
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -1662,6 +1728,11 @@
         private System.Windows.Forms.Label LOGOSignup;
         private System.Windows.Forms.Panel SIGNUP;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label InvalidUsernameLabel;
+        private System.Windows.Forms.Label InvalidPasswordLabel;
+        private System.Windows.Forms.Label InvalidProgramLabel;
+        private System.Windows.Forms.Label InvalidLastNameLabel;
+        private System.Windows.Forms.Label InvalidFirstNameLabel;
     }
 }
 
