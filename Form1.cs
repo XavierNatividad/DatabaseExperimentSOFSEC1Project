@@ -63,8 +63,9 @@ namespace SOFSEC1_Project
                 if (Regex.IsMatch(username, "^[a-zA-Z0-9_]+$"))
                 {
                     if (username.Length >= 8 && username.Length <= 20)
-                    {                     
-                        if (username == "Xavier")
+                    {
+                        List<string> existingUsernames = SqliteDataAccess.GetUsernames();
+                        if (!existingUsernames.Contains(username))
                         {
                             //Username passed
                             usernamePassed = true;
@@ -74,7 +75,7 @@ namespace SOFSEC1_Project
                         {
                             //Username is already taken
                             usernamePassed = false;
-                            InvalidUsernameLabel.Text = "Username must be between 8 and 20 characters";
+                            InvalidUsernameLabel.Text = "Username is already taken";
                             InvalidUsernameLabel.Visible = true;
                         }
                     }
@@ -108,9 +109,9 @@ namespace SOFSEC1_Project
             {
                 if (firstName.Length <= 64)
                 {
-                    if (!Regex.IsMatch(firstName, "^[a-zA-Z ]+$"))
+                    if (Regex.IsMatch(firstName, "^[a-zA-Z ]+$"))
                     {
-                        //Last name passed
+                        //First name passed
                         fnPassed = true;
                         newUser.firstName = firstName;
                     }
@@ -118,18 +119,24 @@ namespace SOFSEC1_Project
                     {
                         //First name can only contain letters and spaces
                         fnPassed = false;
+                        InvalidFirstNameLabel.Text = "First name can only contain letters and spaces";
+                        InvalidFirstNameLabel.Visible = true;
                     }
                 }
                 else
                 {
                     //First name must be up to 64 characters
                     fnPassed = false;
+                    InvalidFirstNameLabel.Text = "First name must be up to 64 characters";
+                    InvalidFirstNameLabel.Visible = true;
                 }
             }
             else
             {
                 //First name must not be empty
                 fnPassed = false;
+                InvalidFirstNameLabel.Text = "First name must not be empty";
+                InvalidFirstNameLabel.Visible = true;
             }
 
             //Last name
@@ -137,7 +144,7 @@ namespace SOFSEC1_Project
             {
                 if (lastName.Length <= 64)
                 {
-                    if (!Regex.IsMatch(lastName, "^[a-zA-Z ]+$"))
+                    if (Regex.IsMatch(lastName, "^[a-zA-Z ]+$"))
                     {
                         //Last name passed
                         lnPassed = true;
@@ -145,20 +152,25 @@ namespace SOFSEC1_Project
                     }
                     else
                     {
-                        //First name can only contain letters and spaces
+                        //Last name can only contain letters and spaces
                         lnPassed = false;
+                        InvalidLastNameLabel.Text = "Last name can only contain letters and spaces";
+                        InvalidLastNameLabel.Visible = true;
                     }
                 }
                 else
                 {
-                    //First name must be up to 64 characters
+                    //Last name must be up to 64 characters
                     lnPassed = false;
+                    InvalidLastNameLabel.Text = "Last name must be up to 64 characters";
+                    InvalidLastNameLabel.Visible = true;
                 }
             }
             else
             {
-                //First name must not be empty
-                lnPassed = false;
+                //Last name must not be empty
+                InvalidLastNameLabel.Text = "Last name must not be empty";
+                InvalidLastNameLabel.Visible = true;
             }
 
             //Program
@@ -180,7 +192,7 @@ namespace SOFSEC1_Project
                 if (password.Length >= 8 && password.Length <= 64)
                 {
 
-                    if (!Regex.IsMatch(password, @"^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()\-_=+])[A-Za-z\d!@#$%^&*()\-_=+]{8,64}$"))
+                    if (Regex.IsMatch(password, @"^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()\-_=+])[A-Za-z\d!@#$%^&*()\-_=+]{8,64}$"))
                     {
                         if (password == confirmPassword)
                         {
@@ -192,18 +204,24 @@ namespace SOFSEC1_Project
                         {
                             //Passwords do not match
                             passwordPassed = false;
+                            InvalidPasswordLabel.Text = "Passwords do not match";
+                            InvalidPasswordLabel.Visible = true;
                         }
                     }
                     else
                     {
                         //Password must contain at least one letter, one number, and one special character
                         passwordPassed = false;
+                        InvalidPasswordLabel.Text = "Password must contain at least one letter, one number, and one special character";
+                        InvalidPasswordLabel.Visible = true;
                     }
                 }
                 else
                 {
                     //Password must be between 8 and 64 characters
                     passwordPassed = false;
+                    InvalidPasswordLabel.Text = "Password must be between 8 and 64 characters";
+                    InvalidPasswordLabel.Visible = true;
                 }
 
             }
@@ -211,11 +229,17 @@ namespace SOFSEC1_Project
             {
                 //Password must not be empty
                 passwordPassed = false;
+                InvalidPasswordLabel.Text = "Password must not be empty";
+                InvalidPasswordLabel.Visible = true;
             }
 
             if (usernamePassed && passwordPassed && fnPassed && lnPassed && programPassed)
             {
                 //Add new user account
+                SqliteDataAccess.AddUser(newUser);
+                SuccessLabel.Text = "Account creation successful";
+                SuccessLabel.Visible = true;
+
             }
         }
 
@@ -254,7 +278,5 @@ namespace SOFSEC1_Project
                 ProgramSignupBox.Items.Add(program);
             }
         }
-
-        
     }
 }

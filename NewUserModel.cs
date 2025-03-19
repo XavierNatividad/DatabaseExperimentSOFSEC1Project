@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SOFSEC1_Project
 {
-    class NewUserModel
+    public class NewUserModel
     {
         public string username { get; set; }
         public string firstName { get; set; }

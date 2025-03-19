@@ -144,6 +144,7 @@
             this.InvalidLastNameLabel = new System.Windows.Forms.Label();
             this.InvalidProgramLabel = new System.Windows.Forms.Label();
             this.InvalidPasswordLabel = new System.Windows.Forms.Label();
+            this.SuccessLabel = new System.Windows.Forms.Label();
             this.TopHome.SuspendLayout();
             this.HOME.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -1272,6 +1273,7 @@
             // CenterSignup
             // 
             this.CenterSignup.BackColor = System.Drawing.Color.PaleGreen;
+            this.CenterSignup.Controls.Add(this.SuccessLabel);
             this.CenterSignup.Controls.Add(this.InvalidPasswordLabel);
             this.CenterSignup.Controls.Add(this.InvalidProgramLabel);
             this.CenterSignup.Controls.Add(this.InvalidLastNameLabel);
@@ -1575,6 +1577,17 @@
             this.InvalidPasswordLabel.Text = "label2";
             this.InvalidPasswordLabel.Visible = false;
             // 
+            // SuccessLabel
+            // 
+            this.SuccessLabel.AutoSize = true;
+            this.SuccessLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.SuccessLabel.Location = new System.Drawing.Point(510, 39);
+            this.SuccessLabel.Name = "SuccessLabel";
+            this.SuccessLabel.Size = new System.Drawing.Size(44, 16);
+            this.SuccessLabel.TabIndex = 25;
+            this.SuccessLabel.Text = "label1";
+            this.SuccessLabel.Visible = false;
+            // 
             // GPAware
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -1733,6 +1746,7 @@
         private System.Windows.Forms.Label InvalidProgramLabel;
         private System.Windows.Forms.Label InvalidLastNameLabel;
         private System.Windows.Forms.Label InvalidFirstNameLabel;
+        private System.Windows.Forms.Label SuccessLabel;
     }
 }
 
