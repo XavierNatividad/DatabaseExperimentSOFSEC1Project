@@ -62,7 +62,7 @@ namespace GradeCalculator
             return hash.Equals(newHash);
         }
 
-        public static byte[] Encrypt(string password, string plainText)
+        public static string Encrypt(string password, string plainText)
         {
             using (SHA256 sha256 = SHA256.Create())
             {
@@ -84,7 +84,7 @@ namespace GradeCalculator
                                 writer.Write(plainText);
                             }
 
-                            return GetEncryptedDataIncludedIV(memoryStream.ToArray(), aes.IV);
+                            return BytesArrayToString(GetEncryptedDataIncludedIV(memoryStream.ToArray(), aes.IV));
                         }
                     }
 
@@ -93,8 +93,9 @@ namespace GradeCalculator
             }
 
         }
-        public static string Decrypt(string password, byte[] cipherText)
+        public static string Decrypt(string password, string stringCipherText)
         {
+            byte[] cipherText = GetBytesFromString(stringCipherText);
             using (SHA256 sha256 = SHA256.Create())
             {
                 byte[] key = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));

@@ -41,6 +41,7 @@ namespace SOFSEC1_Project
         private void CreateAccountSignupBox_Click(object sender, EventArgs e)
         {
             NewUserModel newUser = new NewUserModel();
+            GPAwareCryptography cryptography = new GPAwareCryptography();
             string username = UsernameSignupBox.Text;
             string firstName = FirstNameSignupBox.Text;
             string lastName = LastNameSignupBox.Text;
@@ -67,7 +68,6 @@ namespace SOFSEC1_Project
                         {
                             //Username passed
                             usernamePassed = true;
-                            newUser.username = username;
                         }
                         else
                         {
@@ -111,7 +111,6 @@ namespace SOFSEC1_Project
                     {
                         //First name passed
                         fnPassed = true;
-                        newUser.firstName = firstName;
                     }
                     else
                     {
@@ -146,7 +145,6 @@ namespace SOFSEC1_Project
                     {
                         //Last name passed
                         lnPassed = true;
-                        newUser.lastName = lastName;
                     }
                     else
                     {
@@ -175,7 +173,6 @@ namespace SOFSEC1_Project
             if (!string.IsNullOrWhiteSpace(program))
             {
                 programPassed = true;
-                newUser.program = program;
             }
             else
             {
@@ -196,7 +193,6 @@ namespace SOFSEC1_Project
                         {
                             //Password passed
                             passwordPassed = true;
-                            newUser.password = password;
                         }
                         else
                         {
@@ -234,11 +230,17 @@ namespace SOFSEC1_Project
             if (usernamePassed && passwordPassed && fnPassed && lnPassed && programPassed)
             {
                 //Add new user account
+                newUser.username = GPAwareCryptography.Encrypt(username, password);
+                newUser.password = cryptography.HashPassword(password);
+                newUser.firstName = GPAwareCryptography.Encrypt(firstName, password);
+                newUser.lastName = GPAwareCryptography.Encrypt(lastName, password);
+                newUser.program = GPAwareCryptography.Encrypt(program, password);
+                newUser.autoGenerateCourses = autoGenerateCourses;
+
                 SqliteDataAccess.AddUser(newUser);
                 SuccessLabel.Text = "Account creation successful";
                 SuccessLabel.Visible = true;
                 CreateAccountSignupBox.Visible = false;
-
             }
         }
 
