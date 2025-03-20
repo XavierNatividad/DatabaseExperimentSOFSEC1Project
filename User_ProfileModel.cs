@@ -12,6 +12,6 @@ namespace SOFSEC1_Project
         public int loginId { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
-        public string program { get; set; }
+        public string programId { get; set; }
     }
 }

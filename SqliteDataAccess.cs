@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using DatabaseExperimentSOFSEC1Project;
 using GradeCalculator;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace SOFSEC1_Project
 {
@@ -17,22 +19,43 @@ namespace SOFSEC1_Project
         {
             return ConfigurationManager.ConnectionStrings[id].ConnectionString;
         }
-
-        public static void GetUsername()
+        public static string GetLoginId(string username)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = cnn.Query<User_LoginModel>("SELECT * from Person", new DynamicParameters());
+                DynamicParameters parameters = new DynamicParameters();
+                parameters.Add("@username", username);
+                var output = cnn.Query<string>("SELECT login_Id FROM user_login WHERE username = @username", parameters);
+                return output.First();
+            }
+        }
+        public static string GetUserId(string loginId)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                DynamicParameters parameters = new DynamicParameters();
+                parameters.Add("@loginId", loginId);
+                var output = cnn.Query<string>("SELECT user_Id FROM user_profile WHERE login_Id = @loginId;", parameters);
+                return output.First();
+            }
+        }
+        public static User_ProfileModel GetUserProfile(string userId)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                DynamicParameters parameters = new DynamicParameters();
+                parameters.Add("@userId", userId);
+                var encryptedProfile = cnn.Query<User_ProfileModel>("SELECT * from user_profile WHERE user_Id = @userId;", parameters);
+                return encryptedProfile.First();
             }
         }
 
-        public static List<User_ProfileModel> GetUserProfile()
+        public static List<GradeModel> GetGrades(string userId)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = cnn.Query<User_ProfileModel>("SELECT * from user_profile", new DynamicParameters());
-
-                return output.ToList();
+                var encryptedGrades = cnn.Query<GradeModel>("SELECT * from grade WHERE userId = @userId;", new DynamicParameters(new { userId }));
+                return encryptedGrades.ToList();
             }
         }
 
@@ -67,46 +90,68 @@ namespace SOFSEC1_Project
 
                     cnn.Execute("INSERT into grade (userId, termNumber, courseName, courseCode, units, academicUnit) values (@userId, @termNumber, @courseName, @courseCode, @units, @academicUnit)", gradeParameters);
                 }
+            }
+        }
 
-                //DynamicParameters gradeParameters = new DynamicParameters();
-                //cnn.Execute("INSERT into grades (termNumber, courseName, courseCode, units) values (@userId, @termNumber, @courseName, @courseCode, @units)", gradeParameters);
-                //program_courses.ToList();
-
+        public static void UpdateGrades(List<GradeModel> grades, string userId)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                foreach (GradeModel grade in grades)
+                {
+                    DynamicParameters parameters = new DynamicParameters();
+                    parameters.Add("@userId", userId);
+                    parameters.Add("@gradeId", grade.gradeId);
+                    parameters.Add("@termNumber", grade.termNumber);
+                    parameters.Add("@courseName", grade.courseName);
+                    parameters.Add("@courseCode", grade.courseCode);
+                    parameters.Add("@units", grade.units);
+                    parameters.Add("@grade", grade.grade);
+                    parameters.Add("@academicUnit", grade.academicUnit);
+                    cnn.Execute("UPDATE grade SET grade = @grade WHERE userId = @userId AND gradeId = @gradeId", parameters);
+                }
             }
         }
 
         public static string GetProgramId(string program)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
-                {
-                    var output = cnn.Query<string>("SELECT programId FROM Program WHERE programCODE = @program", new { program });
-                    return output.First();
-                }
+                var output = cnn.Query<string>("SELECT programId FROM Program WHERE programCODE = @program", new { program });
+                return output.First();
             }
+        }
 
         public static List<string> GetUsernames()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = cnn.Query<string>("SELECT username from user_login", new DynamicParameters());
+                var output = cnn.Query<string>("SELECT username from User_login", new DynamicParameters());
 
                 return output.ToList();
             }
         }
 
-        public static bool VerifyLogin(User_LoginModel login)
+        public static bool VerifyLogin(string username, string password)
         {
-            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            username = username.Trim();
+            password = password.Trim();
+            List<string> usernameList = GetUsernames();
+
+            if (GetUsernames().Contains(username))
             {
-                List<string> usernameMatch = cnn.Query<string>("SELECT username from user_login WHERE username = @username", login).ToList();
-
-                if (usernameMatch.Count == 1)
+                using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
                 {
-                    List<string> passwordMatch = cnn.Query<string>("SELECT password FROM user_login WHERE username = @username", login).ToList();
+                    string output = cnn.Query<string>("SELECT password FROM user_login WHERE username = @username", new { username }).First();
 
-                    if (passwordMatch.Count == 1)
+                    if (String.IsNullOrEmpty(password))
                     {
-                        if(login.hashedPassword == passwordMatch.First())
+                        return false;
+                    }
+                    else
+                    {
+                        GPAwareCryptography crypto = new GPAwareCryptography();
+                        if (crypto.VerifyPassword(password, output))
                         {
                             return true;
                         }
@@ -115,18 +160,14 @@ namespace SOFSEC1_Project
                             return false;
                         }
                     }
-                    else
-                    {
-                        return false;
-                    }
-                }
-                else
-                {
-                    return false;
+
                 }
             }
+            else
+            {
+                return false;
+            }
         }
-
         public static List<string> GetPrograms()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -134,6 +175,18 @@ namespace SOFSEC1_Project
                 var output = cnn.Query<string>("SELECT programCODE FROM Program", new DynamicParameters());
 
                 return output.ToList();
+            }
+        }
+
+        public static string GetProgramName(string programCode)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                DynamicParameters parameters = new DynamicParameters();
+                parameters.Add("@programCode", programCode);
+                var output = cnn.Query<string>("SELECT programName FROM Program WHERE programCode = @programCode", parameters);
+
+                return output.First();
             }
         }
 

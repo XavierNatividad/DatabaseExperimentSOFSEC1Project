@@ -7,6 +7,8 @@ using System.Security.Cryptography;
 using Konscious.Security.Cryptography;
 using System.Security.AccessControl;
 using System.IO;
+using SOFSEC1_Project;
+using DatabaseExperimentSOFSEC1Project;
 
 namespace GradeCalculator
 {
@@ -17,27 +19,17 @@ namespace GradeCalculator
         private const int degreesOfParallelism = 4;
         private const int iterations = 4;
         private const int memorySize = 1024 * 1024;
-
-        public string HashPassword(string password)
+        public byte[] CreateSalt()
         {
-            byte[] salt = new byte[saltSize];
-            using (var randomnumbergenerator = RandomNumberGenerator.Create())
-            {
-                randomnumbergenerator.GetBytes(salt);
-            }
+            var salt = new byte[saltSize];
+            var rng = new RNGCryptoServiceProvider();
+            rng.GetBytes(salt);
 
-            byte[] hash = HashPassword(password, salt);
-
-            var saltHash = new byte[salt.Length + hash.Length];
-            Array.Copy(salt, 0, saltHash, 0, salt.Length);
-            Array.Copy(hash, 0, saltHash, salt.Length, hash.Length);
-
-            return Convert.ToBase64String(saltHash);
+            return salt;
         }
-
-        private byte[] HashPassword(string password, byte[] salt)
+        public byte[] HashPassword(string password, byte[] salt)
         {
-            var argon2 = new Argon2id(Encoding.UTF8.GetBytes(password))
+            var argon2id = new Argon2id(Encoding.UTF8.GetBytes(password))
             {
                 Salt = salt,
                 DegreeOfParallelism = degreesOfParallelism,
@@ -45,12 +37,16 @@ namespace GradeCalculator
                 MemorySize = memorySize
             };
 
-            return argon2.GetBytes(hashSize);
+            byte[] preSaltPassword = argon2id.GetBytes(hashSize);
+            byte[] saltPassword = new byte[saltSize + hashSize];
+            Array.Copy(salt, 0, saltPassword, 0, saltSize);
+            Array.Copy(preSaltPassword, 0, saltPassword, saltSize, hashSize);
+            return saltPassword;
         }
 
         public bool VerifyPassword(string password, string hashedPassword)
         {
-            byte[] combinedBytes = Convert.FromBase64String(hashedPassword);
+            byte[] combinedBytes = GetBytesFromString(hashedPassword);
 
             byte[] salt = new byte[saltSize];
             byte[] hash = new byte[hashSize];
@@ -59,7 +55,11 @@ namespace GradeCalculator
 
             byte[] newHash = HashPassword(password, salt);
 
-            return hash.Equals(newHash);
+            // Extract the hash part from the newHash
+            byte[] newHashPart = new byte[hashSize];
+            Array.Copy(newHash, saltSize, newHashPart, 0, hashSize);
+
+            return hash.SequenceEqual(newHashPart);
         }
 
         public static string Encrypt(string password, string plainText)
@@ -110,7 +110,7 @@ namespace GradeCalculator
                     (aes.IV, tempCypherText) = GetIV(cipherText);
                     cipherText = tempCypherText;
 
-                    using (MemoryStream memoryStream = new MemoryStream())
+                    using (MemoryStream memoryStream = new MemoryStream(cipherText))
                     {
                         using (CryptoStream cryptStream = new CryptoStream(memoryStream, aes.CreateDecryptor(), CryptoStreamMode.Read))
                         {
@@ -120,7 +120,6 @@ namespace GradeCalculator
                             }
                         }
                     }
-
                 }
             }
         }
@@ -135,7 +134,7 @@ namespace GradeCalculator
         public static (byte[], byte[]) GetIV(byte[] encryptedDataIncludingIV)
         {
             byte[] iv = new byte[16];
-            byte[] cipherText = new byte[encryptedDataIncludingIV.Length -16];
+            byte[] cipherText = new byte[encryptedDataIncludingIV.Length - 16];
             Buffer.BlockCopy(encryptedDataIncludingIV, 0, iv, 0, iv.Length);
             Buffer.BlockCopy(encryptedDataIncludingIV, iv.Length, cipherText, 0, cipherText.Length);
             return (iv, cipherText);
