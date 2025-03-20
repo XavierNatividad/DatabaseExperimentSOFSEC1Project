@@ -209,6 +209,8 @@
             this.TermGPABoxGPAView = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.CGPASummaryGPAView = new System.Windows.Forms.Label();
+            this.AccountCreationLabel = new System.Windows.Forms.Label();
+            this.ReturnToLoginButton = new System.Windows.Forms.Button();
             this.HOME.SuspendLayout();
             this.TopHome.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -1275,6 +1277,8 @@
             // CenterSignup
             // 
             this.CenterSignup.BackColor = System.Drawing.Color.PaleGreen;
+            this.CenterSignup.Controls.Add(this.ReturnToLoginButton);
+            this.CenterSignup.Controls.Add(this.AccountCreationLabel);
             this.CenterSignup.Controls.Add(this.SuccessLabel);
             this.CenterSignup.Controls.Add(this.InvalidPasswordLabel);
             this.CenterSignup.Controls.Add(this.InvalidProgramLabel);
@@ -1312,6 +1316,7 @@
             this.SuccessLabel.Size = new System.Drawing.Size(399, 31);
             this.SuccessLabel.TabIndex = 25;
             this.SuccessLabel.Text = "Account Creation Successful!";
+            this.SuccessLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // InvalidPasswordLabel
             // 
@@ -2397,6 +2402,31 @@
             this.CGPASummaryGPAView.TabIndex = 18;
             this.CGPASummaryGPAView.Text = "CGPA Summary:";
             // 
+            // AccountCreationLabel
+            // 
+            this.AccountCreationLabel.AutoSize = true;
+            this.AccountCreationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AccountCreationLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.AccountCreationLabel.Location = new System.Drawing.Point(567, 24);
+            this.AccountCreationLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.AccountCreationLabel.Name = "AccountCreationLabel";
+            this.AccountCreationLabel.Size = new System.Drawing.Size(211, 29);
+            this.AccountCreationLabel.TabIndex = 26;
+            this.AccountCreationLabel.Text = "Creating account...";
+            this.AccountCreationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.AccountCreationLabel.Visible = false;
+            // 
+            // ReturnToLoginButton
+            // 
+            this.ReturnToLoginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReturnToLoginButton.Location = new System.Drawing.Point(594, 23);
+            this.ReturnToLoginButton.Name = "ReturnToLoginButton";
+            this.ReturnToLoginButton.Size = new System.Drawing.Size(192, 30);
+            this.ReturnToLoginButton.TabIndex = 27;
+            this.ReturnToLoginButton.Text = "Return to login page";
+            this.ReturnToLoginButton.UseVisualStyleBackColor = true;
+            this.ReturnToLoginButton.Click += new System.EventHandler(this.ReturnToLoginButton_Click_1);
+            // 
             // GPAware
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -2413,6 +2443,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "GPAware";
             this.Text = "GPAware";
+            this.Load += new System.EventHandler(this.GPAware_Load);
             this.HOME.ResumeLayout(false);
             this.TopHome.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
@@ -2637,6 +2668,8 @@
         private System.Windows.Forms.Label RequirementNeededTextGPAView;
         private System.Windows.Forms.Label RequirementGPAView;
         private System.Windows.Forms.Label InvalidLoginLabel;
+        private System.Windows.Forms.Label AccountCreationLabel;
+        private System.Windows.Forms.Button ReturnToLoginButton;
     }
 }
 

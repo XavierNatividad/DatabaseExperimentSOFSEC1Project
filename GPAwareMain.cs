@@ -229,18 +229,29 @@ namespace SOFSEC1_Project
 
             if (usernamePassed && passwordPassed && fnPassed && lnPassed && programPassed)
             {
+                Cursor.Current = Cursors.WaitCursor;
+                ReturnToLoginButton.Visible = false;
+                AccountCreationLabel.Visible = true;
+                CreateAccountSignupBox.Visible = false;;
                 //Add new user account
-                newUser.username = GPAwareCryptography.Encrypt(username, password);
+                newUser.username = username;
                 newUser.password = cryptography.HashPassword(password);
                 newUser.firstName = GPAwareCryptography.Encrypt(firstName, password);
                 newUser.lastName = GPAwareCryptography.Encrypt(lastName, password);
-                newUser.program = GPAwareCryptography.Encrypt(program, password);
-                newUser.autoGenerateCourses = autoGenerateCourses;
+                newUser.program = GPAwareCryptography.Encrypt(SqliteDataAccess.GetProgramId(program), password);
 
-                SqliteDataAccess.AddUser(newUser);
-                SuccessLabel.Text = "Account creation successful";
-                SuccessLabel.Visible = true;
-                CreateAccountSignupBox.Visible = false;
+                if (autoGenerateCourses)
+                {
+                    SqliteDataAccess.AddUser(newUser, password, program);
+                }
+                else
+                {
+                    SqliteDataAccess.AddUser(newUser, password);
+                }
+                AccountCreationLabel.Visible = false;
+                ReturnToLoginButton.Visible = true;
+                Cursor.Current = Cursors.Default;
+                SuccessLabel.Text = "Account creation successful!";
             }
         }
 
@@ -346,6 +357,17 @@ namespace SOFSEC1_Project
         private void PasswordHomeLogin_TextChanged(object sender, EventArgs e)
         {
             InvalidLoginLabel.Visible = false;
+        }
+
+        private void GPAware_Load(object sender, EventArgs e)
+        {
+            SuccessLabel.Visible = false;
+            AccountCreationLabel.Visible = false;
+        }
+
+        private void ReturnToLoginButton_Click_1(object sender, EventArgs e)
+        {
+            ShowPanel(HOME);
         }
     }
 }

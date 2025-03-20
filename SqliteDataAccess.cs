@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using GradeCalculator;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -35,14 +36,53 @@ namespace SOFSEC1_Project
             }
         }
 
-        public static void AddUser(NewUserModel newUser)
+        public static void AddUser(NewUserModel newUser, string password)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
                 cnn.Execute("INSERT into user_login (username, password) values (@username, @password)", newUser);
-                cnn.Execute("INSERT INTO user_profile(login_Id, firstName, lastName, programId) VALUES((SELECT login_Id FROM user_login WHERE username = @username), @firstName, @lastName, (SELECT programId FROM program WHERE programCode = @program));", newUser);
+                cnn.Execute("INSERT INTO user_profile(login_Id, firstName, lastName, programId) VALUES((SELECT login_Id FROM user_login WHERE username = @username), @firstName, @lastName, @program);", newUser);
             }
         }
+
+        public static void AddUser(NewUserModel newUser, string password, string programCode)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute("INSERT into user_login (username, password) values (@username, @password)", newUser);
+                cnn.Execute("INSERT INTO user_profile(login_Id, firstName, lastName, programId) VALUES((SELECT login_Id FROM user_login WHERE username = @username), @firstName, @lastName, @program);", newUser);
+
+                var userId = cnn.Query<string>("SELECT user_Id FROM user_profile WHERE login_Id IN (SELECT login_id FROM user_login WHERE username = @username);", newUser).First();
+                var program_courses = cnn.Query<dynamic>("SELECT termNumber, courseName, courseCode, units, academicUnit FROM program_courses WHERE programCode = @programCode", new { programCode });
+
+                foreach (var course in program_courses)
+                {
+                    DynamicParameters gradeParameters = new DynamicParameters();
+                    gradeParameters.Add("@userId", userId);
+                    gradeParameters.Add("@termNumber", course.termNumber);
+                    gradeParameters.Add("@courseName", course.courseName);
+                    gradeParameters.Add("@courseCode", course.courseCode);
+                    gradeParameters.Add("@units", course.units);
+                    gradeParameters.Add("@academicUnit", course.academicUnit);
+
+                    cnn.Execute("INSERT into grade (userId, termNumber, courseName, courseCode, units, academicUnit) values (@userId, @termNumber, @courseName, @courseCode, @units, @academicUnit)", gradeParameters);
+                }
+
+                //DynamicParameters gradeParameters = new DynamicParameters();
+                //cnn.Execute("INSERT into grades (termNumber, courseName, courseCode, units) values (@userId, @termNumber, @courseName, @courseCode, @units)", gradeParameters);
+                //program_courses.ToList();
+
+            }
+        }
+
+        public static string GetProgramId(string program)
+            {
+                using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+                {
+                    var output = cnn.Query<string>("SELECT programId FROM Program WHERE programCODE = @program", new { program });
+                    return output.First();
+                }
+            }
 
         public static List<string> GetUsernames()
         {

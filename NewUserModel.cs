@@ -13,18 +13,16 @@ namespace SOFSEC1_Project
         public string lastName { get; set; }
         public string program { get; set; }
         public string password { get; set; }
-        public bool autoGenerateCourses { get; set; }
 
         public NewUserModel()
         { }
-        public NewUserModel(string username, string firstName, string lastName, string program, string password, bool autoGenerateCourses) 
+        public NewUserModel(string username, string firstName, string lastName, string program, string password) 
         {
             this.username = username;
             this.firstName = firstName;
             this.lastName = lastName;
             this.program = program;
             this.password = password;
-            this.autoGenerateCourses = autoGenerateCourses;
         }
     }
 }
