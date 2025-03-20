@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Security.Cryptography;
 using Konscious.Security.Cryptography;
 using System.Security.AccessControl;
+using System.IO;
 
 namespace GradeCalculator
 {
@@ -59,6 +60,94 @@ namespace GradeCalculator
             byte[] newHash = HashPassword(password, salt);
 
             return hash.Equals(newHash);
+        }
+
+        public static byte[] Encrypt(string password, string plainText)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] key = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+
+                using (Aes aes = Aes.Create())
+                {
+                    aes.Key = key;
+                    aes.Mode = CipherMode.CBC;
+
+                    aes.GenerateIV();
+
+                    using (MemoryStream memoryStream = new MemoryStream())
+                    {
+                        using (CryptoStream cryptStream = new CryptoStream(memoryStream, aes.CreateEncryptor(), CryptoStreamMode.Write))
+                        {
+                            using (StreamWriter writer = new StreamWriter(cryptStream))
+                            {
+                                writer.Write(plainText);
+                            }
+
+                            return GetEncryptedDataIncludedIV(memoryStream.ToArray(), aes.IV);
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+        public static string Decrypt(string password, byte[] cipherText)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] key = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+
+                using (Aes aes = Aes.Create())
+                {
+                    aes.Key = key;
+                    aes.Mode = CipherMode.CBC;
+
+                    byte[] tempCypherText;
+
+                    (aes.IV, tempCypherText) = GetIV(cipherText);
+                    cipherText = tempCypherText;
+
+                    using (MemoryStream memoryStream = new MemoryStream())
+                    {
+                        using (CryptoStream cryptStream = new CryptoStream(memoryStream, aes.CreateDecryptor(), CryptoStreamMode.Read))
+                        {
+                            using (StreamReader reader = new StreamReader(cryptStream))
+                            {
+                                return reader.ReadToEnd();
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+
+        private static byte[] GetEncryptedDataIncludedIV(byte[] encryptedData, byte[] iv)
+        {
+            byte[] result = new byte[iv.Length + encryptedData.Length];
+            Buffer.BlockCopy(iv, 0, result, 0, iv.Length);
+            Buffer.BlockCopy(encryptedData, 0, result, iv.Length, encryptedData.Length);
+            return result;
+        }
+        public static (byte[], byte[]) GetIV(byte[] encryptedDataIncludingIV)
+        {
+            byte[] iv = new byte[16];
+            byte[] cipherText = new byte[encryptedDataIncludingIV.Length -16];
+            Buffer.BlockCopy(encryptedDataIncludingIV, 0, iv, 0, iv.Length);
+            Buffer.BlockCopy(encryptedDataIncludingIV, iv.Length, cipherText, 0, cipherText.Length);
+            return (iv, cipherText);
+        }
+
+        public static string BytesArrayToString(byte[] cipherText)
+        {
+            return Convert.ToBase64String(cipherText);
+        }
+
+        public static byte[] GetBytesFromString(string cipherText)
+        {
+            return Convert.FromBase64String(cipherText);
         }
     }
 }
