@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.HOME = new System.Windows.Forms.Panel();
             this.TopHome = new System.Windows.Forms.Panel();
             this.LogoHome = new System.Windows.Forms.Label();
@@ -102,6 +102,7 @@
             this.LogoSignup = new System.Windows.Forms.Label();
             this.DASHBOARD = new System.Windows.Forms.Panel();
             this.TopDashboard = new System.Windows.Forms.Panel();
+            this.LogOutDashboard = new System.Windows.Forms.Label();
             this.NameDashboard = new System.Windows.Forms.Label();
             this.CGPADashboard = new System.Windows.Forms.Label();
             this.DashboardDashboard = new System.Windows.Forms.Label();
@@ -124,6 +125,7 @@
             this.WelcomeDashboardText = new System.Windows.Forms.Label();
             this.PROFILE = new System.Windows.Forms.Panel();
             this.TopProfile = new System.Windows.Forms.Panel();
+            this.LogOutProfile = new System.Windows.Forms.Label();
             this.NameProfile = new System.Windows.Forms.Label();
             this.CGPAProfile = new System.Windows.Forms.Label();
             this.DashboardProfile = new System.Windows.Forms.Label();
@@ -132,12 +134,17 @@
             this.CenterProfile = new System.Windows.Forms.Panel();
             this.ProfileTextProfile = new System.Windows.Forms.Label();
             this.GreyCenterProfile = new System.Windows.Forms.Panel();
+            this.ProgramReplaceProfile = new System.Windows.Forms.Label();
+            this.LastNameReplaceProfile = new System.Windows.Forms.Label();
+            this.FirstNameReplaceProfile = new System.Windows.Forms.Label();
+            this.UsernameReplaceProfile = new System.Windows.Forms.Label();
             this.ProgramProfile = new System.Windows.Forms.Label();
             this.LastNameProfile = new System.Windows.Forms.Label();
             this.FirstNameProfile = new System.Windows.Forms.Label();
             this.UsernameProfile = new System.Windows.Forms.Label();
             this.GPAVIEW = new System.Windows.Forms.Panel();
             this.TopGPAView = new System.Windows.Forms.Panel();
+            this.LogOutGPAView = new System.Windows.Forms.Label();
             this.NameGPAView = new System.Windows.Forms.Label();
             this.CGPAGPAView = new System.Windows.Forms.Label();
             this.DashboardGPAView = new System.Windows.Forms.Label();
@@ -150,13 +157,6 @@
             this.GreyCenterGPAView = new System.Windows.Forms.Panel();
             this.GradesTableView = new System.Windows.Forms.DataGridView();
             this.sqLiteCommand1 = new System.Data.SQLite.SQLiteCommand();
-            this.LogOutGPAView = new System.Windows.Forms.Label();
-            this.LogOutDashboard = new System.Windows.Forms.Label();
-            this.LogOutProfile = new System.Windows.Forms.Label();
-            this.UsernameReplaceProfile = new System.Windows.Forms.Label();
-            this.FirstNameReplaceProfile = new System.Windows.Forms.Label();
-            this.LastNameReplaceProfile = new System.Windows.Forms.Label();
-            this.ProgramReplaceProfile = new System.Windows.Forms.Label();
             this.HOME.SuspendLayout();
             this.TopHome.SuspendLayout();
             this.MainTabControl.SuspendLayout();
@@ -246,7 +246,7 @@
             this.ConversionTable.Location = new System.Drawing.Point(4, 34);
             this.ConversionTable.Name = "ConversionTable";
             this.ConversionTable.Padding = new System.Windows.Forms.Padding(3);
-            this.ConversionTable.Size = new System.Drawing.Size(653, 380);
+            this.ConversionTable.Size = new System.Drawing.Size(664, 380);
             this.ConversionTable.TabIndex = 1;
             this.ConversionTable.Text = "Conversion Table";
             this.ConversionTable.UseVisualStyleBackColor = true;
@@ -420,7 +420,7 @@
             this.LogOutGPAEdit.Size = new System.Drawing.Size(109, 47);
             this.LogOutGPAEdit.TabIndex = 4;
             this.LogOutGPAEdit.Text = "Log out";
-            this.LogOutGPAEdit.Click += new System.EventHandler(this.LogoProfile_Click);
+            this.LogOutGPAEdit.Click += new System.EventHandler(this.LogOutProfile_Click);
             // 
             // NameGPAEdit
             // 
@@ -623,34 +623,34 @@
             // GradesTableEdit
             // 
             this.GradesTableEdit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GradesTableEdit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GradesTableEdit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
             this.GradesTableEdit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GradesTableEdit.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GradesTableEdit.DefaultCellStyle = dataGridViewCellStyle27;
             this.GradesTableEdit.Location = new System.Drawing.Point(23, 17);
             this.GradesTableEdit.Margin = new System.Windows.Forms.Padding(2);
             this.GradesTableEdit.Name = "GradesTableEdit";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GradesTableEdit.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GradesTableEdit.RowHeadersDefaultCellStyle = dataGridViewCellStyle28;
             this.GradesTableEdit.RowHeadersWidth = 51;
             this.GradesTableEdit.RowTemplate.Height = 24;
             this.GradesTableEdit.Size = new System.Drawing.Size(973, 383);
@@ -1062,6 +1062,19 @@
             this.TopDashboard.Size = new System.Drawing.Size(1264, 89);
             this.TopDashboard.TabIndex = 4;
             // 
+            // LogOutDashboard
+            // 
+            this.LogOutDashboard.BackColor = System.Drawing.Color.Transparent;
+            this.LogOutDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LogOutDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOutDashboard.ForeColor = System.Drawing.Color.White;
+            this.LogOutDashboard.Location = new System.Drawing.Point(1121, 40);
+            this.LogOutDashboard.Name = "LogOutDashboard";
+            this.LogOutDashboard.Size = new System.Drawing.Size(109, 47);
+            this.LogOutDashboard.TabIndex = 6;
+            this.LogOutDashboard.Text = "Log out";
+            this.LogOutDashboard.Click += new System.EventHandler(this.LogOutProfile_Click);
+            // 
             // NameDashboard
             // 
             this.NameDashboard.BackColor = System.Drawing.Color.Transparent;
@@ -1343,6 +1356,19 @@
             this.TopProfile.Size = new System.Drawing.Size(1264, 89);
             this.TopProfile.TabIndex = 0;
             // 
+            // LogOutProfile
+            // 
+            this.LogOutProfile.BackColor = System.Drawing.Color.Transparent;
+            this.LogOutProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LogOutProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOutProfile.ForeColor = System.Drawing.Color.White;
+            this.LogOutProfile.Location = new System.Drawing.Point(1121, 40);
+            this.LogOutProfile.Name = "LogOutProfile";
+            this.LogOutProfile.Size = new System.Drawing.Size(109, 47);
+            this.LogOutProfile.TabIndex = 7;
+            this.LogOutProfile.Text = "Log out";
+            this.LogOutProfile.Click += new System.EventHandler(this.LogOutProfile_Click);
+            // 
             // NameProfile
             // 
             this.NameProfile.BackColor = System.Drawing.Color.Transparent;
@@ -1445,6 +1471,58 @@
             this.GreyCenterProfile.Size = new System.Drawing.Size(1211, 400);
             this.GreyCenterProfile.TabIndex = 44;
             // 
+            // ProgramReplaceProfile
+            // 
+            this.ProgramReplaceProfile.AutoSize = true;
+            this.ProgramReplaceProfile.BackColor = System.Drawing.Color.Transparent;
+            this.ProgramReplaceProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProgramReplaceProfile.ForeColor = System.Drawing.Color.Black;
+            this.ProgramReplaceProfile.Location = new System.Drawing.Point(177, 151);
+            this.ProgramReplaceProfile.Name = "ProgramReplaceProfile";
+            this.ProgramReplaceProfile.Size = new System.Drawing.Size(93, 25);
+            this.ProgramReplaceProfile.TabIndex = 60;
+            this.ProgramReplaceProfile.Text = "Program";
+            this.ProgramReplaceProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // LastNameReplaceProfile
+            // 
+            this.LastNameReplaceProfile.AutoSize = true;
+            this.LastNameReplaceProfile.BackColor = System.Drawing.Color.Transparent;
+            this.LastNameReplaceProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LastNameReplaceProfile.ForeColor = System.Drawing.Color.Black;
+            this.LastNameReplaceProfile.Location = new System.Drawing.Point(178, 107);
+            this.LastNameReplaceProfile.Name = "LastNameReplaceProfile";
+            this.LastNameReplaceProfile.Size = new System.Drawing.Size(39, 25);
+            this.LastNameReplaceProfile.TabIndex = 59;
+            this.LastNameReplaceProfile.Text = "LN";
+            this.LastNameReplaceProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // FirstNameReplaceProfile
+            // 
+            this.FirstNameReplaceProfile.AutoSize = true;
+            this.FirstNameReplaceProfile.BackColor = System.Drawing.Color.Transparent;
+            this.FirstNameReplaceProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FirstNameReplaceProfile.ForeColor = System.Drawing.Color.Black;
+            this.FirstNameReplaceProfile.Location = new System.Drawing.Point(177, 63);
+            this.FirstNameReplaceProfile.Name = "FirstNameReplaceProfile";
+            this.FirstNameReplaceProfile.Size = new System.Drawing.Size(40, 25);
+            this.FirstNameReplaceProfile.TabIndex = 58;
+            this.FirstNameReplaceProfile.Text = "FN";
+            this.FirstNameReplaceProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // UsernameReplaceProfile
+            // 
+            this.UsernameReplaceProfile.AutoSize = true;
+            this.UsernameReplaceProfile.BackColor = System.Drawing.Color.Transparent;
+            this.UsernameReplaceProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsernameReplaceProfile.ForeColor = System.Drawing.Color.Black;
+            this.UsernameReplaceProfile.Location = new System.Drawing.Point(178, 22);
+            this.UsernameReplaceProfile.Name = "UsernameReplaceProfile";
+            this.UsernameReplaceProfile.Size = new System.Drawing.Size(110, 25);
+            this.UsernameReplaceProfile.TabIndex = 57;
+            this.UsernameReplaceProfile.Text = "Username";
+            this.UsernameReplaceProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // ProgramProfile
             // 
             this.ProgramProfile.AutoSize = true;
@@ -1523,6 +1601,19 @@
             this.TopGPAView.Name = "TopGPAView";
             this.TopGPAView.Size = new System.Drawing.Size(1264, 89);
             this.TopGPAView.TabIndex = 4;
+            // 
+            // LogOutGPAView
+            // 
+            this.LogOutGPAView.BackColor = System.Drawing.Color.Transparent;
+            this.LogOutGPAView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LogOutGPAView.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOutGPAView.ForeColor = System.Drawing.Color.White;
+            this.LogOutGPAView.Location = new System.Drawing.Point(1121, 40);
+            this.LogOutGPAView.Name = "LogOutGPAView";
+            this.LogOutGPAView.Size = new System.Drawing.Size(109, 47);
+            this.LogOutGPAView.TabIndex = 5;
+            this.LogOutGPAView.Text = "Log out";
+            this.LogOutGPAView.Click += new System.EventHandler(this.LogOutProfile_Click);
             // 
             // NameGPAView
             // 
@@ -1651,23 +1742,23 @@
             // 
             this.GradesTableView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GradesTableView.CausesValidation = false;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GradesTableView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GradesTableView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
             this.GradesTableView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GradesTableView.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GradesTableView.DefaultCellStyle = dataGridViewCellStyle30;
             this.GradesTableView.Location = new System.Drawing.Point(24, 17);
             this.GradesTableView.Margin = new System.Windows.Forms.Padding(2);
             this.GradesTableView.Name = "GradesTableView";
@@ -1682,108 +1773,21 @@
             // 
             this.sqLiteCommand1.CommandText = null;
             // 
-            // LogOutGPAView
-            // 
-            this.LogOutGPAView.BackColor = System.Drawing.Color.Transparent;
-            this.LogOutGPAView.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogOutGPAView.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogOutGPAView.ForeColor = System.Drawing.Color.White;
-            this.LogOutGPAView.Location = new System.Drawing.Point(1121, 40);
-            this.LogOutGPAView.Name = "LogOutGPAView";
-            this.LogOutGPAView.Size = new System.Drawing.Size(109, 47);
-            this.LogOutGPAView.TabIndex = 5;
-            this.LogOutGPAView.Text = "Log out";
-            // 
-            // LogOutDashboard
-            // 
-            this.LogOutDashboard.BackColor = System.Drawing.Color.Transparent;
-            this.LogOutDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogOutDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogOutDashboard.ForeColor = System.Drawing.Color.White;
-            this.LogOutDashboard.Location = new System.Drawing.Point(1121, 40);
-            this.LogOutDashboard.Name = "LogOutDashboard";
-            this.LogOutDashboard.Size = new System.Drawing.Size(109, 47);
-            this.LogOutDashboard.TabIndex = 6;
-            this.LogOutDashboard.Text = "Log out";
-            // 
-            // LogOutProfile
-            // 
-            this.LogOutProfile.BackColor = System.Drawing.Color.Transparent;
-            this.LogOutProfile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogOutProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogOutProfile.ForeColor = System.Drawing.Color.White;
-            this.LogOutProfile.Location = new System.Drawing.Point(1121, 40);
-            this.LogOutProfile.Name = "LogOutProfile";
-            this.LogOutProfile.Size = new System.Drawing.Size(109, 47);
-            this.LogOutProfile.TabIndex = 7;
-            this.LogOutProfile.Text = "Log out";
-            // 
-            // UsernameReplaceProfile
-            // 
-            this.UsernameReplaceProfile.AutoSize = true;
-            this.UsernameReplaceProfile.BackColor = System.Drawing.Color.Transparent;
-            this.UsernameReplaceProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsernameReplaceProfile.ForeColor = System.Drawing.Color.Black;
-            this.UsernameReplaceProfile.Location = new System.Drawing.Point(178, 22);
-            this.UsernameReplaceProfile.Name = "UsernameReplaceProfile";
-            this.UsernameReplaceProfile.Size = new System.Drawing.Size(110, 25);
-            this.UsernameReplaceProfile.TabIndex = 57;
-            this.UsernameReplaceProfile.Text = "Username";
-            this.UsernameReplaceProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // FirstNameReplaceProfile
-            // 
-            this.FirstNameReplaceProfile.AutoSize = true;
-            this.FirstNameReplaceProfile.BackColor = System.Drawing.Color.Transparent;
-            this.FirstNameReplaceProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FirstNameReplaceProfile.ForeColor = System.Drawing.Color.Black;
-            this.FirstNameReplaceProfile.Location = new System.Drawing.Point(177, 63);
-            this.FirstNameReplaceProfile.Name = "FirstNameReplaceProfile";
-            this.FirstNameReplaceProfile.Size = new System.Drawing.Size(40, 25);
-            this.FirstNameReplaceProfile.TabIndex = 58;
-            this.FirstNameReplaceProfile.Text = "FN";
-            this.FirstNameReplaceProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // LastNameReplaceProfile
-            // 
-            this.LastNameReplaceProfile.AutoSize = true;
-            this.LastNameReplaceProfile.BackColor = System.Drawing.Color.Transparent;
-            this.LastNameReplaceProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LastNameReplaceProfile.ForeColor = System.Drawing.Color.Black;
-            this.LastNameReplaceProfile.Location = new System.Drawing.Point(178, 107);
-            this.LastNameReplaceProfile.Name = "LastNameReplaceProfile";
-            this.LastNameReplaceProfile.Size = new System.Drawing.Size(39, 25);
-            this.LastNameReplaceProfile.TabIndex = 59;
-            this.LastNameReplaceProfile.Text = "LN";
-            this.LastNameReplaceProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // ProgramReplaceProfile
-            // 
-            this.ProgramReplaceProfile.AutoSize = true;
-            this.ProgramReplaceProfile.BackColor = System.Drawing.Color.Transparent;
-            this.ProgramReplaceProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProgramReplaceProfile.ForeColor = System.Drawing.Color.Black;
-            this.ProgramReplaceProfile.Location = new System.Drawing.Point(177, 151);
-            this.ProgramReplaceProfile.Name = "ProgramReplaceProfile";
-            this.ProgramReplaceProfile.Size = new System.Drawing.Size(93, 25);
-            this.ProgramReplaceProfile.TabIndex = 60;
-            this.ProgramReplaceProfile.Text = "Program";
-            this.ProgramReplaceProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // GPAware
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.DASHBOARD);
+            this.Controls.Add(this.GPAEDIT);
+            this.Controls.Add(this.GPAVIEW);
             this.Controls.Add(this.PROFILE);
             this.Controls.Add(this.HOME);
-            this.Controls.Add(this.GPAVIEW);
-            this.Controls.Add(this.GPAEDIT);
             this.Controls.Add(this.SIGNUP);
-            this.Controls.Add(this.DASHBOARD);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "GPAware";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GPAware";
             this.Load += new System.EventHandler(this.GPAware_Load);
             this.HOME.ResumeLayout(false);
