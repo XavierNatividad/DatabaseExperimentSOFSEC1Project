@@ -266,7 +266,7 @@ namespace SOFSEC1_Project
             }
             else
             {
-                string DeansListMessage = "You are eligible to a Dean's Lister for the following terms: \n";
+                string DeansListMessage = "You are eligible to be on the Dean's List in the following terms: \n";
                 for (int i = 1; i < GetHighestTermNumber(); i++)
                 {
                     int flowcharttUnits = FlowchartUnits(i);
@@ -285,6 +285,7 @@ namespace SOFSEC1_Project
                     else
                     {
                         lowestGrade = -1;
+                        DeansListMessage = "You are not eligible to be on the Dean's List for any recorded term/s.";
                     }
 
                     if (lowestGrade != 1 && (lowestGrade >= 2.5 && takenUnits >= Math.Min(flowcharttUnits, 15)))
@@ -301,8 +302,17 @@ namespace SOFSEC1_Project
                             {
                                 DeansListMessage += $"\tTerm {i.ToString("00")} | {termGPA} | Second Honors \n";
                             }
+                            else
+                            {
+                                DeansListMessage = "You are not eligible to be on the Dean's List for any recorded term/s.";
+                            }
                         }
                     }
+                    else
+                    {
+                        DeansListMessage = "You are not eligible to be on the Dean's List for any recorded term/s.";
+                    }
+
                 }
                 return DeansListMessage;
             }

@@ -316,6 +316,7 @@ namespace SOFSEC1_Project
 
         private void LoginHome_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             string username = UsernameHomeLogin.Text;
             string password = PasswordHomeLogin.Text.Trim();
 
@@ -336,7 +337,6 @@ namespace SOFSEC1_Project
 
                     UsernameHomeLogin.Text = "";
                     PasswordHomeLogin.Text = "";
-
                     ShowPanel(DASHBOARD);
                 }
                 catch (Exception)
@@ -356,6 +356,7 @@ namespace SOFSEC1_Project
                 UsernameHomeLogin.Text = "";
                 PasswordHomeLogin.Text = "";
             }
+            Cursor.Current = Cursors.Default;
         }
 
         private void CreateAccountRedirect_Click(object sender, EventArgs e)
@@ -589,20 +590,12 @@ namespace SOFSEC1_Project
             GradesTableEdit.Columns.Add("AcademicUnit", "Academic Unit");
             GradesTableEdit.Columns.Add(gradePicker);
 
-            if (userLogin.grades.Count == 0)
+            foreach (var grade in userLogin.grades)
             {
-                GradesTableView.Rows.Add("", "", "", "", "", "", "");
-                GradesTableEdit.Rows.Add("", "", "", "", "", "", "");
-            }
-            else
-            {
-                foreach (var grade in userLogin.grades)
-                {
-                    GradesTableView.Rows.Add(grade.gradeId, grade.termNumber, grade.courseName, grade.courseCode, grade.units, grade.academicUnit, grade.grade);
+                GradesTableView.Rows.Add(grade.gradeId, grade.termNumber, grade.courseName, grade.courseCode, grade.units, grade.academicUnit, grade.grade);
 
-                    int rowIndex = GradesTableEdit.Rows.Add(grade.gradeId, grade.termNumber, grade.courseName, grade.courseCode, grade.units, grade.academicUnit);
-                    GradesTableEdit.Rows[rowIndex].Cells["Grade"].Value = grade.grade;
-                }
+                int rowIndex = GradesTableEdit.Rows.Add(grade.gradeId, grade.termNumber, grade.courseName, grade.courseCode, grade.units, grade.academicUnit);
+                GradesTableEdit.Rows[rowIndex].Cells["Grade"].Value = grade.grade;
             }
         }
 

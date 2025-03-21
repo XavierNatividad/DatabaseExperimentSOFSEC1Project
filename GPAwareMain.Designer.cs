@@ -28,16 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle111 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle112 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle113 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle114 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle115 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.HOME = new System.Windows.Forms.Panel();
             this.TopHome = new System.Windows.Forms.Panel();
             this.LogoHome = new System.Windows.Forms.Label();
             this.MainTabControl = new System.Windows.Forms.TabControl();
             this.About = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.ConversionTable = new System.Windows.Forms.TabPage();
             this.BottomHome = new System.Windows.Forms.Panel();
             this.RightHome = new System.Windows.Forms.Panel();
@@ -74,6 +78,12 @@
             this.DeleteGPAEdit = new System.Windows.Forms.Button();
             this.BottomSignup = new System.Windows.Forms.Panel();
             this.CenterSignup = new System.Windows.Forms.Panel();
+            this.UsernameSignupBox = new System.Windows.Forms.TextBox();
+            this.ProgramSignupBox = new System.Windows.Forms.ComboBox();
+            this.FirstNameSignupBox = new System.Windows.Forms.TextBox();
+            this.LastNameSignupBox = new System.Windows.Forms.TextBox();
+            this.PasswordSignupBox = new System.Windows.Forms.TextBox();
+            this.ConfirmPasswordSignupBox = new System.Windows.Forms.TextBox();
             this.ReturnToLoginButton = new System.Windows.Forms.Button();
             this.AccountCreationLabel = new System.Windows.Forms.Label();
             this.SuccessLabel = new System.Windows.Forms.Label();
@@ -82,18 +92,12 @@
             this.InvalidLastNameLabel = new System.Windows.Forms.Label();
             this.InvalidFirstNameLabel = new System.Windows.Forms.Label();
             this.InvalidUsernameLabel = new System.Windows.Forms.Label();
-            this.ProgramSignupBox = new System.Windows.Forms.ComboBox();
-            this.ConfirmPasswordSignupBox = new System.Windows.Forms.TextBox();
             this.ConfirmPasswordSignupText = new System.Windows.Forms.Label();
-            this.PasswordSignupBox = new System.Windows.Forms.TextBox();
             this.PasswordSignupText = new System.Windows.Forms.Label();
             this.ProgramSignupText = new System.Windows.Forms.Label();
-            this.LastNameSignupBox = new System.Windows.Forms.TextBox();
             this.LastNameSignupText = new System.Windows.Forms.Label();
-            this.FirstNameSignupBox = new System.Windows.Forms.TextBox();
             this.FirstNameSignupText = new System.Windows.Forms.Label();
             this.CreateAccountSignupBox = new System.Windows.Forms.Button();
-            this.UsernameSignupBox = new System.Windows.Forms.TextBox();
             this.UsernameSignupText = new System.Windows.Forms.Label();
             this.CreateNewAccountSignupText = new System.Windows.Forms.Label();
             this.SIGNUP = new System.Windows.Forms.Panel();
@@ -156,10 +160,6 @@
             this.GreyCenterGPAView = new System.Windows.Forms.Panel();
             this.GradesTableView = new System.Windows.Forms.DataGridView();
             this.sqLiteCommand1 = new System.Data.SQLite.SQLiteCommand();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.HOME.SuspendLayout();
             this.TopHome.SuspendLayout();
             this.MainTabControl.SuspendLayout();
@@ -248,6 +248,48 @@
             this.About.TabIndex = 0;
             this.About.Text = "About";
             this.About.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.SeaGreen;
+            this.label6.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(36, 35);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(593, 114);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "GPAware";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(0, 335);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(664, 33);
+            this.label11.TabIndex = 7;
+            this.label11.Text = " SOFSEC1 TCS2";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(0, 204);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(664, 33);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "by Xavier Natividad, Sofia Ferrer, Migs Albano, Joshua Yu, Miguel Flordeliza";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(0, 165);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(664, 33);
+            this.label4.TabIndex = 0;
+            this.label4.Text = " An encrypted CGPA tracker and recorder";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ConversionTable
             // 
@@ -633,35 +675,37 @@
             // 
             // GradesTableEdit
             // 
+            this.GradesTableEdit.AllowUserToAddRows = false;
+            this.GradesTableEdit.AllowUserToDeleteRows = false;
             this.GradesTableEdit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle111.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle111.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle111.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle111.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle111.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle111.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle111.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GradesTableEdit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle111;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GradesTableEdit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.GradesTableEdit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle112.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle112.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle112.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle112.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle112.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle112.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle112.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GradesTableEdit.DefaultCellStyle = dataGridViewCellStyle112;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GradesTableEdit.DefaultCellStyle = dataGridViewCellStyle7;
             this.GradesTableEdit.Location = new System.Drawing.Point(23, 17);
             this.GradesTableEdit.Margin = new System.Windows.Forms.Padding(2);
             this.GradesTableEdit.Name = "GradesTableEdit";
-            dataGridViewCellStyle113.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle113.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle113.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle113.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle113.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle113.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle113.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GradesTableEdit.RowHeadersDefaultCellStyle = dataGridViewCellStyle113;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GradesTableEdit.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.GradesTableEdit.RowHeadersWidth = 51;
             this.GradesTableEdit.RowTemplate.Height = 24;
             this.GradesTableEdit.Size = new System.Drawing.Size(973, 383);
@@ -748,6 +792,72 @@
             this.CenterSignup.Name = "CenterSignup";
             this.CenterSignup.Size = new System.Drawing.Size(1075, 367);
             this.CenterSignup.TabIndex = 3;
+            // 
+            // UsernameSignupBox
+            // 
+            this.UsernameSignupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsernameSignupBox.Location = new System.Drawing.Point(204, 100);
+            this.UsernameSignupBox.Name = "UsernameSignupBox";
+            this.UsernameSignupBox.Size = new System.Drawing.Size(284, 26);
+            this.UsernameSignupBox.TabIndex = 0;
+            this.UsernameSignupBox.TextChanged += new System.EventHandler(this.UsernameSignupBox_TextChanged);
+            this.UsernameSignupBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UsernameHomeLogin_KeyDown);
+            // 
+            // ProgramSignupBox
+            // 
+            this.ProgramSignupBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ProgramSignupBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ProgramSignupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ProgramSignupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProgramSignupBox.FormattingEnabled = true;
+            this.ProgramSignupBox.Location = new System.Drawing.Point(579, 98);
+            this.ProgramSignupBox.Name = "ProgramSignupBox";
+            this.ProgramSignupBox.Size = new System.Drawing.Size(284, 28);
+            this.ProgramSignupBox.TabIndex = 1;
+            this.ProgramSignupBox.DropDown += new System.EventHandler(this.ProgramSignupBox_DropDown);
+            this.ProgramSignupBox.SelectedIndexChanged += new System.EventHandler(this.ProgramSignupBox_SelectedIndexChanged);
+            this.ProgramSignupBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UsernameHomeLogin_KeyDown);
+            // 
+            // FirstNameSignupBox
+            // 
+            this.FirstNameSignupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FirstNameSignupBox.Location = new System.Drawing.Point(204, 176);
+            this.FirstNameSignupBox.Name = "FirstNameSignupBox";
+            this.FirstNameSignupBox.Size = new System.Drawing.Size(284, 26);
+            this.FirstNameSignupBox.TabIndex = 2;
+            this.FirstNameSignupBox.TextChanged += new System.EventHandler(this.FirstNameSignupBox_TextChanged);
+            this.FirstNameSignupBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UsernameHomeLogin_KeyDown);
+            // 
+            // LastNameSignupBox
+            // 
+            this.LastNameSignupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LastNameSignupBox.Location = new System.Drawing.Point(204, 230);
+            this.LastNameSignupBox.Name = "LastNameSignupBox";
+            this.LastNameSignupBox.Size = new System.Drawing.Size(284, 26);
+            this.LastNameSignupBox.TabIndex = 3;
+            this.LastNameSignupBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UsernameHomeLogin_KeyDown);
+            // 
+            // PasswordSignupBox
+            // 
+            this.PasswordSignupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PasswordSignupBox.Location = new System.Drawing.Point(579, 178);
+            this.PasswordSignupBox.Name = "PasswordSignupBox";
+            this.PasswordSignupBox.Size = new System.Drawing.Size(284, 26);
+            this.PasswordSignupBox.TabIndex = 4;
+            this.PasswordSignupBox.UseSystemPasswordChar = true;
+            this.PasswordSignupBox.TextChanged += new System.EventHandler(this.PasswordSignupBox_TextChanged);
+            this.PasswordSignupBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UsernameHomeLogin_KeyDown);
+            // 
+            // ConfirmPasswordSignupBox
+            // 
+            this.ConfirmPasswordSignupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConfirmPasswordSignupBox.Location = new System.Drawing.Point(579, 230);
+            this.ConfirmPasswordSignupBox.Name = "ConfirmPasswordSignupBox";
+            this.ConfirmPasswordSignupBox.Size = new System.Drawing.Size(284, 26);
+            this.ConfirmPasswordSignupBox.TabIndex = 5;
+            this.ConfirmPasswordSignupBox.UseSystemPasswordChar = true;
+            this.ConfirmPasswordSignupBox.TextChanged += new System.EventHandler(this.ConfirmPasswordSignupBox_TextChanged);
+            this.ConfirmPasswordSignupBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UsernameHomeLogin_KeyDown);
             // 
             // ReturnToLoginButton
             // 
@@ -847,32 +957,6 @@
             this.InvalidUsernameLabel.Text = "label1";
             this.InvalidUsernameLabel.Visible = false;
             // 
-            // ProgramSignupBox
-            // 
-            this.ProgramSignupBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ProgramSignupBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ProgramSignupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ProgramSignupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProgramSignupBox.FormattingEnabled = true;
-            this.ProgramSignupBox.Location = new System.Drawing.Point(579, 98);
-            this.ProgramSignupBox.Name = "ProgramSignupBox";
-            this.ProgramSignupBox.Size = new System.Drawing.Size(284, 28);
-            this.ProgramSignupBox.TabIndex = 1;
-            this.ProgramSignupBox.DropDown += new System.EventHandler(this.ProgramSignupBox_DropDown);
-            this.ProgramSignupBox.SelectedIndexChanged += new System.EventHandler(this.ProgramSignupBox_SelectedIndexChanged);
-            this.ProgramSignupBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UsernameHomeLogin_KeyDown);
-            // 
-            // ConfirmPasswordSignupBox
-            // 
-            this.ConfirmPasswordSignupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConfirmPasswordSignupBox.Location = new System.Drawing.Point(579, 230);
-            this.ConfirmPasswordSignupBox.Name = "ConfirmPasswordSignupBox";
-            this.ConfirmPasswordSignupBox.Size = new System.Drawing.Size(284, 26);
-            this.ConfirmPasswordSignupBox.TabIndex = 5;
-            this.ConfirmPasswordSignupBox.UseSystemPasswordChar = true;
-            this.ConfirmPasswordSignupBox.TextChanged += new System.EventHandler(this.ConfirmPasswordSignupBox_TextChanged);
-            this.ConfirmPasswordSignupBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UsernameHomeLogin_KeyDown);
-            // 
             // ConfirmPasswordSignupText
             // 
             this.ConfirmPasswordSignupText.AutoSize = true;
@@ -884,17 +968,6 @@
             this.ConfirmPasswordSignupText.Size = new System.Drawing.Size(137, 20);
             this.ConfirmPasswordSignupText.TabIndex = 16;
             this.ConfirmPasswordSignupText.Text = "Confirm Password";
-            // 
-            // PasswordSignupBox
-            // 
-            this.PasswordSignupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordSignupBox.Location = new System.Drawing.Point(579, 178);
-            this.PasswordSignupBox.Name = "PasswordSignupBox";
-            this.PasswordSignupBox.Size = new System.Drawing.Size(284, 26);
-            this.PasswordSignupBox.TabIndex = 4;
-            this.PasswordSignupBox.UseSystemPasswordChar = true;
-            this.PasswordSignupBox.TextChanged += new System.EventHandler(this.PasswordSignupBox_TextChanged);
-            this.PasswordSignupBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UsernameHomeLogin_KeyDown);
             // 
             // PasswordSignupText
             // 
@@ -920,15 +993,6 @@
             this.ProgramSignupText.TabIndex = 12;
             this.ProgramSignupText.Text = "Program";
             // 
-            // LastNameSignupBox
-            // 
-            this.LastNameSignupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LastNameSignupBox.Location = new System.Drawing.Point(204, 230);
-            this.LastNameSignupBox.Name = "LastNameSignupBox";
-            this.LastNameSignupBox.Size = new System.Drawing.Size(284, 26);
-            this.LastNameSignupBox.TabIndex = 3;
-            this.LastNameSignupBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UsernameHomeLogin_KeyDown);
-            // 
             // LastNameSignupText
             // 
             this.LastNameSignupText.AutoSize = true;
@@ -940,16 +1004,6 @@
             this.LastNameSignupText.Size = new System.Drawing.Size(84, 20);
             this.LastNameSignupText.TabIndex = 10;
             this.LastNameSignupText.Text = "Last name";
-            // 
-            // FirstNameSignupBox
-            // 
-            this.FirstNameSignupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FirstNameSignupBox.Location = new System.Drawing.Point(204, 176);
-            this.FirstNameSignupBox.Name = "FirstNameSignupBox";
-            this.FirstNameSignupBox.Size = new System.Drawing.Size(284, 26);
-            this.FirstNameSignupBox.TabIndex = 2;
-            this.FirstNameSignupBox.TextChanged += new System.EventHandler(this.FirstNameSignupBox_TextChanged);
-            this.FirstNameSignupBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UsernameHomeLogin_KeyDown);
             // 
             // FirstNameSignupText
             // 
@@ -973,16 +1027,6 @@
             this.CreateAccountSignupBox.Text = "Create account";
             this.CreateAccountSignupBox.UseVisualStyleBackColor = true;
             this.CreateAccountSignupBox.Click += new System.EventHandler(this.CreateAccountSignupBox_Click);
-            // 
-            // UsernameSignupBox
-            // 
-            this.UsernameSignupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsernameSignupBox.Location = new System.Drawing.Point(204, 100);
-            this.UsernameSignupBox.Name = "UsernameSignupBox";
-            this.UsernameSignupBox.Size = new System.Drawing.Size(284, 26);
-            this.UsernameSignupBox.TabIndex = 0;
-            this.UsernameSignupBox.TextChanged += new System.EventHandler(this.UsernameSignupBox_TextChanged);
-            this.UsernameSignupBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UsernameHomeLogin_KeyDown);
             // 
             // UsernameSignupText
             // 
@@ -1749,25 +1793,27 @@
             // 
             // GradesTableView
             // 
+            this.GradesTableView.AllowUserToAddRows = false;
+            this.GradesTableView.AllowUserToDeleteRows = false;
             this.GradesTableView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GradesTableView.CausesValidation = false;
-            dataGridViewCellStyle114.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle114.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle114.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle114.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle114.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle114.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle114.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GradesTableView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle114;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GradesTableView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.GradesTableView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle115.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle115.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle115.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle115.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle115.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle115.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle115.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GradesTableView.DefaultCellStyle = dataGridViewCellStyle115;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GradesTableView.DefaultCellStyle = dataGridViewCellStyle10;
             this.GradesTableView.Location = new System.Drawing.Point(24, 17);
             this.GradesTableView.Margin = new System.Windows.Forms.Padding(2);
             this.GradesTableView.Name = "GradesTableView";
@@ -1782,48 +1828,6 @@
             // 
             this.sqLiteCommand1.CommandText = null;
             // 
-            // label4
-            // 
-            this.label4.Location = new System.Drawing.Point(0, 165);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(664, 33);
-            this.label4.TabIndex = 0;
-            this.label4.Text = " An encrypted CGPA tracker and recorder";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(0, 204);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(664, 33);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "by Xavier Natividad, Sofia Ferrer, Migs Albano, Joshua Yu, Miguel Flordeliza";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label11
-            // 
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(0, 335);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(664, 33);
-            this.label11.TabIndex = 7;
-            this.label11.Text = " SOFSEC1 TCS2";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.BackColor = System.Drawing.Color.SeaGreen;
-            this.label6.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(36, 35);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(593, 114);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "GPAware";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // GPAware
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1831,11 +1835,11 @@
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.HOME);
+            this.Controls.Add(this.GPAVIEW);
+            this.Controls.Add(this.GPAEDIT);
             this.Controls.Add(this.SIGNUP);
             this.Controls.Add(this.DASHBOARD);
-            this.Controls.Add(this.GPAEDIT);
             this.Controls.Add(this.PROFILE);
-            this.Controls.Add(this.GPAVIEW);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "GPAware";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
