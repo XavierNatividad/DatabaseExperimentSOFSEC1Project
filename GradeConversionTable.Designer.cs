@@ -36,8 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "GradeConversionTable";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Grade Conversion Table";
+            this.Text = "GradeConversionTable";
             this.Load += new System.EventHandler(this.GradeConversionTable_Load);
             this.ResumeLayout(false);
 

@@ -17,12 +17,12 @@ namespace DatabaseExperimentSOFSEC1Project
         public GradeConversionTable()
         {
             InitializeComponent();
-            this.Load += GradeConversionTable_Load; 
+            this.Load += GradeConversionTable_Load;  // Attach the Load event
         }
 
         private void GradeConversionTable_Load(object sender, EventArgs e)
         {
-            SetupConversionTable(); 
+            SetupConversionTable();  // Call SetupConversionTable when the form loads
         }
 
         private void SetupConversionTable()
