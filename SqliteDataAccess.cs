@@ -92,7 +92,7 @@ namespace SOFSEC1_Project
                     string courseNameOutput = GPAwareCryptography.Encrypt(password, courseNameInput);
                     string courseCodeOutput = GPAwareCryptography.Encrypt(password, courseCodeInput);
                     string unitsOutput = GPAwareCryptography.Encrypt(password, unitsInput);
-                    string gradeOutput = GPAwareCryptography.Encrypt (password, gradeInput);
+                    string gradeOutput = GPAwareCryptography.Encrypt(password, gradeInput);
                     string academincUnitOutput = GPAwareCryptography.Encrypt(password, academincUnitInput);
 
                     DynamicParameters gradeParameters = new DynamicParameters();
