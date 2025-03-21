@@ -333,7 +333,7 @@ namespace SOFSEC1_Project
                     NonAcademicUnitsValueLabel.Text = units[1];
                     TotalUnitsValueLabel.Text = units[2];
                     DeansListTitleLabel.Text = userLogin.DeansList();
-                    
+
                     UsernameHomeLogin.Text = "";
                     PasswordHomeLogin.Text = "";
 
@@ -421,6 +421,9 @@ namespace SOFSEC1_Project
 
         private void ReturnToLoginButton_Click_1(object sender, EventArgs e)
         {
+            UsernameHomeLogin.Text = "";
+            PasswordHomeLogin.Text = "";
+
             UsernameSignupBox.Text = "";
             FirstNameSignupBox.Text = "";
             LastNameSignupBox.Text = "";
@@ -537,7 +540,8 @@ namespace SOFSEC1_Project
             LogoutConfirm confirmDialog = new LogoutConfirm(() =>
             {
                 ShowPanel(HOME);
-                userLogin = null;
+                            UsernameHomeLogin.Text = "";
+            PasswordHomeLogin.Text = "";
             });
 
             if (confirmDialog.ShowDialog() == DialogResult.OK)
@@ -609,6 +613,26 @@ namespace SOFSEC1_Project
             NoButtonClear.Visible = false;
             YesButtonDiscard.Visible = false;
             NoButtonDiscard.Visible = false;
+        }
+
+        private void UsernameHomeLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; 
+
+                Control nextControl = this.GetNextControl((Control)sender, true);
+
+                while (nextControl != null && !(nextControl is TextBox))
+                {
+                    nextControl = this.GetNextControl(nextControl, true);
+                }
+
+                if (nextControl != null)
+                {
+                    nextControl.Focus();
+                }
+            }
         }
     }
 }
