@@ -377,11 +377,6 @@ namespace SOFSEC1_Project
             ShowPanel(SIGNUP);
         }
 
-        private void LogoProfile_Click(object sender, EventArgs e)
-        {
-            ShowPanel(HOME);
-        }
-
         private void DashboardProfile_Click(object sender, EventArgs e)
         {
             ShowPanel(DASHBOARD);
@@ -555,7 +550,7 @@ namespace SOFSEC1_Project
 
         private void MainTabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (MainTabControl.SelectedTab == ConversionTable) 
+            if (MainTabControl.SelectedTab == ConversionTable) // Ensure you're on the correct tab
             {
                 ShowGradeConversionTable();
             }
@@ -563,6 +558,7 @@ namespace SOFSEC1_Project
 
         private void ShowGradeConversionTable()
         {
+            // Prevent multiple instances of the form inside the tab
             ConversionTable.Controls.Clear();
 
             GradeConversionTable gradeForm = new GradeConversionTable();
@@ -572,6 +568,19 @@ namespace SOFSEC1_Project
 
             ConversionTable.Controls.Add(gradeForm);
             gradeForm.Show();
+        }
+
+        private void LogOutProfile_Click(object sender, EventArgs e)
+        {
+            LogoutConfirm confirmDialog = new LogoutConfirm(() =>
+            {
+                ShowPanel(HOME);
+                userLogin = null;
+            });
+
+            if (confirmDialog.ShowDialog() == DialogResult.OK)
+            {
+            }
         }
     }
 }
