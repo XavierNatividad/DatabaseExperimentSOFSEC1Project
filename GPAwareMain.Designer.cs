@@ -102,6 +102,7 @@
             this.LogoSignup = new System.Windows.Forms.Label();
             this.DASHBOARD = new System.Windows.Forms.Panel();
             this.TopDashboard = new System.Windows.Forms.Panel();
+            this.LogOutDashboard = new System.Windows.Forms.Label();
             this.NameDashboard = new System.Windows.Forms.Label();
             this.CGPADashboard = new System.Windows.Forms.Label();
             this.DashboardDashboard = new System.Windows.Forms.Label();
@@ -124,6 +125,7 @@
             this.WelcomeDashboardText = new System.Windows.Forms.Label();
             this.PROFILE = new System.Windows.Forms.Panel();
             this.TopProfile = new System.Windows.Forms.Panel();
+            this.LogOutProfile = new System.Windows.Forms.Label();
             this.NameProfile = new System.Windows.Forms.Label();
             this.CGPAProfile = new System.Windows.Forms.Label();
             this.DashboardProfile = new System.Windows.Forms.Label();
@@ -132,12 +134,17 @@
             this.CenterProfile = new System.Windows.Forms.Panel();
             this.ProfileTextProfile = new System.Windows.Forms.Label();
             this.GreyCenterProfile = new System.Windows.Forms.Panel();
+            this.ProgramReplaceProfile = new System.Windows.Forms.Label();
+            this.LastNameReplaceProfile = new System.Windows.Forms.Label();
+            this.FirstNameReplaceProfile = new System.Windows.Forms.Label();
+            this.UsernameReplaceProfile = new System.Windows.Forms.Label();
             this.ProgramProfile = new System.Windows.Forms.Label();
             this.LastNameProfile = new System.Windows.Forms.Label();
             this.FirstNameProfile = new System.Windows.Forms.Label();
             this.UsernameProfile = new System.Windows.Forms.Label();
             this.GPAVIEW = new System.Windows.Forms.Panel();
             this.TopGPAView = new System.Windows.Forms.Panel();
+            this.LogOutGPAView = new System.Windows.Forms.Label();
             this.NameGPAView = new System.Windows.Forms.Label();
             this.CGPAGPAView = new System.Windows.Forms.Label();
             this.DashboardGPAView = new System.Windows.Forms.Label();
@@ -150,13 +157,6 @@
             this.GreyCenterGPAView = new System.Windows.Forms.Panel();
             this.GradesTableView = new System.Windows.Forms.DataGridView();
             this.sqLiteCommand1 = new System.Data.SQLite.SQLiteCommand();
-            this.LogOutGPAView = new System.Windows.Forms.Label();
-            this.LogOutDashboard = new System.Windows.Forms.Label();
-            this.LogOutProfile = new System.Windows.Forms.Label();
-            this.UsernameReplaceProfile = new System.Windows.Forms.Label();
-            this.FirstNameReplaceProfile = new System.Windows.Forms.Label();
-            this.LastNameReplaceProfile = new System.Windows.Forms.Label();
-            this.ProgramReplaceProfile = new System.Windows.Forms.Label();
             this.HOME.SuspendLayout();
             this.TopHome.SuspendLayout();
             this.MainTabControl.SuspendLayout();
@@ -246,7 +246,7 @@
             this.ConversionTable.Location = new System.Drawing.Point(4, 34);
             this.ConversionTable.Name = "ConversionTable";
             this.ConversionTable.Padding = new System.Windows.Forms.Padding(3);
-            this.ConversionTable.Size = new System.Drawing.Size(653, 380);
+            this.ConversionTable.Size = new System.Drawing.Size(664, 380);
             this.ConversionTable.TabIndex = 1;
             this.ConversionTable.Text = "Conversion Table";
             this.ConversionTable.UseVisualStyleBackColor = true;
@@ -329,9 +329,8 @@
             // 
             this.PasswordHomeLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PasswordHomeLogin.Location = new System.Drawing.Point(48, 193);
-            this.PasswordHomeLogin.Multiline = true;
             this.PasswordHomeLogin.Name = "PasswordHomeLogin";
-            this.PasswordHomeLogin.Size = new System.Drawing.Size(314, 35);
+            this.PasswordHomeLogin.Size = new System.Drawing.Size(314, 29);
             this.PasswordHomeLogin.TabIndex = 5;
             this.PasswordHomeLogin.Text = " ";
             this.PasswordHomeLogin.TextChanged += new System.EventHandler(this.PasswordHomeLogin_TextChanged);
@@ -351,9 +350,8 @@
             // 
             this.UsernameHomeLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UsernameHomeLogin.Location = new System.Drawing.Point(48, 111);
-            this.UsernameHomeLogin.Multiline = true;
             this.UsernameHomeLogin.Name = "UsernameHomeLogin";
-            this.UsernameHomeLogin.Size = new System.Drawing.Size(314, 35);
+            this.UsernameHomeLogin.Size = new System.Drawing.Size(314, 29);
             this.UsernameHomeLogin.TabIndex = 3;
             this.UsernameHomeLogin.Text = " ";
             this.UsernameHomeLogin.TextChanged += new System.EventHandler(this.UsernameHomeLogin_TextChanged);
@@ -1062,6 +1060,18 @@
             this.TopDashboard.Size = new System.Drawing.Size(1264, 89);
             this.TopDashboard.TabIndex = 4;
             // 
+            // LogOutDashboard
+            // 
+            this.LogOutDashboard.BackColor = System.Drawing.Color.Transparent;
+            this.LogOutDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LogOutDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOutDashboard.ForeColor = System.Drawing.Color.White;
+            this.LogOutDashboard.Location = new System.Drawing.Point(1121, 40);
+            this.LogOutDashboard.Name = "LogOutDashboard";
+            this.LogOutDashboard.Size = new System.Drawing.Size(109, 47);
+            this.LogOutDashboard.TabIndex = 6;
+            this.LogOutDashboard.Text = "Log out";
+            // 
             // NameDashboard
             // 
             this.NameDashboard.BackColor = System.Drawing.Color.Transparent;
@@ -1343,6 +1353,18 @@
             this.TopProfile.Size = new System.Drawing.Size(1264, 89);
             this.TopProfile.TabIndex = 0;
             // 
+            // LogOutProfile
+            // 
+            this.LogOutProfile.BackColor = System.Drawing.Color.Transparent;
+            this.LogOutProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LogOutProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOutProfile.ForeColor = System.Drawing.Color.White;
+            this.LogOutProfile.Location = new System.Drawing.Point(1121, 40);
+            this.LogOutProfile.Name = "LogOutProfile";
+            this.LogOutProfile.Size = new System.Drawing.Size(109, 47);
+            this.LogOutProfile.TabIndex = 7;
+            this.LogOutProfile.Text = "Log out";
+            // 
             // NameProfile
             // 
             this.NameProfile.BackColor = System.Drawing.Color.Transparent;
@@ -1445,6 +1467,58 @@
             this.GreyCenterProfile.Size = new System.Drawing.Size(1211, 400);
             this.GreyCenterProfile.TabIndex = 44;
             // 
+            // ProgramReplaceProfile
+            // 
+            this.ProgramReplaceProfile.AutoSize = true;
+            this.ProgramReplaceProfile.BackColor = System.Drawing.Color.Transparent;
+            this.ProgramReplaceProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProgramReplaceProfile.ForeColor = System.Drawing.Color.Black;
+            this.ProgramReplaceProfile.Location = new System.Drawing.Point(177, 151);
+            this.ProgramReplaceProfile.Name = "ProgramReplaceProfile";
+            this.ProgramReplaceProfile.Size = new System.Drawing.Size(93, 25);
+            this.ProgramReplaceProfile.TabIndex = 60;
+            this.ProgramReplaceProfile.Text = "Program";
+            this.ProgramReplaceProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // LastNameReplaceProfile
+            // 
+            this.LastNameReplaceProfile.AutoSize = true;
+            this.LastNameReplaceProfile.BackColor = System.Drawing.Color.Transparent;
+            this.LastNameReplaceProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LastNameReplaceProfile.ForeColor = System.Drawing.Color.Black;
+            this.LastNameReplaceProfile.Location = new System.Drawing.Point(178, 107);
+            this.LastNameReplaceProfile.Name = "LastNameReplaceProfile";
+            this.LastNameReplaceProfile.Size = new System.Drawing.Size(39, 25);
+            this.LastNameReplaceProfile.TabIndex = 59;
+            this.LastNameReplaceProfile.Text = "LN";
+            this.LastNameReplaceProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // FirstNameReplaceProfile
+            // 
+            this.FirstNameReplaceProfile.AutoSize = true;
+            this.FirstNameReplaceProfile.BackColor = System.Drawing.Color.Transparent;
+            this.FirstNameReplaceProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FirstNameReplaceProfile.ForeColor = System.Drawing.Color.Black;
+            this.FirstNameReplaceProfile.Location = new System.Drawing.Point(177, 63);
+            this.FirstNameReplaceProfile.Name = "FirstNameReplaceProfile";
+            this.FirstNameReplaceProfile.Size = new System.Drawing.Size(40, 25);
+            this.FirstNameReplaceProfile.TabIndex = 58;
+            this.FirstNameReplaceProfile.Text = "FN";
+            this.FirstNameReplaceProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // UsernameReplaceProfile
+            // 
+            this.UsernameReplaceProfile.AutoSize = true;
+            this.UsernameReplaceProfile.BackColor = System.Drawing.Color.Transparent;
+            this.UsernameReplaceProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsernameReplaceProfile.ForeColor = System.Drawing.Color.Black;
+            this.UsernameReplaceProfile.Location = new System.Drawing.Point(178, 22);
+            this.UsernameReplaceProfile.Name = "UsernameReplaceProfile";
+            this.UsernameReplaceProfile.Size = new System.Drawing.Size(110, 25);
+            this.UsernameReplaceProfile.TabIndex = 57;
+            this.UsernameReplaceProfile.Text = "Username";
+            this.UsernameReplaceProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // ProgramProfile
             // 
             this.ProgramProfile.AutoSize = true;
@@ -1523,6 +1597,18 @@
             this.TopGPAView.Name = "TopGPAView";
             this.TopGPAView.Size = new System.Drawing.Size(1264, 89);
             this.TopGPAView.TabIndex = 4;
+            // 
+            // LogOutGPAView
+            // 
+            this.LogOutGPAView.BackColor = System.Drawing.Color.Transparent;
+            this.LogOutGPAView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LogOutGPAView.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOutGPAView.ForeColor = System.Drawing.Color.White;
+            this.LogOutGPAView.Location = new System.Drawing.Point(1121, 40);
+            this.LogOutGPAView.Name = "LogOutGPAView";
+            this.LogOutGPAView.Size = new System.Drawing.Size(109, 47);
+            this.LogOutGPAView.TabIndex = 5;
+            this.LogOutGPAView.Text = "Log out";
             // 
             // NameGPAView
             // 
@@ -1682,105 +1768,17 @@
             // 
             this.sqLiteCommand1.CommandText = null;
             // 
-            // LogOutGPAView
-            // 
-            this.LogOutGPAView.BackColor = System.Drawing.Color.Transparent;
-            this.LogOutGPAView.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogOutGPAView.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogOutGPAView.ForeColor = System.Drawing.Color.White;
-            this.LogOutGPAView.Location = new System.Drawing.Point(1121, 40);
-            this.LogOutGPAView.Name = "LogOutGPAView";
-            this.LogOutGPAView.Size = new System.Drawing.Size(109, 47);
-            this.LogOutGPAView.TabIndex = 5;
-            this.LogOutGPAView.Text = "Log out";
-            // 
-            // LogOutDashboard
-            // 
-            this.LogOutDashboard.BackColor = System.Drawing.Color.Transparent;
-            this.LogOutDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogOutDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogOutDashboard.ForeColor = System.Drawing.Color.White;
-            this.LogOutDashboard.Location = new System.Drawing.Point(1121, 40);
-            this.LogOutDashboard.Name = "LogOutDashboard";
-            this.LogOutDashboard.Size = new System.Drawing.Size(109, 47);
-            this.LogOutDashboard.TabIndex = 6;
-            this.LogOutDashboard.Text = "Log out";
-            // 
-            // LogOutProfile
-            // 
-            this.LogOutProfile.BackColor = System.Drawing.Color.Transparent;
-            this.LogOutProfile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogOutProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogOutProfile.ForeColor = System.Drawing.Color.White;
-            this.LogOutProfile.Location = new System.Drawing.Point(1121, 40);
-            this.LogOutProfile.Name = "LogOutProfile";
-            this.LogOutProfile.Size = new System.Drawing.Size(109, 47);
-            this.LogOutProfile.TabIndex = 7;
-            this.LogOutProfile.Text = "Log out";
-            // 
-            // UsernameReplaceProfile
-            // 
-            this.UsernameReplaceProfile.AutoSize = true;
-            this.UsernameReplaceProfile.BackColor = System.Drawing.Color.Transparent;
-            this.UsernameReplaceProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsernameReplaceProfile.ForeColor = System.Drawing.Color.Black;
-            this.UsernameReplaceProfile.Location = new System.Drawing.Point(178, 22);
-            this.UsernameReplaceProfile.Name = "UsernameReplaceProfile";
-            this.UsernameReplaceProfile.Size = new System.Drawing.Size(110, 25);
-            this.UsernameReplaceProfile.TabIndex = 57;
-            this.UsernameReplaceProfile.Text = "Username";
-            this.UsernameReplaceProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // FirstNameReplaceProfile
-            // 
-            this.FirstNameReplaceProfile.AutoSize = true;
-            this.FirstNameReplaceProfile.BackColor = System.Drawing.Color.Transparent;
-            this.FirstNameReplaceProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FirstNameReplaceProfile.ForeColor = System.Drawing.Color.Black;
-            this.FirstNameReplaceProfile.Location = new System.Drawing.Point(177, 63);
-            this.FirstNameReplaceProfile.Name = "FirstNameReplaceProfile";
-            this.FirstNameReplaceProfile.Size = new System.Drawing.Size(40, 25);
-            this.FirstNameReplaceProfile.TabIndex = 58;
-            this.FirstNameReplaceProfile.Text = "FN";
-            this.FirstNameReplaceProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // LastNameReplaceProfile
-            // 
-            this.LastNameReplaceProfile.AutoSize = true;
-            this.LastNameReplaceProfile.BackColor = System.Drawing.Color.Transparent;
-            this.LastNameReplaceProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LastNameReplaceProfile.ForeColor = System.Drawing.Color.Black;
-            this.LastNameReplaceProfile.Location = new System.Drawing.Point(178, 107);
-            this.LastNameReplaceProfile.Name = "LastNameReplaceProfile";
-            this.LastNameReplaceProfile.Size = new System.Drawing.Size(39, 25);
-            this.LastNameReplaceProfile.TabIndex = 59;
-            this.LastNameReplaceProfile.Text = "LN";
-            this.LastNameReplaceProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // ProgramReplaceProfile
-            // 
-            this.ProgramReplaceProfile.AutoSize = true;
-            this.ProgramReplaceProfile.BackColor = System.Drawing.Color.Transparent;
-            this.ProgramReplaceProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProgramReplaceProfile.ForeColor = System.Drawing.Color.Black;
-            this.ProgramReplaceProfile.Location = new System.Drawing.Point(177, 151);
-            this.ProgramReplaceProfile.Name = "ProgramReplaceProfile";
-            this.ProgramReplaceProfile.Size = new System.Drawing.Size(93, 25);
-            this.ProgramReplaceProfile.TabIndex = 60;
-            this.ProgramReplaceProfile.Text = "Program";
-            this.ProgramReplaceProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // GPAware
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.PROFILE);
             this.Controls.Add(this.HOME);
-            this.Controls.Add(this.GPAVIEW);
-            this.Controls.Add(this.GPAEDIT);
             this.Controls.Add(this.SIGNUP);
+            this.Controls.Add(this.GPAVIEW);
+            this.Controls.Add(this.PROFILE);
+            this.Controls.Add(this.GPAEDIT);
             this.Controls.Add(this.DASHBOARD);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "GPAware";

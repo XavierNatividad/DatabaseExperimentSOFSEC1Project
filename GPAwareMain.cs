@@ -555,7 +555,7 @@ namespace SOFSEC1_Project
 
         private void MainTabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (MainTabControl.SelectedTab == ConversionTable) // Ensure you're on the correct tab
+            if (MainTabControl.SelectedTab == ConversionTable) 
             {
                 ShowGradeConversionTable();
             }
@@ -563,7 +563,6 @@ namespace SOFSEC1_Project
 
         private void ShowGradeConversionTable()
         {
-            // Prevent multiple instances of the form inside the tab
             ConversionTable.Controls.Clear();
 
             GradeConversionTable gradeForm = new GradeConversionTable();
