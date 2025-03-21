@@ -34,8 +34,9 @@ namespace SOFSEC1_Project
 
             User_ProfileModel profile = SqliteDataAccess.GetUserProfile(this.userId);
 
-            DecryptProfile(profile);
             grades = SqliteDataAccess.GetGrades(this.userId);
+            grades = DecryptGrades(grades);
+            DecryptProfile(profile);
         }
         public void DecryptProfile(User_ProfileModel profile)
         {
@@ -43,13 +44,22 @@ namespace SOFSEC1_Project
             lastName = GPAwareCryptography.Decrypt(password, profile.lastName);
             programId = SqliteDataAccess.GetProgramName(GPAwareCryptography.Decrypt(password, profile.programId));
         }
-        public void DecryptGrades()
+        public List<GradeModel> DecryptGrades(List<GradeModel> inputGrades)
         {
-            foreach (GradeModel grade in grades)
+            List<GradeModel> decryptedGrades = new List<GradeModel>();
+            foreach (GradeModel grade in inputGrades)
             {
-                grade.courseName = GPAwareCryptography.Decrypt(password, grade.courseName);
-                grade.grade = GPAwareCryptography.Decrypt(password, grade.grade);
+                GradeModel newGrade = new GradeModel();
+                newGrade.termNumber = GPAwareCryptography.Decrypt(password, grade.termNumber);
+                newGrade.courseName = GPAwareCryptography.Decrypt(password, grade.courseName);
+                newGrade.courseCode = GPAwareCryptography.Decrypt(password, grade.courseCode);
+                newGrade.units = GPAwareCryptography.Decrypt(password, grade.units);
+                newGrade.grade = GPAwareCryptography.Decrypt(password, grade.grade);
+                newGrade.academicUnit = GPAwareCryptography.Decrypt(password, grade.academicUnit);
+                decryptedGrades.Add(newGrade);
             }
+            
+            return decryptedGrades;
         }
         public string[] totalUnits()
         {
@@ -57,11 +67,11 @@ namespace SOFSEC1_Project
             int nonAcademicUnitsCount = 0;
             foreach (GradeModel grade in grades)
             {
-                if(grade.academicUnit == "TRUE" && grade.grade != null)
+                if(grade.academicUnit == "TRUE" && grade.grade != "N/A")
                 {
                     acaemicUnitsCount += Convert.ToInt32(grade.units);
                 }
-                if (grade.academicUnit == "FALSE" && grade.grade != null)
+                if (grade.academicUnit == "FALSE" && grade.grade != "N/A")
                 {
                     nonAcademicUnitsCount += Convert.ToInt32(grade.units);
                 }
@@ -76,7 +86,7 @@ namespace SOFSEC1_Project
             double totalUnits = 0;
             foreach (GradeModel grade in grades)
             {
-                if (grade.academicUnit == "TRUE" && grade.grade != null)
+                if (grade.academicUnit == "TRUE" && grade.grade != "N/A")
                 {
                     totalGradePoints += Convert.ToDouble(grade.grade) * Convert.ToDouble(grade.units);
                     totalUnits += Convert.ToDouble(grade.units);
@@ -147,7 +157,7 @@ namespace SOFSEC1_Project
             bool hasFailingGrade = false;
             foreach (GradeModel grade in grades)
             {
-                if (grade.academicUnit == "TRUE" && grade.grade != null)
+                if (grade.academicUnit == "TRUE" && grade.grade != "N/A")
                 {
                     if (Convert.ToDouble(grade.grade) < 1.0)
                     {

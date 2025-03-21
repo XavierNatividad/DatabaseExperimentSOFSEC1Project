@@ -80,15 +80,31 @@ namespace SOFSEC1_Project
 
                 foreach (var course in program_courses)
                 {
-                    DynamicParameters gradeParameters = new DynamicParameters();
-                    gradeParameters.Add("@userId", userId);
-                    gradeParameters.Add("@termNumber", course.termNumber);
-                    gradeParameters.Add("@courseName", course.courseName);
-                    gradeParameters.Add("@courseCode", course.courseCode);
-                    gradeParameters.Add("@units", course.units);
-                    gradeParameters.Add("@academicUnit", course.academicUnit);
+                    int userIdInput = Convert.ToInt32(userId);
+                    string termNumberInput = course.termNumber;
+                    string courseNameInput = course.courseName;
+                    string courseCodeInput = course.courseCode;
+                    string unitsInput = course.units;
+                    string gradeInput = "N/A";
+                    string academincUnitInput = course.academicUnit;
 
-                    cnn.Execute("INSERT into grade (userId, termNumber, courseName, courseCode, units, academicUnit) values (@userId, @termNumber, @courseName, @courseCode, @units, @academicUnit)", gradeParameters);
+                    string termNumberOutput = GPAwareCryptography.Encrypt(password, termNumberInput);
+                    string courseNameOutput = GPAwareCryptography.Encrypt(password, courseNameInput);
+                    string courseCodeOutput = GPAwareCryptography.Encrypt(password, courseCodeInput);
+                    string unitsOutput = GPAwareCryptography.Encrypt(password, unitsInput);
+                    string gradeOutput = GPAwareCryptography.Encrypt (password, gradeInput);
+                    string academincUnitOutput = GPAwareCryptography.Encrypt(password, academincUnitInput);
+
+                    DynamicParameters gradeParameters = new DynamicParameters();
+                    gradeParameters.Add("@userId", userIdInput);
+                    gradeParameters.Add("@termNumber", termNumberOutput);
+                    gradeParameters.Add("@courseName", courseNameOutput);
+                    gradeParameters.Add("@courseCode", courseCodeOutput);
+                    gradeParameters.Add("@units", unitsOutput);
+                    gradeParameters.Add("@grade", gradeOutput);
+                    gradeParameters.Add("@academicUnit", academincUnitOutput);
+
+                    cnn.Execute("INSERT into grade (userId, termNumber, courseName, courseCode, units, grade, academicUnit) values (@userId, @termNumber, @courseName, @courseCode, @units, @grade, @academicUnit)", gradeParameters);
                 }
             }
         }
