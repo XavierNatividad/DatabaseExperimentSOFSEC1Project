@@ -21,7 +21,7 @@ namespace SOFSEC1_Project
         public GPAware()
         {
             InitializeComponent();
-            ShowPanel(HOME);
+            //ShowPanel(HOME);
             // TO START WITH HOME ALWAYS
             
         }
@@ -243,11 +243,6 @@ namespace SOFSEC1_Project
                 firstName = GPAwareCryptography.Encrypt(password, firstName);
                 newUser.firstName = firstName;
 
-                passwordHash.Text = firstName;
-                passwordHash.Text = GPAwareCryptography.Decrypt(password, firstName);
-                passwordHashAfter.Text = newUser.firstName;
-
-
                 lastName = GPAwareCryptography.Encrypt(password, lastName);
                 newUser.lastName = lastName;
 
@@ -434,11 +429,11 @@ namespace SOFSEC1_Project
         private void NameProfile_Click(object sender, EventArgs e)
         {
             ShowPanel(PROFILE);
-            UsernameBoxProfile.Text = userLogin.username.ToString();
+            UsernameReplaceProfile.Text = userLogin.username.ToString();
 
-            FirstNameBoxProfile.Text = userLogin.firstName.ToString();
-            LastNameBoxProfile.Text = userLogin.lastName.ToString();
-            ProgramBoxProfile.Text = userLogin.programId.ToString();
+            FirstNameReplaceProfile.Text = userLogin.firstName.ToString();
+            LastNameReplaceProfile.Text = userLogin.lastName.ToString();
+            ProgramReplaceProfile.Text = userLogin.programId.ToString();
 
             //FirstNameBoxProfile.Text = GPAwareCryptography.Decrypt(userLogin.password, userLogin.firstName);
             //LastNameBoxProfile.Text = GPAwareCryptography.Decrypt(userLogin.password, userLogin.lastName);
@@ -558,5 +553,26 @@ namespace SOFSEC1_Project
             NoButtonDiscard.Visible = false;
         }
 
+        private void MainTabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (MainTabControl.SelectedTab == ConversionTable) // Ensure you're on the correct tab
+            {
+                ShowGradeConversionTable();
+            }
+        }
+
+        private void ShowGradeConversionTable()
+        {
+            // Prevent multiple instances of the form inside the tab
+            ConversionTable.Controls.Clear();
+
+            GradeConversionTable gradeForm = new GradeConversionTable();
+            gradeForm.TopLevel = false; 
+            gradeForm.FormBorderStyle = FormBorderStyle.None; 
+            gradeForm.Dock = DockStyle.Fill; 
+
+            ConversionTable.Controls.Add(gradeForm);
+            gradeForm.Show();
+        }
     }
 }
