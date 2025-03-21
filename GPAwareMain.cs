@@ -21,9 +21,9 @@ namespace SOFSEC1_Project
         public GPAware()
         {
             InitializeComponent();
-            //ShowPanel(HOME);
+            ShowPanel(HOME);
             // TO START WITH HOME ALWAYS
-            
+
         }
 
         private void ShowPanel(Panel panelToShow)
@@ -48,7 +48,6 @@ namespace SOFSEC1_Project
             string firstName = FirstNameSignupBox.Text;
             string lastName = LastNameSignupBox.Text;
             string program = ProgramSignupBox.Text;
-            bool autoGenerateCourses = AutoGenerateCourses.Checked;
             string password = PasswordSignupBox.Text.Trim();
             string confirmPassword = ConfirmPasswordSignupBox.Text;
 
@@ -249,35 +248,13 @@ namespace SOFSEC1_Project
                 program = GPAwareCryptography.Encrypt(password, program);
                 newUser.program = program;
 
-                if (autoGenerateCourses)
-                {
-                    SqliteDataAccess.AddUser(newUser, password, GPAwareCryptography.Decrypt(password, program));
-                }
-                else
-                {
-                    SqliteDataAccess.AddUser(newUser, password);
-                }
+                SqliteDataAccess.AddUser(newUser, password, GPAwareCryptography.Decrypt(password, program));
+
                 AccountCreationLabel.Visible = false;
                 ReturnToLoginButton.Visible = true;
                 Cursor.Current = Cursors.Default;
-                SuccessLabel.Text = "Account creation successful!";
-                
-                newUser = null;
-                newUser = null;
-                cryptography = null;
-                username = null;
-                firstName = null;
-                lastName = null;
-                program = null;
-                autoGenerateCourses = false;
-                password = null;
-                confirmPassword = null;
-
-                usernamePassed = false;
-                fnPassed = false;
-                lnPassed = false;
-                programPassed = false;
-                passwordPassed = false;
+                SuccessLabel.Text = "Account creation successful!"; 
+                SuccessLabel.Visible = true;
             }
             newUser = null;
             newUser = null;
@@ -286,7 +263,6 @@ namespace SOFSEC1_Project
             firstName = null;
             lastName = null;
             program = null;
-            autoGenerateCourses = false;
             password = null;
             confirmPassword = null;
 
@@ -345,30 +321,40 @@ namespace SOFSEC1_Project
 
             if (SqliteDataAccess.VerifyLogin(username, password))
             {
-                //try
-                //{
+                try
+                {
                     userLogin = new User_LoginModel(username, password);
                     string GPA = userLogin.CGPA().ToString();
                     GPALabel.Text = GPA;
                     TrackDashboardText.Text = userLogin.HonorsStanding();
-                    
+
                     string[] units = userLogin.totalUnits();
                     AcademicUnitsValueLabel.Text = units[0];
                     NonAcademicUnitsValueLabel.Text = units[1];
                     TotalUnitsValueLabel.Text = units[2];
+                    DeansListTitleLabel.Text = userLogin.DeansList();
                     
+                    UsernameHomeLogin.Text = "";
+                    PasswordHomeLogin.Text = "";
+
                     ShowPanel(DASHBOARD);
-                //}
-                //catch (Exception)
-                //{
-                //    InvalidLoginLabel.Text = "An error occurred while logging in.";
-                //    InvalidLoginLabel.Visible = true;
-                //}
+                }
+                catch (Exception)
+                {
+                    InvalidLoginLabel.Text = "An error occurred while logging in.";
+                    InvalidLoginLabel.Visible = true;
+
+                    UsernameHomeLogin.Text = "";
+                    PasswordHomeLogin.Text = "";
+                }
             }
             else
             {
                 InvalidLoginLabel.Text = "Username or password is invalid.";
                 InvalidLoginLabel.Visible = true;
+
+                UsernameHomeLogin.Text = "";
+                PasswordHomeLogin.Text = "";
             }
         }
 
@@ -379,45 +365,21 @@ namespace SOFSEC1_Project
 
         private void DashboardProfile_Click(object sender, EventArgs e)
         {
+            string GPA = userLogin.CGPA().ToString();
+            GPALabel.Text = GPA;
+            TrackDashboardText.Text = userLogin.HonorsStanding();
+
+            string[] units = userLogin.totalUnits();
+            AcademicUnitsValueLabel.Text = units[0];
+            NonAcademicUnitsValueLabel.Text = units[1];
+            TotalUnitsValueLabel.Text = units[2];
+            DeansListTitleLabel.Text = userLogin.DeansList();
             ShowPanel(DASHBOARD);
         }
 
         private void CGPAProfile_Click(object sender, EventArgs e)
         {
-            GradesTableView.Rows.Clear();
-            GradesTableView.Columns.Clear();
-            GradesTableView.Columns.Add("GradeID", "Grade ID");
-            GradesTableView.Columns.Add("TermNumber", "Term Number");
-            GradesTableView.Columns.Add("CourseName", "Course Name");
-            GradesTableView.Columns.Add("CourseCode", "Course Code");
-            GradesTableView.Columns.Add("Units", "Units");
-            GradesTableView.Columns.Add("Grade", "Grade");
-            GradesTableView.Columns.Add("AcademicUnit", "Academic Unit");
-
-            GradesTableEdit.Rows.Clear();
-            GradesTableEdit.Columns.Clear();
-            GradesTableEdit.Columns.Add("GradeID", "Grade ID");
-            GradesTableEdit.Columns.Add("TermNumber", "Term Number");
-            GradesTableEdit.Columns.Add("CourseName", "Course Name");
-            GradesTableEdit.Columns.Add("CourseCode", "Course Code");
-            GradesTableEdit.Columns.Add("Units", "Units");
-            GradesTableEdit.Columns.Add("Grade", "Grade");
-            GradesTableEdit.Columns.Add("AcademicUnit", "Academic Unit");
-
-
-            if (userLogin.grades.Count == 0)
-            {
-                GradesTableView.Rows.Add("", "", "", "", "", "");
-                GradesTableEdit.Rows.Add("", "", "", "", "", "");
-            }
-            else
-            {
-                foreach (var grade in userLogin.grades)
-                {
-                    GradesTableView.Rows.Add(grade.gradeId, grade.termNumber, grade.courseName, grade.courseCode, grade.units, grade.grade, grade.academicUnit);
-                    GradesTableEdit.Rows.Add(grade.gradeId, grade.termNumber, grade.courseName, grade.courseCode, grade.units, grade.grade, grade.academicUnit);
-                }
-            }
+            LoadGradesIntoDataGridView();
             ShowPanel(GPAVIEW);
         }
 
@@ -437,6 +399,7 @@ namespace SOFSEC1_Project
 
         private void EditModeGPAView_Click(object sender, EventArgs e)
         {
+            LoadGradesIntoDataGridView();
             ShowPanel(GPAEDIT);
         }
 
@@ -458,6 +421,15 @@ namespace SOFSEC1_Project
 
         private void ReturnToLoginButton_Click_1(object sender, EventArgs e)
         {
+            UsernameSignupBox.Text = "";
+            FirstNameSignupBox.Text = "";
+            LastNameSignupBox.Text = "";
+            ProgramSignupBox.Text = "";
+            PasswordSignupBox.Text = "";
+            ConfirmPasswordSignupBox.Text = "";
+
+            SuccessLabel.Visible = false;
+            CreateAccountSignupBox.Visible = true;
             ShowPanel(HOME);
         }
 
@@ -473,7 +445,16 @@ namespace SOFSEC1_Project
 
         private void SaveGPAEdit_Click(object sender, EventArgs e)
         {
+            YesButtonClear.Visible = false;
+            NoButtonClear.Visible = false;
+            YesButtonDiscard.Visible = false;
+            NoButtonDiscard.Visible = false;
             userLogin.SaveGrades(GradesTableEdit);
+
+            AreYouSureLabel.Text = "Your changes have been saved.";
+            AreYouSureLabel.Visible = true;
+            
+            LoadGradesIntoDataGridView();
         }
 
         private void GradeConversionTableButton_Click(object sender, EventArgs e)
@@ -507,11 +488,13 @@ namespace SOFSEC1_Project
         }
         private void YesButtonClear_Click(object sender, EventArgs e)
         {
+            YesButtonClear.Visible = false;
+            NoButtonClear.Visible = false;
             userLogin.ClearGrades(GradesTableEdit);
-
-            AreYouSureLabel.Visible = false;
-            YesButtonDiscard.Visible = false;
-            NoButtonDiscard.Visible = false;
+            LoadGradesIntoDataGridView();
+            AreYouSureLabel.ForeColor = Color.Black;
+            AreYouSureLabel.Text = "All grade entries have been cleared.";
+            
         }
         private void NoButtonDiscard_Click(object sender, EventArgs e)
         {
@@ -521,31 +504,10 @@ namespace SOFSEC1_Project
         }
         private void YesButtonDiscard_Click(object sender, EventArgs e)
         {
-            GradesTableEdit.Rows.Clear();
-            GradesTableEdit.Columns.Clear();
-            GradesTableEdit.Columns.Add("GradeID", "Grade ID");
-            GradesTableEdit.Columns.Add("TermNumber", "Term Number");
-            GradesTableEdit.Columns.Add("CourseName", "Course Name");
-            GradesTableEdit.Columns.Add("CourseCode", "Course Code");
-            GradesTableEdit.Columns.Add("Units", "Units");
-            GradesTableEdit.Columns.Add("Grade", "Grade");
-            GradesTableEdit.Columns.Add("AcademicUnit", "Academic Unit");
-
-            if (userLogin.grades.Count == 0)
-            {
-                GradesTableEdit.Rows.Add("", "", "", "", "", "");
-            }
-            else
-            {
-                foreach (var grade in userLogin.grades)
-                {
-                    GradesTableEdit.Rows.Add(grade.gradeId, grade.termNumber, grade.courseName, grade.courseCode, grade.units, grade.grade, grade.academicUnit);
-                }
-            }
-
-            AreYouSureLabel.Visible = false;
+            LoadGradesIntoDataGridView();
+            AreYouSureLabel.Text = "Your changes have been discarded.";
             YesButtonDiscard.Visible = false;
-            NoButtonDiscard.Visible = false;
+            NoButtonDiscard.Visible = false;    
         }
 
         private void MainTabControl_SelectedIndexChanged(object sender, EventArgs e)
@@ -581,6 +543,72 @@ namespace SOFSEC1_Project
             if (confirmDialog.ShowDialog() == DialogResult.OK)
             {
             }
+        }
+
+        private void GradesTableEdit_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            AreYouSureLabel.Visible = false;
+        }
+        private void LoadGradesIntoDataGridView()
+        {
+            DataGridViewComboBoxColumn gradePicker = new DataGridViewComboBoxColumn();
+            gradePicker.HeaderText = "Grade";
+            gradePicker.Name = "Grade";
+
+            gradePicker.Items.Add("4.0");
+            gradePicker.Items.Add("3.5");
+            gradePicker.Items.Add("3.0");
+            gradePicker.Items.Add("2.5");
+            gradePicker.Items.Add("2.0");
+            gradePicker.Items.Add("1.5");
+            gradePicker.Items.Add("1.0");
+            gradePicker.Items.Add("R");
+            gradePicker.Items.Add("N/A");
+
+            GradesTableView.Rows.Clear();
+            GradesTableView.Columns.Clear();
+            GradesTableView.Columns.Add("GradeID", "Grade ID");
+            GradesTableView.Columns.Add("TermNumber", "Term Number");
+            GradesTableView.Columns.Add("CourseName", "Course Name");
+            GradesTableView.Columns.Add("CourseCode", "Course Code");
+            GradesTableView.Columns.Add("Units", "Units");
+            GradesTableView.Columns.Add("AcademicUnit", "Academic Unit");
+            GradesTableView.Columns.Add("Grade", "Grade");
+
+            GradesTableEdit.Rows.Clear();
+            GradesTableEdit.Columns.Clear();
+            GradesTableEdit.Columns.Add("GradeID", "Grade ID");
+            GradesTableEdit.Columns.Add("TermNumber", "Term Number");
+            GradesTableEdit.Columns.Add("CourseName", "Course Name");
+            GradesTableEdit.Columns.Add("CourseCode", "Course Code");
+            GradesTableEdit.Columns.Add("Units", "Units");
+            GradesTableEdit.Columns.Add("AcademicUnit", "Academic Unit");
+            GradesTableEdit.Columns.Add(gradePicker);
+
+            if (userLogin.grades.Count == 0)
+            {
+                GradesTableView.Rows.Add("", "", "", "", "", "", "");
+                GradesTableEdit.Rows.Add("", "", "", "", "", "", "");
+            }
+            else
+            {
+                foreach (var grade in userLogin.grades)
+                {
+                    GradesTableView.Rows.Add(grade.gradeId, grade.termNumber, grade.courseName, grade.courseCode, grade.units, grade.academicUnit, grade.grade);
+
+                    int rowIndex = GradesTableEdit.Rows.Add(grade.gradeId, grade.termNumber, grade.courseName, grade.courseCode, grade.units, grade.academicUnit);
+                    GradesTableEdit.Rows[rowIndex].Cells["Grade"].Value = grade.grade;
+                }
+            }
+        }
+
+        private void GradesTableEdit_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            AreYouSureLabel.Visible = false;
+            YesButtonClear.Visible = false;
+            NoButtonClear.Visible = false;
+            YesButtonDiscard.Visible = false;
+            NoButtonDiscard.Visible = false;
         }
     }
 }

@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle76 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle77 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle78 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle79 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle80 = new System.Windows.Forms.DataGridViewCellStyle();
             this.HOME = new System.Windows.Forms.Panel();
             this.TopHome = new System.Windows.Forms.Panel();
             this.LogoHome = new System.Windows.Forms.Label();
@@ -83,7 +83,6 @@
             this.InvalidFirstNameLabel = new System.Windows.Forms.Label();
             this.InvalidUsernameLabel = new System.Windows.Forms.Label();
             this.ProgramSignupBox = new System.Windows.Forms.ComboBox();
-            this.AutoGenerateCourses = new System.Windows.Forms.CheckBox();
             this.ConfirmPasswordSignupBox = new System.Windows.Forms.TextBox();
             this.ConfirmPasswordSignupText = new System.Windows.Forms.Label();
             this.PasswordSignupBox = new System.Windows.Forms.TextBox();
@@ -329,11 +328,10 @@
             // 
             this.PasswordHomeLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PasswordHomeLogin.Location = new System.Drawing.Point(48, 193);
-            this.PasswordHomeLogin.Multiline = true;
             this.PasswordHomeLogin.Name = "PasswordHomeLogin";
-            this.PasswordHomeLogin.Size = new System.Drawing.Size(314, 35);
+            this.PasswordHomeLogin.Size = new System.Drawing.Size(314, 29);
             this.PasswordHomeLogin.TabIndex = 5;
-            this.PasswordHomeLogin.Text = " ";
+            this.PasswordHomeLogin.UseSystemPasswordChar = true;
             this.PasswordHomeLogin.TextChanged += new System.EventHandler(this.PasswordHomeLogin_TextChanged);
             // 
             // PasswordHomeText
@@ -351,9 +349,8 @@
             // 
             this.UsernameHomeLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UsernameHomeLogin.Location = new System.Drawing.Point(48, 111);
-            this.UsernameHomeLogin.Multiline = true;
             this.UsernameHomeLogin.Name = "UsernameHomeLogin";
-            this.UsernameHomeLogin.Size = new System.Drawing.Size(314, 35);
+            this.UsernameHomeLogin.Size = new System.Drawing.Size(314, 29);
             this.UsernameHomeLogin.TabIndex = 3;
             this.UsernameHomeLogin.Text = " ";
             this.UsernameHomeLogin.TextChanged += new System.EventHandler(this.UsernameHomeLogin_TextChanged);
@@ -579,6 +576,7 @@
             this.YesButtonClear.Text = "Yes";
             this.YesButtonClear.UseVisualStyleBackColor = false;
             this.YesButtonClear.Visible = false;
+            this.YesButtonClear.Click += new System.EventHandler(this.YesButtonClear_Click);
             // 
             // NoButtonDiscard
             // 
@@ -592,6 +590,7 @@
             this.NoButtonDiscard.Text = "No";
             this.NoButtonDiscard.UseVisualStyleBackColor = false;
             this.NoButtonDiscard.Visible = false;
+            this.NoButtonDiscard.Click += new System.EventHandler(this.NoButtonDiscard_Click);
             // 
             // YesButtonDiscard
             // 
@@ -605,6 +604,7 @@
             this.YesButtonDiscard.Text = "Yes";
             this.YesButtonDiscard.UseVisualStyleBackColor = false;
             this.YesButtonDiscard.Visible = false;
+            this.YesButtonDiscard.Click += new System.EventHandler(this.YesButtonDiscard_Click);
             // 
             // AreYouSureLabel
             // 
@@ -623,38 +623,41 @@
             // GradesTableEdit
             // 
             this.GradesTableEdit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GradesTableEdit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle76.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle76.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle76.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle76.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle76.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle76.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle76.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GradesTableEdit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle76;
             this.GradesTableEdit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GradesTableEdit.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle77.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle77.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle77.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle77.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle77.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle77.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle77.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GradesTableEdit.DefaultCellStyle = dataGridViewCellStyle77;
             this.GradesTableEdit.Location = new System.Drawing.Point(23, 17);
             this.GradesTableEdit.Margin = new System.Windows.Forms.Padding(2);
             this.GradesTableEdit.Name = "GradesTableEdit";
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GradesTableEdit.RowHeadersDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle78.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle78.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle78.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle78.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle78.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle78.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle78.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GradesTableEdit.RowHeadersDefaultCellStyle = dataGridViewCellStyle78;
             this.GradesTableEdit.RowHeadersWidth = 51;
             this.GradesTableEdit.RowTemplate.Height = 24;
             this.GradesTableEdit.Size = new System.Drawing.Size(973, 383);
             this.GradesTableEdit.TabIndex = 47;
+            this.GradesTableEdit.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.GradesTableEdit_CellBeginEdit);
+            this.GradesTableEdit.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GradesTableEdit_CellContentClick);
+            this.GradesTableEdit.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GradesTableEdit_CellContentClick);
             // 
             // SaveGPAEdit
             // 
@@ -717,7 +720,6 @@
             this.CenterSignup.Controls.Add(this.InvalidFirstNameLabel);
             this.CenterSignup.Controls.Add(this.InvalidUsernameLabel);
             this.CenterSignup.Controls.Add(this.ProgramSignupBox);
-            this.CenterSignup.Controls.Add(this.AutoGenerateCourses);
             this.CenterSignup.Controls.Add(this.ConfirmPasswordSignupBox);
             this.CenterSignup.Controls.Add(this.ConfirmPasswordSignupText);
             this.CenterSignup.Controls.Add(this.PasswordSignupBox);
@@ -848,17 +850,6 @@
             this.ProgramSignupBox.DropDown += new System.EventHandler(this.ProgramSignupBox_DropDown);
             this.ProgramSignupBox.SelectedIndexChanged += new System.EventHandler(this.ProgramSignupBox_SelectedIndexChanged);
             // 
-            // AutoGenerateCourses
-            // 
-            this.AutoGenerateCourses.AutoSize = true;
-            this.AutoGenerateCourses.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AutoGenerateCourses.Location = new System.Drawing.Point(579, 130);
-            this.AutoGenerateCourses.Name = "AutoGenerateCourses";
-            this.AutoGenerateCourses.Size = new System.Drawing.Size(191, 24);
-            this.AutoGenerateCourses.TabIndex = 18;
-            this.AutoGenerateCourses.Text = "Auto-generate courses";
-            this.AutoGenerateCourses.UseVisualStyleBackColor = true;
-            // 
             // ConfirmPasswordSignupBox
             // 
             this.ConfirmPasswordSignupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -866,6 +857,7 @@
             this.ConfirmPasswordSignupBox.Name = "ConfirmPasswordSignupBox";
             this.ConfirmPasswordSignupBox.Size = new System.Drawing.Size(284, 26);
             this.ConfirmPasswordSignupBox.TabIndex = 17;
+            this.ConfirmPasswordSignupBox.UseSystemPasswordChar = true;
             this.ConfirmPasswordSignupBox.TextChanged += new System.EventHandler(this.ConfirmPasswordSignupBox_TextChanged);
             // 
             // ConfirmPasswordSignupText
@@ -887,6 +879,7 @@
             this.PasswordSignupBox.Name = "PasswordSignupBox";
             this.PasswordSignupBox.Size = new System.Drawing.Size(284, 26);
             this.PasswordSignupBox.TabIndex = 15;
+            this.PasswordSignupBox.UseSystemPasswordChar = true;
             this.PasswordSignupBox.TextChanged += new System.EventHandler(this.PasswordSignupBox_TextChanged);
             // 
             // PasswordSignupText
@@ -1166,9 +1159,9 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(947, 276);
+            this.label3.Location = new System.Drawing.Point(988, 276);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(258, 53);
+            this.label3.Size = new System.Drawing.Size(217, 53);
             this.label3.TabIndex = 54;
             this.label3.Text = "Total units taken:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1188,14 +1181,13 @@
             // DeansListTitleLabel
             // 
             this.DeansListTitleLabel.BackColor = System.Drawing.Color.Transparent;
-            this.DeansListTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeansListTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeansListTitleLabel.ForeColor = System.Drawing.Color.Black;
-            this.DeansListTitleLabel.Location = new System.Drawing.Point(786, 44);
+            this.DeansListTitleLabel.Location = new System.Drawing.Point(662, 44);
             this.DeansListTitleLabel.Name = "DeansListTitleLabel";
-            this.DeansListTitleLabel.Size = new System.Drawing.Size(419, 53);
+            this.DeansListTitleLabel.Size = new System.Drawing.Size(543, 243);
             this.DeansListTitleLabel.TabIndex = 52;
             this.DeansListTitleLabel.Text = "You are eligible to be a Dean\'s Lister for the following terms:";
-            this.DeansListTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // NonAcademicUnitsValueLabel
             // 
@@ -1742,23 +1734,23 @@
             // 
             this.GradesTableView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GradesTableView.CausesValidation = false;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GradesTableView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle79.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle79.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle79.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle79.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle79.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle79.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle79.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GradesTableView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle79;
             this.GradesTableView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GradesTableView.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle80.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle80.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle80.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle80.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle80.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle80.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle80.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GradesTableView.DefaultCellStyle = dataGridViewCellStyle80;
             this.GradesTableView.Location = new System.Drawing.Point(24, 17);
             this.GradesTableView.Margin = new System.Windows.Forms.Padding(2);
             this.GradesTableView.Name = "GradesTableView";
@@ -1779,12 +1771,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.DASHBOARD);
-            this.Controls.Add(this.GPAEDIT);
-            this.Controls.Add(this.GPAVIEW);
-            this.Controls.Add(this.PROFILE);
             this.Controls.Add(this.HOME);
+            this.Controls.Add(this.DASHBOARD);
             this.Controls.Add(this.SIGNUP);
+            this.Controls.Add(this.GPAEDIT);
+            this.Controls.Add(this.PROFILE);
+            this.Controls.Add(this.GPAVIEW);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "GPAware";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1847,7 +1839,6 @@
         private System.Windows.Forms.Panel BottomSignup;
         private System.Windows.Forms.Panel CenterSignup;
         private System.Windows.Forms.ComboBox ProgramSignupBox;
-        private System.Windows.Forms.CheckBox AutoGenerateCourses;
         private System.Windows.Forms.TextBox ConfirmPasswordSignupBox;
         private System.Windows.Forms.Label ConfirmPasswordSignupText;
         private System.Windows.Forms.TextBox PasswordSignupBox;

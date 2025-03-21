@@ -149,5 +149,6 @@ namespace GradeCalculator
         {
             return Convert.FromBase64String(cipherText);
         }
+
     }
 }

@@ -118,12 +118,7 @@ namespace SOFSEC1_Project
                     DynamicParameters parameters = new DynamicParameters();
                     parameters.Add("@userId", userId);
                     parameters.Add("@gradeId", grade.gradeId);
-                    parameters.Add("@termNumber", grade.termNumber);
-                    parameters.Add("@courseName", grade.courseName);
-                    parameters.Add("@courseCode", grade.courseCode);
-                    parameters.Add("@units", grade.units);
                     parameters.Add("@grade", grade.grade);
-                    parameters.Add("@academicUnit", grade.academicUnit);
                     cnn.Execute("UPDATE grade SET grade = @grade WHERE userId = @userId AND gradeId = @gradeId", parameters);
                 }
             }
