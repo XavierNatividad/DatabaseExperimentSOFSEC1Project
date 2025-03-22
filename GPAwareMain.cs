@@ -73,21 +73,38 @@ namespace SOFSEC1_Project
             UsernameHomeLogin.Text = "";
             PasswordHomeLogin.Text = "";
         }
-
-        private void InitializeSessionTimer()
+        private void StartSessionTimer()
         {
+            if (sessionTimer != null)
+            {
+                sessionTimer.Stop();
+                sessionTimer.Dispose();
+            }
+
             sessionTimer = new Timer();
-            sessionTimer.Interval = SESSION_TIMEOUT_MINUTES * 60 * 1000; 
+            sessionTimer.Interval = SESSION_TIMEOUT_MINUTES * 60 * 1000;
             sessionTimer.Tick += (s, e) => AutoLogout();
             sessionTimer.Start();
         }
 
+        private void StopSessionTimer()
+        {
+            if (sessionTimer != null)
+            {
+                sessionTimer.Stop();
+                sessionTimer.Dispose();
+                sessionTimer = null;
+            }
+        }
         private void ResetSessionTimer()
         {
-            sessionTimer.Stop();
-            sessionTimer.Start();
+            if (sessionTimer != null)
+            {
+                sessionTimer.Stop();
+                sessionTimer.Start();
+            }
         }
-        
+
         private void AutoLogout()
         {
             if (InvokeRequired)
@@ -96,15 +113,37 @@ namespace SOFSEC1_Project
                 return;
             }
 
-            sessionTimeoutDisplayed = true; 
+            if (userLogin == null)
+            {
+                return;
+            }
+
+            if (sessionTimeoutDisplayed)
+            {
+                return;
+            }
+            sessionTimeoutDisplayed = true;
+
+            if (gradeConversionTable != null && !gradeConversionTable.IsDisposed)
+            {
+                gradeConversionTable.Close();
+                gradeConversionTable = null;
+            }
 
             ClearUserData();
-            ShowPanel(HOME); 
+            ShowPanel(HOME);
 
-            SessionTimeout timeoutDialog = new SessionTimeout();
-            timeoutDialog.ShowDialog(); 
+            StopSessionTimer();
 
-            sessionTimeoutDisplayed = false; 
+            Task.Run(() =>
+            {
+                sessionTimeoutDisplayed = false; 
+
+                using (SessionTimeout timeoutDialog = new SessionTimeout())
+                {
+                    timeoutDialog.ShowDialog();
+                }
+            });
         }
         private void CreateAccountSignupBox_Click(object sender, EventArgs e)
         {
@@ -420,6 +459,8 @@ namespace SOFSEC1_Project
                     UsernameHomeLogin.Text = "";
                     PasswordHomeLogin.Text = "";
                     ShowPanel(DASHBOARD);
+
+                    StartSessionTimer();
                 }
                 catch (Exception)
                 {
@@ -435,7 +476,7 @@ namespace SOFSEC1_Project
 
                 if (failedAttempts >= MAX_ATTEMPTS)
                 {
-                    InvalidLoginLabel.Text = $"Too many failed attempts. Try again in {LOCKOUT_MINUTES} minutes.";
+                    InvalidLoginLabel.Text = $"Too many failed attempts. Try again in {LOCKOUT_MINUTES} min.";
                 }
                 else
                 {
@@ -615,7 +656,6 @@ namespace SOFSEC1_Project
 
         private void GPAware_Load(object sender, EventArgs e)
         {
-            InitializeSessionTimer();
             SuccessLabel.Visible = false;
             AccountCreationLabel.Visible = false;
 
@@ -688,10 +728,19 @@ namespace SOFSEC1_Project
             LoadGradesIntoDataGridView();
         }
 
+        private GradeConversionTable gradeConversionTable;
         private void GradeConversionTableButton_Click(object sender, EventArgs e)
         {
-            GradeConversionTable gradeConversionTable = new GradeConversionTable();
-            gradeConversionTable.Show();
+            if (gradeConversionTable == null || gradeConversionTable.IsDisposed)
+            {
+                gradeConversionTable = new GradeConversionTable();
+                gradeConversionTable.FormClosed += (s, ev) => gradeConversionTable = null; 
+                gradeConversionTable.ShowDialog();
+            }
+            else
+            {
+                gradeConversionTable.BringToFront(); 
+            }
         }
 
         private void DiscardGPAEdit_Click(object sender, EventArgs e)
@@ -768,13 +817,19 @@ namespace SOFSEC1_Project
         {
             LogoutConfirm confirmDialog = new LogoutConfirm(() =>
             {
+                StopSessionTimer();
+
+                if (gradeConversionTable != null && !gradeConversionTable.IsDisposed)
+                {
+                    gradeConversionTable.Close();
+                    gradeConversionTable = null;
+                }
+
                 ClearUserData();
                 ShowPanel(HOME);
             });
 
-            if (confirmDialog.ShowDialog() == DialogResult.OK)
-            {
-            }
+            confirmDialog.ShowDialog();
         }
 
         private void GradesTableEdit_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
