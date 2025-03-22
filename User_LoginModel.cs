@@ -83,16 +83,17 @@ namespace SOFSEC1_Project
         }
         private void ProcessGrade(GradeModel grade, ref double totalGradePoints, ref double totalUnits)
         {
-            if (grade.grade == "R")
+
+            if (double.TryParse(grade.grade, out double gradeValue))
             {
-                totalGradePoints += 0;
+                totalGradePoints += gradeValue * Convert.ToDouble(grade.units);
                 totalUnits += Convert.ToDouble(grade.units);
             }
             else
             {
-                totalGradePoints += Convert.ToDouble(grade.grade) * Convert.ToDouble(grade.units);
+                totalGradePoints += 0;
                 totalUnits += Convert.ToDouble(grade.units);
-            }    
+            }
         }
 
         public string CGPA()
@@ -264,7 +265,7 @@ namespace SOFSEC1_Project
             else
             {
                 string DeansListMessage = "You are eligible to be on the Dean's List in the following terms: \n";
-                for (int i = 1; i < GetHighestTermNumber(); i++)
+                for (int i = 1; i <= GetHighestTermNumber(); i++)
                 {
                     int flowcharttUnits = FlowchartUnits(i);
                     int takenUnits = TakenUnits(i);
@@ -291,29 +292,37 @@ namespace SOFSEC1_Project
                         lowestGrade = -1;
                     }
 
-                    if (lowestGrade != -1 && (lowestGrade >= 2.5 && takenUnits >= Math.Min(flowcharttUnits, 15)))
+                    if (lowestGrade >= 2.5 && takenUnits >= Math.Min(flowcharttUnits, 15))
                     {
-                        string termGPA = TermGPA(i);
-                        if (termGPA != "N/A")
+                        if(lowestGrade != -1)
                         {
-                            termGPA = Convert.ToDouble(termGPA).ToString("0.00");
-                            if (Convert.ToDouble(termGPA) >= 3.5 && lowestGrade >= 2.5)
+                            string termGPA = TermGPA(i);
+                            if (termGPA != "N/A")
                             {
-                                DeansListMessage += $"\tTerm {i.ToString("00")} | {termGPA} | First Honors \n";
-                            }
-                            else if (Convert.ToDouble(termGPA) >= 3.0 && lowestGrade >= 2.5)
-                            {
-                                DeansListMessage += $"\tTerm {i.ToString("00")} | {termGPA} | Second Honors \n";
+                                termGPA = Convert.ToDouble(termGPA).ToString("0.00");
+                                if (Convert.ToDouble(termGPA) >= 3.5 && lowestGrade >= 2.5)
+                                {
+                                    DeansListMessage += $"\tTerm {i.ToString("00")} | {termGPA} | First Honors \n";
+                                }
+                                else if (Convert.ToDouble(termGPA) >= 3.0 && lowestGrade >= 2.5)
+                                {
+                                    DeansListMessage += $"\tTerm {i.ToString("00")} | {termGPA} | Second Honors \n";
+                                }
+                                else
+                                {
+                                    DeansListMessage += $"\tTerm {i.ToString("00")} | {termGPA} | Not eligible \n";
+                                }
                             }
                             else
                             {
                                 DeansListMessage += $"\tTerm {i.ToString("00")} | {termGPA} | Not eligible \n";
                             }
                         }
-                        else
-                        {
-                            DeansListMessage += $"\tTerm {i.ToString("00")} | {termGPA} | Not eligible \n";
-                        }
+                    }
+                    else if (lowestGrade > -1)
+                    {
+                        string termGPA = TermGPA(i);
+                        DeansListMessage += $"\tTerm {i.ToString("00")} | {termGPA} | Not eligible \n";
                     }
                 }
                 return DeansListMessage;
@@ -328,7 +337,7 @@ namespace SOFSEC1_Project
             }
 
             int highestTermNumber = grades
-                .Where(g => !string.IsNullOrEmpty(g.termNumber))
+                .Where(g => g.grade != "N/A")
                 .Max(g => int.Parse(g.termNumber));
 
             return highestTermNumber;
