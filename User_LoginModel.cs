@@ -81,6 +81,20 @@ namespace SOFSEC1_Project
             string[] totalUnits = { acaemicUnitsCount.ToString(), nonAcademicUnitsCount.ToString(), (acaemicUnitsCount + nonAcademicUnitsCount).ToString() };
             return totalUnits;
         }
+        private void ProcessGrade(GradeModel grade, ref double totalGradePoints, ref double totalUnits)
+        {
+            if (grade.grade == "R")
+            {
+                totalGradePoints += 0;
+                totalUnits += Convert.ToDouble(grade.units);
+            }
+            else
+            {
+                totalGradePoints += Convert.ToDouble(grade.grade) * Convert.ToDouble(grade.units);
+                totalUnits += Convert.ToDouble(grade.units);
+            }    
+        }
+
         public string CGPA()
         {
             bool empty = true;
@@ -90,16 +104,7 @@ namespace SOFSEC1_Project
             {
                 if (grade.academicUnit == "TRUE" && grade.grade != "N/A")
                 {
-                    if(grade.grade == "R")
-                    {
-                        totalGradePoints += Convert.ToDouble(0) * Convert.ToDouble(grade.units);
-                        totalUnits += Convert.ToDouble(grade.units);
-                    }
-                    else 
-                    {
-                        totalGradePoints += Convert.ToDouble(grade.grade) * Convert.ToDouble(grade.units);
-                        totalUnits += Convert.ToDouble(grade.units);
-                    }
+                    ProcessGrade(grade, ref totalGradePoints, ref totalUnits);
                     empty = false;
                 }
             }
@@ -110,8 +115,9 @@ namespace SOFSEC1_Project
             else
             {
                 return (totalGradePoints / totalUnits).ToString("0.00");
-            }        
+            }
         }
+
         public string TermGPA(int termNumber)
         {
             bool empty = true;
@@ -121,16 +127,7 @@ namespace SOFSEC1_Project
             {
                 if (grade.academicUnit == "TRUE" && grade.grade != "N/A" && int.Parse(grade.termNumber) == termNumber)
                 {
-                    if (grade.grade == "R")
-                    {
-                        totalGradePoints += Convert.ToDouble(0) * Convert.ToDouble(grade.units);
-                        totalUnits += Convert.ToDouble(grade.units);
-                    }
-                    else
-                    {
-                        totalGradePoints += Convert.ToDouble(grade.grade) * Convert.ToDouble(grade.units);
-                        totalUnits += Convert.ToDouble(grade.units);
-                    }
+                    ProcessGrade(grade, ref totalGradePoints, ref totalUnits);
                     empty = false;
                 }
             }
@@ -280,39 +277,44 @@ namespace SOFSEC1_Project
 
                     if (filteredGrades.Any())
                     {
-                        lowestGrade = filteredGrades.Min(g => Convert.ToDouble(g.grade));
+                        if (filteredGrades.Any(g => g.grade == "R"))
+                        {
+                            lowestGrade = 0;
+                        }
+                        else
+                        {
+                            lowestGrade = filteredGrades.Min(g => Convert.ToDouble(g.grade));
+                        }     
                     }
                     else
                     {
                         lowestGrade = -1;
-                        DeansListMessage = "You are not eligible to be on the Dean's List for any recorded term/s.";
                     }
 
-                    if (lowestGrade != 1 && (lowestGrade >= 2.5 && takenUnits >= Math.Min(flowcharttUnits, 15)))
+                    if (lowestGrade != -1 && (lowestGrade >= 2.5 && takenUnits >= Math.Min(flowcharttUnits, 15)))
                     {
                         string termGPA = TermGPA(i);
                         if (termGPA != "N/A")
                         {
                             termGPA = Convert.ToDouble(termGPA).ToString("0.00");
-                            if (Convert.ToDouble(termGPA) >= 3.5)
+                            if (Convert.ToDouble(termGPA) >= 3.5 && lowestGrade >= 2.5)
                             {
                                 DeansListMessage += $"\tTerm {i.ToString("00")} | {termGPA} | First Honors \n";
                             }
-                            else if (Convert.ToDouble(termGPA) >= 3.0)
+                            else if (Convert.ToDouble(termGPA) >= 3.0 && lowestGrade >= 2.5)
                             {
                                 DeansListMessage += $"\tTerm {i.ToString("00")} | {termGPA} | Second Honors \n";
                             }
                             else
                             {
-                                DeansListMessage = "You are not eligible to be on the Dean's List for any recorded term/s.";
+                                DeansListMessage += $"\tTerm {i.ToString("00")} | {termGPA} | Not eligible \n";
                             }
                         }
+                        else
+                        {
+                            DeansListMessage += $"\tTerm {i.ToString("00")} | {termGPA} | Not eligible \n";
+                        }
                     }
-                    else
-                    {
-                        DeansListMessage = "You are not eligible to be on the Dean's List for any recorded term/s.";
-                    }
-
                 }
                 return DeansListMessage;
             }
