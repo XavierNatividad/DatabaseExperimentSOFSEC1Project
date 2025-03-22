@@ -18,14 +18,26 @@ namespace SOFSEC1_Project
     public partial class GPAware: Form
     {
         User_LoginModel userLogin = new User_LoginModel();
+
+        private static int failedAttempts = 0;
+        private static DateTime? lockoutStartTime = null;
+        private Timer unlockTimer;
+
+        private const int MAX_ATTEMPTS = 5;
+        private const int LOCKOUT_MINUTES = 5;
+
+        private Timer sessionTimer;
+        private const int SESSION_TIMEOUT_MINUTES = 1;
+        private bool sessionTimeoutDisplayed = false;
+
         public GPAware()
         {
             InitializeComponent();
             ShowPanel(HOME);
+            unlockTimer = new Timer(); 
             // TO START WITH HOME ALWAYS
 
         }
-
         private void ShowPanel(Panel panelToShow)
         {
             // Hide all panels
@@ -40,6 +52,60 @@ namespace SOFSEC1_Project
             panelToShow.Visible = true;
         }
 
+        private void ClearUserData()
+        {
+            userLogin = null;
+            UsernameReplaceProfile.Text = "";
+            FirstNameReplaceProfile.Text = "";
+            LastNameReplaceProfile.Text = "";
+            ProgramReplaceProfile.Text = "";
+            NameDashboardPopup.Text = "";
+            DeansListTitleLabel.Text = "";
+            GPALabel.Text = "";
+
+            AcademicUnitsValueLabel.Text = "";
+            NonAcademicUnitsValueLabel.Text = "";
+            TotalUnitsValueLabel.Text = "";
+
+            GradesTableView.Rows.Clear();
+            GradesTableEdit.Rows.Clear();
+
+            UsernameHomeLogin.Text = "";
+            PasswordHomeLogin.Text = "";
+        }
+
+        private void InitializeSessionTimer()
+        {
+            sessionTimer = new Timer();
+            sessionTimer.Interval = SESSION_TIMEOUT_MINUTES * 60 * 1000; 
+            sessionTimer.Tick += (s, e) => AutoLogout();
+            sessionTimer.Start();
+        }
+
+        private void ResetSessionTimer()
+        {
+            sessionTimer.Stop();
+            sessionTimer.Start();
+        }
+        
+        private void AutoLogout()
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new Action(AutoLogout));
+                return;
+            }
+
+            sessionTimeoutDisplayed = true; 
+
+            ClearUserData();
+            ShowPanel(HOME); 
+
+            SessionTimeout timeoutDialog = new SessionTimeout();
+            timeoutDialog.ShowDialog(); 
+
+            sessionTimeoutDisplayed = false; 
+        }
         private void CreateAccountSignupBox_Click(object sender, EventArgs e)
         {
             NewUserModel newUser = new NewUserModel();
@@ -320,8 +386,18 @@ namespace SOFSEC1_Project
             string username = UsernameHomeLogin.Text;
             string password = PasswordHomeLogin.Text.Trim();
 
+
+            if (IsSystemLockedOut(out int minutesLeft))
+            {
+                InvalidLoginLabel.Text = $"Too many failed attempts. Try again in {minutesLeft} min.";
+                InvalidLoginLabel.Visible = true;
+                Cursor.Current = Cursors.Default;
+                return;
+            }
+
             if (SqliteDataAccess.VerifyLogin(username, password))
             {
+
                 try
                 {
                     userLogin = new User_LoginModel(username, password);
@@ -329,11 +405,17 @@ namespace SOFSEC1_Project
                     GPALabel.Text = GPA;
                     TrackDashboardText.Text = userLogin.HonorsStanding();
 
+                    NameDashboardPopup.Text = userLogin.firstName + " " + userLogin.lastName;
+
+
                     string[] units = userLogin.totalUnits();
                     AcademicUnitsValueLabel.Text = units[0];
                     NonAcademicUnitsValueLabel.Text = units[1];
                     TotalUnitsValueLabel.Text = units[2];
                     DeansListTitleLabel.Text = userLogin.DeansList();
+
+                    ResetFailedAttempts();
+                    InvalidLoginLabel.Visible = false;
 
                     UsernameHomeLogin.Text = "";
                     PasswordHomeLogin.Text = "";
@@ -343,20 +425,130 @@ namespace SOFSEC1_Project
                 {
                     InvalidLoginLabel.Text = "An error occurred while logging in.";
                     InvalidLoginLabel.Visible = true;
-
-                    UsernameHomeLogin.Text = "";
-                    PasswordHomeLogin.Text = "";
                 }
             }
             else
             {
-                InvalidLoginLabel.Text = "Username or password is invalid.";
-                InvalidLoginLabel.Visible = true;
+                TrackFailedAttempt();  // Move this up to ensure failedAttempts is updated first
 
-                UsernameHomeLogin.Text = "";
-                PasswordHomeLogin.Text = "";
+                int remainingAttempts = MAX_ATTEMPTS - failedAttempts;
+
+                if (failedAttempts >= MAX_ATTEMPTS)
+                {
+                    InvalidLoginLabel.Text = $"Too many failed attempts. Try again in {LOCKOUT_MINUTES} minutes.";
+                }
+                else
+                {
+                    InvalidLoginLabel.Text = $"Username or password is invalid. Please try again.\nAttempts remaining: {remainingAttempts}";
+                }
+
+                InvalidLoginLabel.Visible = true;
             }
+            UsernameHomeLogin.Text = "";
+            PasswordHomeLogin.Text = "";
             Cursor.Current = Cursors.Default;
+        }
+        private bool IsSystemLockedOut(out int minutesLeft)
+        {
+            minutesLeft = 0;
+
+            if (lockoutStartTime == null)
+            {
+                return false;
+            }
+
+            TimeSpan timeSinceLockout = DateTime.Now - lockoutStartTime.Value;
+            TimeSpan lockoutDuration = TimeSpan.FromMinutes(LOCKOUT_MINUTES);
+
+            if (timeSinceLockout >= lockoutDuration)
+            {
+                ResetFailedAttempts(); 
+                HideLockoutMessage();
+                return false;
+            }
+
+            minutesLeft = (int)Math.Ceiling((lockoutDuration - timeSinceLockout).TotalMinutes);
+            return true;
+        }
+
+        private void HideLockoutMessage()
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new Action(HideLockoutMessage));
+            }
+            else
+            {
+                InvalidLoginLabel.Visible = false;
+                InvalidLoginLabel.Text = "";
+                this.Refresh();
+            }
+        }
+
+        private void TrackFailedAttempt()
+        {
+            failedAttempts++;
+
+            if (failedAttempts >= MAX_ATTEMPTS)
+            {
+                lockoutStartTime = DateTime.Now;
+
+                if (unlockTimer != null)
+                {
+                    unlockTimer.Stop();
+                    unlockTimer.Dispose();
+                    unlockTimer = null;
+                }
+
+                unlockTimer = new Timer();
+                unlockTimer.Interval = LOCKOUT_MINUTES * 60 * 1000;
+                unlockTimer.Tick += (s, e) =>
+                {
+                    if (unlockTimer != null) 
+                    {
+                        ResetFailedAttempts();
+                        HideLockoutMessage();
+
+                        if (unlockTimer != null) 
+                        {
+                            unlockTimer.Stop();
+                            unlockTimer.Dispose();
+                            unlockTimer = null;
+                        }
+                    }
+                };
+
+                unlockTimer.Start();
+            }
+        }
+
+
+
+        private void ResetFailedAttempts()
+        {
+            failedAttempts = 0;
+            lockoutStartTime = null;
+
+            if (unlockTimer != null)
+            {
+                unlockTimer.Stop();
+                unlockTimer.Dispose();
+                unlockTimer = null;
+            }
+        }
+
+        class LoginAttempt
+        {
+            public int AttemptCount { get; set; } = 0;
+            public DateTime? LockoutStartTime { get; set; }
+            public bool IsLockedOut()
+            {
+                if (LockoutStartTime == null)
+                {
+                    return false;
+                }
+                return (DateTime.Now - LockoutStartTime.Value).TotalMinutes < 5;
+            }
         }
 
         private void CreateAccountRedirect_Click(object sender, EventArgs e)
@@ -366,6 +558,7 @@ namespace SOFSEC1_Project
 
         private void DashboardProfile_Click(object sender, EventArgs e)
         {
+            NameDashboardPopup.Text = userLogin.firstName + " " + userLogin.lastName;
             string GPA = userLogin.CGPA().ToString();
             GPALabel.Text = GPA;
             TrackDashboardText.Text = userLogin.HonorsStanding();
@@ -406,18 +599,52 @@ namespace SOFSEC1_Project
 
         private void UsernameHomeLogin_TextChanged(object sender, EventArgs e)
         {
-            InvalidLoginLabel.Visible = false;
+            if (failedAttempts == 0)
+            {
+                InvalidLoginLabel.Visible = false;
+            }
         }
 
         private void PasswordHomeLogin_TextChanged(object sender, EventArgs e)
         {
-            InvalidLoginLabel.Visible = false;
+            if (failedAttempts == 0)
+            {
+                InvalidLoginLabel.Visible = false;
+            }
         }
 
         private void GPAware_Load(object sender, EventArgs e)
         {
+            InitializeSessionTimer();
             SuccessLabel.Visible = false;
             AccountCreationLabel.Visible = false;
+
+            foreach (Control ctrl in this.Controls)
+            {
+                ctrl.MouseMove += ResetSessionTimerOnEvent;
+                ctrl.KeyDown += ResetSessionTimerOnKeyEvent;
+                AttachHandlersRecursively(ctrl);
+            }
+        }
+
+        private void AttachHandlersRecursively(Control parent)
+        {
+            foreach (Control child in parent.Controls)
+            {
+                child.MouseMove += ResetSessionTimerOnEvent;
+                child.KeyDown += ResetSessionTimerOnKeyEvent;
+                AttachHandlersRecursively(child);
+            }
+        }
+
+        private void ResetSessionTimerOnEvent(object sender, EventArgs e)
+        {
+            ResetSessionTimer();
+        }
+
+        private void ResetSessionTimerOnKeyEvent(object sender, KeyEventArgs e)
+        {
+            ResetSessionTimer();
         }
 
         private void ReturnToLoginButton_Click_1(object sender, EventArgs e)
@@ -536,13 +763,13 @@ namespace SOFSEC1_Project
             gradeForm.Show();
         }
 
+
         private void LogOutProfile_Click(object sender, EventArgs e)
         {
             LogoutConfirm confirmDialog = new LogoutConfirm(() =>
             {
+                ClearUserData();
                 ShowPanel(HOME);
-                            UsernameHomeLogin.Text = "";
-            PasswordHomeLogin.Text = "";
             });
 
             if (confirmDialog.ShowDialog() == DialogResult.OK)

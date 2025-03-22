@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.HOME = new System.Windows.Forms.Panel();
             this.TopHome = new System.Windows.Forms.Panel();
             this.LogoHome = new System.Windows.Forms.Label();
             this.MainTabControl = new System.Windows.Forms.TabControl();
             this.About = new System.Windows.Forms.TabPage();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.LogoAboutHome = new System.Windows.Forms.Label();
+            this.SectionAboutHome = new System.Windows.Forms.Label();
+            this.CreatorsAboutHome = new System.Windows.Forms.Label();
+            this.DescriptionAboutHome = new System.Windows.Forms.Label();
             this.ConversionTable = new System.Windows.Forms.TabPage();
             this.BottomHome = new System.Windows.Forms.Panel();
             this.RightHome = new System.Windows.Forms.Panel();
@@ -112,13 +112,13 @@
             this.LogoDashboard = new System.Windows.Forms.Label();
             this.BottomDashboard = new System.Windows.Forms.Panel();
             this.CenterDashboard = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.TotalUnitsTakenText = new System.Windows.Forms.Label();
             this.TotalUnitsValueLabel = new System.Windows.Forms.Label();
             this.DeansListTitleLabel = new System.Windows.Forms.Label();
             this.NonAcademicUnitsValueLabel = new System.Windows.Forms.Label();
             this.AcademicUnitsValueLabel = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.TotalUnitsLabel = new System.Windows.Forms.Label();
+            this.NonAcadameciUnitsLabel = new System.Windows.Forms.Label();
             this.AcademicUnitsLabel = new System.Windows.Forms.Label();
             this.GPALabel = new System.Windows.Forms.Label();
             this.GradeConversionTableButton = new System.Windows.Forms.Button();
@@ -237,10 +237,10 @@
             // 
             // About
             // 
-            this.About.Controls.Add(this.label6);
-            this.About.Controls.Add(this.label11);
-            this.About.Controls.Add(this.label5);
-            this.About.Controls.Add(this.label4);
+            this.About.Controls.Add(this.LogoAboutHome);
+            this.About.Controls.Add(this.SectionAboutHome);
+            this.About.Controls.Add(this.CreatorsAboutHome);
+            this.About.Controls.Add(this.DescriptionAboutHome);
             this.About.Location = new System.Drawing.Point(4, 34);
             this.About.Name = "About";
             this.About.Padding = new System.Windows.Forms.Padding(3);
@@ -249,47 +249,47 @@
             this.About.Text = "About";
             this.About.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // LogoAboutHome
             // 
-            this.label6.BackColor = System.Drawing.Color.SeaGreen;
-            this.label6.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(36, 35);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(593, 114);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "GPAware";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LogoAboutHome.BackColor = System.Drawing.Color.SeaGreen;
+            this.LogoAboutHome.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LogoAboutHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoAboutHome.ForeColor = System.Drawing.Color.White;
+            this.LogoAboutHome.Location = new System.Drawing.Point(36, 35);
+            this.LogoAboutHome.Name = "LogoAboutHome";
+            this.LogoAboutHome.Size = new System.Drawing.Size(593, 114);
+            this.LogoAboutHome.TabIndex = 8;
+            this.LogoAboutHome.Text = "GPAware";
+            this.LogoAboutHome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label11
+            // SectionAboutHome
             // 
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(0, 335);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(664, 33);
-            this.label11.TabIndex = 7;
-            this.label11.Text = " SOFSEC1 TCS2";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.SectionAboutHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SectionAboutHome.Location = new System.Drawing.Point(0, 335);
+            this.SectionAboutHome.Name = "SectionAboutHome";
+            this.SectionAboutHome.Size = new System.Drawing.Size(664, 33);
+            this.SectionAboutHome.TabIndex = 7;
+            this.SectionAboutHome.Text = " SOFSEC1 TCS2";
+            this.SectionAboutHome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // CreatorsAboutHome
             // 
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(0, 204);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(664, 33);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "by Xavier Natividad, Sofia Ferrer, Migs Albano, Joshua Yu, Miguel Flordeliza";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CreatorsAboutHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreatorsAboutHome.Location = new System.Drawing.Point(0, 204);
+            this.CreatorsAboutHome.Name = "CreatorsAboutHome";
+            this.CreatorsAboutHome.Size = new System.Drawing.Size(664, 33);
+            this.CreatorsAboutHome.TabIndex = 1;
+            this.CreatorsAboutHome.Text = "by Xavier Natividad, Sofia Ferrer, Migs Albano, Joshua Yu, Miguel Flordeliza";
+            this.CreatorsAboutHome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // DescriptionAboutHome
             // 
-            this.label4.Location = new System.Drawing.Point(0, 165);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(664, 33);
-            this.label4.TabIndex = 0;
-            this.label4.Text = " An encrypted CGPA tracker and recorder";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DescriptionAboutHome.Location = new System.Drawing.Point(0, 165);
+            this.DescriptionAboutHome.Name = "DescriptionAboutHome";
+            this.DescriptionAboutHome.Size = new System.Drawing.Size(664, 33);
+            this.DescriptionAboutHome.TabIndex = 0;
+            this.DescriptionAboutHome.Text = " An encrypted CGPA tracker and recorder";
+            this.DescriptionAboutHome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ConversionTable
             // 
@@ -333,7 +333,7 @@
             this.InvalidLoginLabel.AutoSize = true;
             this.InvalidLoginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InvalidLoginLabel.ForeColor = System.Drawing.Color.Red;
-            this.InvalidLoginLabel.Location = new System.Drawing.Point(37, 236);
+            this.InvalidLoginLabel.Location = new System.Drawing.Point(40, 226);
             this.InvalidLoginLabel.Name = "InvalidLoginLabel";
             this.InvalidLoginLabel.Size = new System.Drawing.Size(339, 18);
             this.InvalidLoginLabel.TabIndex = 9;
@@ -678,34 +678,34 @@
             this.GradesTableEdit.AllowUserToAddRows = false;
             this.GradesTableEdit.AllowUserToDeleteRows = false;
             this.GradesTableEdit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GradesTableEdit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GradesTableEdit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
             this.GradesTableEdit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GradesTableEdit.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GradesTableEdit.DefaultCellStyle = dataGridViewCellStyle27;
             this.GradesTableEdit.Location = new System.Drawing.Point(23, 17);
             this.GradesTableEdit.Margin = new System.Windows.Forms.Padding(2);
             this.GradesTableEdit.Name = "GradesTableEdit";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GradesTableEdit.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GradesTableEdit.RowHeadersDefaultCellStyle = dataGridViewCellStyle28;
             this.GradesTableEdit.RowHeadersWidth = 51;
             this.GradesTableEdit.RowTemplate.Height = 24;
             this.GradesTableEdit.Size = new System.Drawing.Size(973, 383);
@@ -1100,7 +1100,6 @@
             this.DASHBOARD.Name = "DASHBOARD";
             this.DASHBOARD.Size = new System.Drawing.Size(1264, 681);
             this.DASHBOARD.TabIndex = 7;
-            this.DASHBOARD.VisibleChanged += new System.EventHandler(this.DASHBOARD_VisibleChanged);
             // 
             // TopDashboard
             // 
@@ -1196,13 +1195,13 @@
             // 
             this.CenterDashboard.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.CenterDashboard.BackColor = System.Drawing.Color.PaleGreen;
-            this.CenterDashboard.Controls.Add(this.label3);
+            this.CenterDashboard.Controls.Add(this.TotalUnitsTakenText);
             this.CenterDashboard.Controls.Add(this.TotalUnitsValueLabel);
             this.CenterDashboard.Controls.Add(this.DeansListTitleLabel);
             this.CenterDashboard.Controls.Add(this.NonAcademicUnitsValueLabel);
             this.CenterDashboard.Controls.Add(this.AcademicUnitsValueLabel);
-            this.CenterDashboard.Controls.Add(this.label2);
-            this.CenterDashboard.Controls.Add(this.label1);
+            this.CenterDashboard.Controls.Add(this.TotalUnitsLabel);
+            this.CenterDashboard.Controls.Add(this.NonAcadameciUnitsLabel);
             this.CenterDashboard.Controls.Add(this.AcademicUnitsLabel);
             this.CenterDashboard.Controls.Add(this.GPALabel);
             this.CenterDashboard.Controls.Add(this.GradeConversionTableButton);
@@ -1215,17 +1214,17 @@
             this.CenterDashboard.Size = new System.Drawing.Size(1240, 485);
             this.CenterDashboard.TabIndex = 3;
             // 
-            // label3
+            // TotalUnitsTakenText
             // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(988, 276);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(217, 53);
-            this.label3.TabIndex = 54;
-            this.label3.Text = "Total units taken:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TotalUnitsTakenText.BackColor = System.Drawing.Color.Transparent;
+            this.TotalUnitsTakenText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalUnitsTakenText.ForeColor = System.Drawing.Color.Black;
+            this.TotalUnitsTakenText.Location = new System.Drawing.Point(988, 276);
+            this.TotalUnitsTakenText.Name = "TotalUnitsTakenText";
+            this.TotalUnitsTakenText.Size = new System.Drawing.Size(217, 53);
+            this.TotalUnitsTakenText.TabIndex = 54;
+            this.TotalUnitsTakenText.Text = "Total units taken:";
+            this.TotalUnitsTakenText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // TotalUnitsValueLabel
             // 
@@ -1274,29 +1273,29 @@
             this.AcademicUnitsValueLabel.Text = "00";
             this.AcademicUnitsValueLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // label2
+            // TotalUnitsLabel
             // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(1034, 385);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 26);
-            this.label2.TabIndex = 49;
-            this.label2.Text = "Total units:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.TotalUnitsLabel.BackColor = System.Drawing.Color.Transparent;
+            this.TotalUnitsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalUnitsLabel.ForeColor = System.Drawing.Color.Black;
+            this.TotalUnitsLabel.Location = new System.Drawing.Point(1034, 385);
+            this.TotalUnitsLabel.Name = "TotalUnitsLabel";
+            this.TotalUnitsLabel.Size = new System.Drawing.Size(123, 26);
+            this.TotalUnitsLabel.TabIndex = 49;
+            this.TotalUnitsLabel.Text = "Total units:";
+            this.TotalUnitsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label1
+            // NonAcadameciUnitsLabel
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(942, 356);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(215, 26);
-            this.label1.TabIndex = 48;
-            this.label1.Text = "Non-academic units:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.NonAcadameciUnitsLabel.BackColor = System.Drawing.Color.Transparent;
+            this.NonAcadameciUnitsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NonAcadameciUnitsLabel.ForeColor = System.Drawing.Color.Black;
+            this.NonAcadameciUnitsLabel.Location = new System.Drawing.Point(942, 356);
+            this.NonAcadameciUnitsLabel.Name = "NonAcadameciUnitsLabel";
+            this.NonAcadameciUnitsLabel.Size = new System.Drawing.Size(215, 26);
+            this.NonAcadameciUnitsLabel.TabIndex = 48;
+            this.NonAcadameciUnitsLabel.Text = "Non-academic units:";
+            this.NonAcadameciUnitsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // AcademicUnitsLabel
             // 
@@ -1797,23 +1796,23 @@
             this.GradesTableView.AllowUserToDeleteRows = false;
             this.GradesTableView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GradesTableView.CausesValidation = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GradesTableView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GradesTableView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
             this.GradesTableView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GradesTableView.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GradesTableView.DefaultCellStyle = dataGridViewCellStyle30;
             this.GradesTableView.Location = new System.Drawing.Point(24, 17);
             this.GradesTableView.Margin = new System.Windows.Forms.Padding(2);
             this.GradesTableView.Name = "GradesTableView";
@@ -1836,10 +1835,10 @@
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.DASHBOARD);
             this.Controls.Add(this.HOME);
-            this.Controls.Add(this.GPAVIEW);
             this.Controls.Add(this.GPAEDIT);
-            this.Controls.Add(this.SIGNUP);
+            this.Controls.Add(this.GPAVIEW);
             this.Controls.Add(this.PROFILE);
+            this.Controls.Add(this.SIGNUP);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "GPAware";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1982,13 +1981,13 @@
         private System.Windows.Forms.DataGridView GradesTableView;
         private System.Windows.Forms.Label GPALabel;
         private System.Windows.Forms.Label AcademicUnitsLabel;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label TotalUnitsLabel;
+        private System.Windows.Forms.Label NonAcadameciUnitsLabel;
         private System.Windows.Forms.Label DeansListTitleLabel;
         private System.Windows.Forms.Label NonAcademicUnitsValueLabel;
         private System.Windows.Forms.Label AcademicUnitsValueLabel;
         private System.Windows.Forms.Label TotalUnitsValueLabel;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label TotalUnitsTakenText;
         private System.Windows.Forms.Label AreYouSureLabel;
         private System.Windows.Forms.Button NoButtonDiscard;
         private System.Windows.Forms.Button YesButtonDiscard;
@@ -2001,10 +2000,10 @@
         private System.Windows.Forms.Label LastNameReplaceProfile;
         private System.Windows.Forms.Label FirstNameReplaceProfile;
         private System.Windows.Forms.Label UsernameReplaceProfile;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label CreatorsAboutHome;
+        private System.Windows.Forms.Label DescriptionAboutHome;
+        private System.Windows.Forms.Label SectionAboutHome;
+        private System.Windows.Forms.Label LogoAboutHome;
     }
 }
 
