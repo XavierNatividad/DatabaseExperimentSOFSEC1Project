@@ -590,6 +590,11 @@ namespace SOFSEC1_Project
             GradesTableEdit.Columns.Add("AcademicUnit", "Academic Unit");
             GradesTableEdit.Columns.Add(gradePicker);
 
+            for (int i = 0; i < 6; i++)
+            {
+                GradesTableEdit.Columns[i].ReadOnly = true;
+            }
+
             foreach (var grade in userLogin.grades)
             {
                 GradesTableView.Rows.Add(grade.gradeId, grade.termNumber, grade.courseName, grade.courseCode, grade.units, grade.academicUnit, grade.grade);
