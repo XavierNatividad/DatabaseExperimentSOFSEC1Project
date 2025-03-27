@@ -173,6 +173,7 @@ namespace SOFSEC1_Project
                         if (!existingUsernames.Contains(username))
                         {
                             //Username passed
+                            InvalidUsernameLabel.Visible = false;
                             usernamePassed = true;
                         }
                         else
@@ -216,6 +217,7 @@ namespace SOFSEC1_Project
                     if (Regex.IsMatch(firstName, "^[a-zA-Z ]+$"))
                     {
                         //First name passed
+                        InvalidFirstNameLabel.Visible = false;
                         fnPassed = true;
                     }
                     else
@@ -250,6 +252,7 @@ namespace SOFSEC1_Project
                     if (Regex.IsMatch(lastName, "^[a-zA-Z ]+$"))
                     {
                         //Last name passed
+                        InvalidLastNameLabel.Visible = false;
                         lnPassed = true;
                     }
                     else
@@ -278,6 +281,7 @@ namespace SOFSEC1_Project
             //Program
             if (!string.IsNullOrWhiteSpace(program))
             {
+                InvalidProgramLabel.Visible = false;
                 programPassed = true;
             }
             else
@@ -298,6 +302,7 @@ namespace SOFSEC1_Project
                         if (password == confirmPassword)
                         {
                             //Password passed
+                            InvalidPasswordLabel.Visible = false;
                             passwordPassed = true;
                         }
                         else
@@ -913,6 +918,11 @@ namespace SOFSEC1_Project
                     nextControl.Focus();
                 }
             }
+        }
+
+        private void LastNameSignupBox_TextChanged(object sender, EventArgs e)
+        {
+            InvalidLastNameLabel.Visible = false;
         }
     }
 }
