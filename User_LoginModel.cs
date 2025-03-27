@@ -239,7 +239,7 @@ namespace SOFSEC1_Project
                 }
                 else if (cgpa >= 3.6 && !hasFailingGrade)
                 {
-                    return "You are current on track to graduate as a Summa Cum Laude.";
+                    return "You are current on track to graduate as a Magna Cum Laude.";
                 }
                 else if (cgpa >= 3.4 && !hasFailingGrade)
                 {
