@@ -60,7 +60,7 @@ namespace SOFSEC1_Project
                 newGrade.academicUnit = GPAwareCryptography.Decrypt(password, grade.academicUnit);
                 decryptedGrades.Add(newGrade);
             }
-
+            
             return decryptedGrades;
         }
         public string[] totalUnits()
