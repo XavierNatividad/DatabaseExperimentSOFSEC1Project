@@ -631,10 +631,6 @@ namespace SOFSEC1_Project
             FirstNameReplaceProfile.Text = userLogin.firstName.ToString();
             LastNameReplaceProfile.Text = userLogin.lastName.ToString();
             ProgramReplaceProfile.Text = userLogin.programId.ToString();
-
-            //FirstNameBoxProfile.Text = GPAwareCryptography.Decrypt(userLogin.password, userLogin.firstName);
-            //LastNameBoxProfile.Text = GPAwareCryptography.Decrypt(userLogin.password, userLogin.lastName);
-            //ProgramBoxProfile.Text = SqliteDataAccess.GetProgramName(GPAwareCryptography.Decrypt(userLogin.password, userLogin.programId));
         }
 
         private void EditModeGPAView_Click(object sender, EventArgs e)
@@ -716,7 +712,7 @@ namespace SOFSEC1_Project
 
         private void GPAVIEW_VisibleChanged(object sender, EventArgs e)
         {
-            //CGPAView.Text = GradeCalculator.CalculateCGPA(userLogin.grades).ToString();
+
         }
 
         private void SaveGPAEdit_Click(object sender, EventArgs e)
