@@ -27,7 +27,7 @@ namespace SOFSEC1_Project
         private const int LOCKOUT_MINUTES = 5;
 
         private Timer sessionTimer;
-        private const int SESSION_TIMEOUT_MINUTES = 1;
+        private const int SESSION_TIMEOUT_MINUTES = 10;
         private bool sessionTimeoutDisplayed = false;
 
         public GPAware()
